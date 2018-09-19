@@ -7,15 +7,18 @@
       window.onload = function () {
         input = document.getElementById('input');
         output = document.getElementById('output');
-        console.log(input, output);
+        input.onkeyup = function () {
+          var result = input.value.replace(/n/g, 'm');
+          result = result.replace(/N/g, 'M');
+          output.innerHTML = result;
+        }
       };
     </script>
   </head>
   <body>
     <h1>Lemgthemer</h1>
     <form>
-      <textarea id="input">
-      </textarea>
+      <textarea id="input"></textarea>
     </form>
     <div id="output"></div>
   </body>
