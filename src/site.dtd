@@ -1,0 +1,11 @@
+<!ENTITY % entities
+    SYSTEM "entities.dtd">
+%entities;
+
+<!ELEMENT site (
+    page*
+)>
+
+<!ENTITY % page
+    SYSTEM "page.dtd">
+%page;

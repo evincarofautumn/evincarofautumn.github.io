@@ -1,0 +1,50 @@
+<!ENTITY % entities
+ SYSTEM "entities.dtd">
+%entities;
+
+<!ELEMENT page
+ (head, body)>
+<!ATTLIST page
+ id ID #REQUIRED
+ xml:base CDATA #IMPLIED>
+
+<!ELEMENT sect
+ (head, body)>
+
+<!ELEMENT head
+ (title, subtitle*)>
+
+<!ELEMENT title
+ (#PCDATA)>
+
+<!ELEMENT subtitle
+ (#PCDATA)>
+
+<!ENTITY % block
+ 'defs | para | sect'>
+
+<!ENTITY % inline
+ 'link'>
+
+<!ENTITY % content
+ '%block; | %inline;'>
+
+<!ELEMENT body
+ (%content;)>
+
+<!ELEMENT defs
+ ((key+, val+)+)>
+
+<!ELEMENT key
+ (%inline;)>
+
+<!ELEMENT val
+ (%content;)>
+
+<!ELEMENT link
+ (#PCDATA)>
+<!ATTLIST link
+ to IDREF #REQUIRED>
+
+<!ELEMENT para
+ (#PCDATA)>

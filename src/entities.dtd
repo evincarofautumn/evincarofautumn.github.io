@@ -1,0 +1,17 @@
+<!ENTITY exslt
+ "http://exslt.org/common">
+
+<!ENTITY generic
+ "https://evincarofautumn.github.io/xmlns/generic">
+
+<!ENTITY html
+ "http://www.w3.org/1999/xhtml">
+
+<!ENTITY sp
+ "&#x20;">
+
+<!ENTITY xinclude
+ "http://www.w3.org/2001/XInclude">
+
+<!ENTITY xslt
+ "http://www.w3.org/1999/XSL/Transform">
