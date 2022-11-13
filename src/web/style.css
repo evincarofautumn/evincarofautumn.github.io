@@ -1,0 +1,33 @@
+dt
+{
+    font-weight:                bold;
+}
+
+:target
+{
+    text-decoration:            underline;
+}
+
+code > sup
+{
+    font-size:                  inherit;
+}
+
+table.pattern
+{
+    border-spacing:             0.5em;
+}
+
+table.pattern td,
+table.pattern th
+{
+    text-align:                 left;
+    border-top:                 2px solid #666666;
+    padding:                    0;
+    vertical-align:             baseline;
+}
+
+table.loop-diagram td,
+table.loop-diagram th {
+    border:                     1px solid #666666;
+}

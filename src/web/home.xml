@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE page
+ SYSTEM "page.dtd">
+<page id="home">
+ <head>
+  <title>Jon Purdy</title>
+ </head>
+ <body>
+  <sect>
+   <head>
+    <title>Writing</title>
+   </head>
+   <body>
+    <defs>
+     <key><link to="loops">Loops</link></key>
+     <val>
+      <para>Gathered writings on crochet and other yarncraft.</para>
+     </val>
+    </defs>
+   </body>
+  </sect>
+ </body>
+</page>
