@@ -18,6 +18,14 @@
        <para>Gathered writings on crochet and other yarncraft.</para>
       </val>
      </def>
+     <def>
+      <key><link to="credits">Credits</link></key>
+      <val>
+       <para>
+        Credits and citations for content on this site.
+       </para>
+      </val>
+     </def>
     </defs>
    </body>
   </sect>

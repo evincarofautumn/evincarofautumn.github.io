@@ -8,6 +8,7 @@ XSLTFLAGS ?= --verbose
 
 build: \
     dst/web/index.html \
+    dst/web/credits/index.html \
     dst/web/loops/index.html \
     dst/web/style.css
 
@@ -29,6 +30,7 @@ src/xslt.dtd: \
 ################################################################
 
 src/site.xml: \
+    src/web/credits.xml \
     src/web/home.xml \
     src/web/loops.xml
 
@@ -56,6 +58,13 @@ xsltproc \
     $(2) \
     $(3)
 endef
+
+dst/web/credits/index.html: \
+    dst/credits.xml \
+    src/page.xsl \
+    src/page.dtd
+	mkdir -p dst/web/credits; \
+	$(call xsltproc,$@,src/page.xsl,$<)
 
 dst/web/index.html: \
     dst/home.xml \

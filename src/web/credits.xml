@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE page
+ SYSTEM "page.dtd">
+<page id="credits">
+
+ <head>
+  <title>Credits</title>
+ </head>
+
+ <body>
+
+  <sect>
+
+   <head>
+    <title>Images</title>
+   </head>
+
+   <body>
+
+    <para>
+     <sep>
+      My avatar and the favicon for this site
+      are based on a photo by
+      <cite of="&cite-wikipedia-user-018;">
+       Wikipedia user 0<sup>18</sup>
+      </cite>
+      of
+      <cite of="&cite-wikimedia-indian-pipe;">
+       <ital>Monotropa uniflora</ital>
+      </cite>
+      flowers, licensed under
+      <cat>
+       <cite of="&cite-cc-by-sa-3.0;">CC BY-SA 3.0</cite>.
+      </cat>
+     </sep>
+    </para>
+
+   </body>
+
+  </sect>
+
+ </body>
+
+</page>

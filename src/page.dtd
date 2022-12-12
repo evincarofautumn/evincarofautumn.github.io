@@ -6,8 +6,9 @@
  'defs | para | sect | table'>
 
 <!ENTITY % inline
- 'abbr | code | link | ref | sup | text | todo
-  | cat | fix | grp | sep'>
+ 'abbr | cite | code | link | ref | sup | text | todo
+ | cat | fix | grp | sep
+ | ital'>
 
 <!ENTITY % block-content
  '(#PCDATA | %block; | %inline;)*'>
@@ -70,6 +71,11 @@
 <!ATTLIST abbr
  of IDREF #IMPLIED>
 
+<!ELEMENT cite
+ %inline-content;>
+<!ATTLIST cite
+ of CDATA #REQUIRED>
+
 <!ELEMENT code
  %inline-content;>
 
@@ -104,4 +110,9 @@
  %inline-content;>
 
 <!ELEMENT sep
+ %inline-content;>
+
+<!-- generic styles -->
+
+<!ELEMENT ital
  %inline-content;>

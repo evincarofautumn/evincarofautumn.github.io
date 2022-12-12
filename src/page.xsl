@@ -135,6 +135,16 @@
   <value-of select="normalize-space(.)"/>
  </template>
 
+ <template match="cite" xmlns="&xslt;">
+  <a href="{ @of }" xmlns="&html;">
+   <s:apply-templates/>
+  </a>
+ </template>
+
+ <template match="cite/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
  <template match="link" xmlns="&xslt;">
   <choose>
    <when test="@to = 'home'">
@@ -299,6 +309,16 @@
  </template>
 
  <template match="text" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
+ <template match="ital" xmlns="&xslt;">
+  <i xmlns="&html;">
+   <s:apply-templates/>
+  </i>
+ </template>
+
+ <template match="ital/text()" xmlns="&xslt;">
   <value-of select="normalize-space(.)"/>
  </template>
 
