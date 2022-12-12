@@ -6,6 +6,44 @@
   <title>Jon Purdy</title>
  </head>
  <body>
+
+  <sect>
+   <head>
+    <title>About</title>
+   </head>
+   <body>
+
+    <para>
+     A rare being from the forests of New England,
+     transplanted to California.
+    </para>
+
+    <para>
+     Most of my work is in programming language technology,
+     including
+     type systems,
+     modern compiler design,
+     parsing,
+     code generation,
+     usability design,
+     and garbage collector implementation.
+     I am familiar with an unusually broad array
+     of programming technologies,
+     but I have the most familiarity and professional experience
+     with Haskell, C, C++, and Perl.
+    </para>
+
+    <para>
+     I am available for hire to write code
+     or to manage, teach, and mentor those who do,
+     preferably using Haskell, Rust, or similar.
+     The code I write is unusually reliable,
+     but I do not produce it quickly.
+    </para>
+
+   </body>
+  </sect>
+
   <sect>
    <head>
     <title>Writing</title>
@@ -29,5 +67,6 @@
     </defs>
    </body>
   </sect>
+
  </body>
 </page>
