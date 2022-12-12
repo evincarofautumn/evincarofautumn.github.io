@@ -7,6 +7,12 @@
 <!ENTITY html
  "http://www.w3.org/1999/xhtml">
 
+<!ENTITY nbsp
+ "&#xA0;">
+
+<!ENTITY saxon
+ "http://icl.com/saxon">
+
 <!ENTITY sp
  "&#x20;">
 

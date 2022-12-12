@@ -1,0 +1,53 @@
+<!ENTITY % entities
+ SYSTEM "entities.dtd">
+%entities;
+
+<!ELEMENT style
+ (#PCDATA)>
+
+<!-- Base Constants -->
+
+<!ENTITY small-margin    '0.5rem'>
+<!ENTITY medium-margin   '1rem'>
+<!ENTITY large-margin    '2rem'>
+<!ENTITY x-large-margin  '4rem'>
+<!ENTITY xx-large-margin '8rem'>
+
+<!ENTITY hair-space '0.04rem'>  <!-- 1/24 -->
+<!ENTITY thin-space '0.12rem'>  <!--  1/8 -->
+<!ENTITY space      '0.16rem'>  <!--  1/6 -->
+
+<!ENTITY border-color 'grey'>
+<!ENTITY todo-color   'grey'>
+
+<!-- Declaration Sets -->
+
+<!ENTITY Double-spaced '
+    line-height:                2rem;
+'>
+
+<!ENTITY Heavy '
+    font-weight:                bold;
+'>
+
+<!ENTITY Underlined '
+    text-decoration:            underline;
+    text-decoration-skip-ink:   auto;
+'>
+
+<!ENTITY Small-caps '
+    font-variant-caps:          all-small-caps;
+'>
+
+<!ENTITY Block '
+    margin:                     &medium-margin; 0;
+'>
+
+<!ENTITY Figure '
+    margin:                     &large-margin; 0;
+'>
+
+<!ENTITY Indented '
+    margin-left:                &medium-margin;;
+    margin-right:               &medium-margin;;
+'>

@@ -12,10 +12,12 @@
    </head>
    <body>
     <defs>
-     <key><link to="loops">Loops</link></key>
-     <val>
-      <para>Gathered writings on crochet and other yarncraft.</para>
-     </val>
+     <def>
+      <key><link to="loops">Loops</link></key>
+      <val>
+       <para>Gathered writings on crochet and other yarncraft.</para>
+      </val>
+     </def>
     </defs>
    </body>
   </sect>

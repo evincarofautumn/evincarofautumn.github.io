@@ -6,6 +6,522 @@
   <title>Loops</title>
  </head>
  <body>
-  <link to="home">Home</link>
+
+  <sect>
+
+   <head>
+    <title>Crochet Stitches</title>
+   </head>
+
+   <body>
+
+    <para>
+     The word “stitch” can refer
+     to a few different kinds of structures in crochet.
+     When these differences are relevant,
+     I’ll refer to them using the following terms.
+    </para>
+
+    <defs>
+
+     <def id="substitch">
+      <key>Substitch</key>
+      <val>
+       <para>
+        <sep>
+         A substitch is one of the basic steps
+         used to construct all higher-level stitch forms.
+         The main substitches are:
+         <cat><ref to="insert-hook">insert hook</ref>,</cat>
+         <cat><ref to="yarn-over">yarn over</ref>,</cat>
+         and
+         <cat><ref to="pull-through">pull through</ref>.</cat>
+        </sep>
+       </para>
+      </val>
+     </def>
+
+     <def id="basic-stitch">
+      <key>Basic Stitch</key>
+      <val>
+       <para>
+        <sep>
+         <cat>
+          <sep>
+           A basic stitch is a series
+           of <ref to="substitch">substitches</ref>
+           that forms one of the basic units
+           of a <ref>pattern</ref>
+          </sep>
+          .
+         </cat>
+         <cat>
+          <sep>
+           In basic crochet,
+           all of the basic stitches begin and end
+           with 1 <ref to="loop-on-hook">loop on the hook</ref>
+          </sep>
+          .
+         </cat>
+        </sep>
+       </para>
+      </val>
+     </def>
+
+     <def id="superstitch">
+      <key>Superstitch</key>
+      <val>
+       <para>
+        <cat>
+         <sep>
+          A superstitch is a series
+          of <ref to="basic-stitch">basic stitches</ref>
+          that forms a higher-level unit than a single stitch.
+          This may span a single <cat><ref>row</ref>,</cat>
+          such as a <ref>shell</ref>
+          or a segment of <cat><ref>cable</ref>;</cat>
+          or it may span multiple rows,
+          as in <ref>star stitch</ref>
+         </sep>
+         .
+        </cat>
+       </para>
+      </val>
+     </def>
+
+    </defs>
+
+   </body>
+
+  </sect>
+
+  <sect>
+
+   <head>
+    <title>Substitches</title>
+   </head>
+
+   <body>
+
+    <defs>
+
+     <def id="yarn-over">
+      <key>Yarn Over (<abbr>YO</abbr>)</key>
+      <key>Yarn Over Hook (<abbr>YOH</abbr>)</key>
+      <val>
+       <para>
+        <sep>
+         Taking up an untwisted <ref>bight</ref>
+         from the <ref>working yarn</ref>
+         by wrapping it “over” the hook,
+         so that the hook passes
+         from the <ref to="near-side">near side</ref>
+         to the <ref to="far-side">far side</ref>
+         of the bight.
+        </sep>
+       </para>
+      </val>
+     </def>
+
+     <def id="yarn-under">
+      <key>Yarn Under (<abbr>YU</abbr>)</key>
+      <key>Yarn Under Hook (<abbr>YUH</abbr>)</key>
+      <key>Reversed Yarn Over (<abbr>RYO</abbr>)</key>
+      <val>
+       <para>
+        <cat>
+         <sep>
+          Taking up a twisted <ref>loop</ref>
+          from the <ref>working yarn</ref>
+          by wrapping it “under” the hook.
+          This is the <ref>reverse</ref>
+          of <ref to="yarn-over">yarn over</ref>
+         </sep>
+         .
+        </cat>
+       </para>
+      </val>
+     </def>
+
+     <def id="insert-hook">
+      <key>Insert Hook (<abbr>IH</abbr>)</key>
+      <val>
+       <para>
+        <sep>
+         <cat>
+          <sep>
+           Inserting the hook through the work
+           at an <ref to="anchor-point">anchor point</ref>
+           from the <ref to="near-side">near side</ref>
+           to the <ref to="far-side">far side</ref>
+          </sep>
+          .
+         </cat>
+         <cat>
+          <sep>
+           I will represent this
+           as a form of
+           <ref to="loop-on-hook">loop on the hook</ref>
+          </sep>
+          ,
+         </cat>
+         where the “loop” is the body of the work itself.
+        </sep>
+       </para>
+      </val>
+     </def>
+
+     <def id="pull-through">
+      <key>Pull Through (<abbr>PT</abbr>)</key>
+      <val>
+       <para>
+        <sep>
+         Pulling the topmost
+         <ref to="loop-on-hook">loop on the hook</ref>
+         through the next topmost.
+         Decreases the number of
+         <abbr>LOH</abbr>
+         by one.
+        </sep>
+       </para>
+      </val>
+     </def>
+
+    </defs>
+
+   </body>
+
+  </sect>
+
+  <sect>
+
+   <head>
+    <title>Situation of the Hook &amp; Work</title>
+   </head>
+
+   <body>
+
+    <defs>
+
+     <def id="loop-on-hook">
+      <key>Loop on Hook, Loops on Hook (<abbr>LOH</abbr>)</key>
+      <val><todo/></val>
+     </def>
+
+     <def id="anchor-point">
+      <key>Anchor Point</key>
+      <val><todo/></val>
+     </def>
+
+     <def id="near-side">
+      <key>Near Side (<abbr>NS</abbr>)</key>
+      <val><todo/></val>
+     </def>
+
+     <def id="far-side">
+      <key>Far Side (<abbr>FS</abbr>)</key>
+      <val><todo/></val>
+     </def>
+
+     <def id="right-side">
+      <key>Right Side (<abbr>RS</abbr>)</key>
+      <val><todo/></val>
+     </def>
+
+     <def id="wrong-side">
+      <key>Wrong Side (<abbr>WS</abbr>)</key>
+      <val><todo/></val>
+     </def>
+
+    </defs>
+
+   </body>
+
+  </sect>
+
+  <sect>
+
+   <head>
+    <title>Basic Crochet Stitches</title>
+   </head>
+
+   <body>
+
+    <table>
+
+     <fmt>
+      <fld>Height</fld>
+      <fld>US</fld>
+      <fld>UK</fld>
+      <fld>Substitches</fld>
+     </fmt>
+
+     <row>
+      <cell>0&nbsp;h</cell>
+      <cell>Chain (<code><ref>ch</ref></code>)</cell>
+      <cell>Chain (<code><ref>ch</ref></code>)</cell>
+      <cell>
+       <code>
+        <sep>
+         <ref>yo</ref>
+         <ref>pt</ref>
+        </sep>
+       </code>
+      </cell>
+     </row>
+
+     <row>
+      <cell>1&nbsp;h</cell>
+      <cell>Slip stitch (<code><ref>sl</ref></code>)</cell>
+      <cell>Slip stitch (<code><ref>sl</ref></code>)</cell>
+      <cell>
+       <code>
+        <code>
+         <sep>
+          <cat>
+           <grp>
+            <sep>
+             <ref>ih</ref>
+             <ref>yo</ref>
+             <ref>pt</ref>
+            </sep>
+           </grp>
+          </cat>
+          <ref>pt</ref>
+         </sep>
+        </code>
+       </code>
+      </cell>
+     </row>
+
+     <row>
+      <cell>2&nbsp;h</cell>
+      <cell>Single crochet (<code><ref>sc</ref></code>)</cell>
+      <cell>Double crochet (<code><ref>dc</ref></code>)</cell>
+      <cell>
+       <code>
+        <sep>
+         <cat>
+          <grp>
+           <sep>
+            <ref>ih</ref>
+            <ref>yo</ref>
+            <ref>pt</ref>
+           </sep>
+          </grp>
+         </cat>
+         <fix>
+          <grp>
+           <sep>
+            <ref>yo</ref>
+            <fix><ref>pt</ref><sup>2</sup></fix>
+           </sep>
+          </grp>
+          <sup>1</sup>
+         </fix>
+        </sep>
+       </code>
+      </cell>
+     </row>
+
+     <row>
+      <cell>3&nbsp;h</cell>
+      <cell>Half double crochet (<code><ref>hdc</ref></code>)</cell>
+      <cell>Half treble crochet (<code><ref>htr</ref></code>)</cell>
+      <cell>
+       <code>
+        <sep>
+         <fix>
+          <ref>yo</ref>
+          <sup>1</sup>
+         </fix>
+         <cat>
+          <grp>
+           <sep>
+            <ref>ih</ref>
+            <ref>yo</ref>
+            <ref>pt</ref>
+           </sep>
+          </grp>
+         </cat>
+         <fix>
+          <grp>
+           <sep>
+            <ref>yo</ref>
+            <fix><ref>pt</ref><sup>2</sup></fix>
+           </sep>
+          </grp>
+          <sup>1</sup>
+         </fix>
+         <ref>pt</ref>
+        </sep>
+       </code>
+      </cell>
+     </row>
+
+     <row>
+      <cell>4&nbsp;h</cell>
+      <cell>Double crochet (<code><ref>dc</ref></code>)</cell>
+      <cell>Treble crochet (<code><ref>tr</ref></code>)</cell>
+      <cell>
+       <code>
+        <sep>
+         <fix><ref>yo</ref><sup>1</sup></fix>
+         <cat>
+          <grp>
+           <sep>
+            <ref>ih</ref>
+            <ref>yo</ref>
+            <ref>pt</ref>
+           </sep>
+          </grp>
+         </cat>
+         <fix>
+          <grp>
+           <sep>
+            <ref>yo</ref>
+            <fix><ref>pt</ref><sup>2</sup></fix>
+           </sep>
+          </grp>
+          <sup>2</sup>
+         </fix>
+        </sep>
+       </code>
+      </cell>
+     </row>
+
+     <row>
+      <cell>5&nbsp;h</cell>
+      <cell>Half triple crochet (<code><ref>htr</ref></code>)</cell>
+      <cell>Half double treble crochet (<code><ref>hdtr</ref></code>)</cell>
+      <cell>
+       <code>
+        <sep>
+         <fix><ref>yo</ref><sup>2</sup></fix>
+         <cat>
+          <grp>
+           <sep>
+            <ref>ih</ref>
+            <ref>yo</ref>
+            <ref>pt</ref>
+           </sep>
+          </grp>
+         </cat>
+         <fix>
+          <grp>
+           <sep>
+            <ref>yo</ref>
+            <fix><ref>pt</ref><sup>2</sup></fix>
+           </sep>
+          </grp>
+          <sup>2</sup>
+         </fix>
+         <ref>pt</ref>
+        </sep>
+       </code>
+      </cell>
+     </row>
+
+     <row>
+      <cell>6&nbsp;h</cell>
+      <cell>Triple crochet (<code><ref>tr</ref></code>)</cell>
+      <cell>Double treble crochet (<code><ref>dtr</ref></code>)</cell>
+      <cell>
+       <code>
+        <sep>
+         <fix><ref>yo</ref><sup>2</sup></fix>
+         <cat>
+          <grp>
+           <sep>
+            <ref>ih</ref>
+            <ref>yo</ref>
+            <ref>pt</ref>
+           </sep>
+          </grp>
+         </cat>
+         <fix>
+          <grp>
+           <sep>
+            <ref>yo</ref>
+            <fix><ref>pt</ref><sup>2</sup></fix>
+           </sep>
+          </grp>
+          <sup>3</sup>
+         </fix>
+        </sep>
+       </code>
+      </cell>
+     </row>
+
+     <row>
+      <cell>7&nbsp;h</cell>
+      <cell>Half double triple crochet (<code><ref>hdtr</ref></code>)</cell>
+      <cell>Half triple treble crochet (<code><ref>htrtr</ref></code>)</cell>
+      <cell>
+       <code>
+        <sep>
+         <fix><ref>yo</ref><sup>3</sup></fix>
+         <cat>
+          <grp>
+           <sep>
+            <ref>ih</ref>
+            <ref>yo</ref>
+            <ref>pt</ref>
+           </sep>
+          </grp>
+         </cat>
+         <fix>
+          <grp>
+           <sep>
+            <ref>yo</ref>
+            <fix><ref>pt</ref><sup>2</sup></fix>
+           </sep>
+          </grp>
+          <sup>3</sup>
+         </fix>
+         <ref>pt</ref>
+        </sep>
+       </code>
+      </cell>
+     </row>
+
+     <row>
+      <cell>8&nbsp;h</cell>
+      <cell>Double triple crochet (<code><ref>dtr</ref></code>)</cell>
+      <cell>Triple treble crochet (<code><ref>trtr</ref></code>)</cell>
+      <cell>
+       <code>
+        <sep>
+         <fix><ref>yo</ref><sup>3</sup></fix>
+         <cat>
+          <grp>
+           <sep>
+            <ref>ih</ref>
+            <ref>yo</ref>
+            <ref>pt</ref>
+           </sep>
+          </grp>
+         </cat>
+         <fix>
+          <grp>
+           <sep>
+            <ref>yo</ref>
+            <fix><ref>pt</ref><sup>2</sup></fix>
+           </sep>
+          </grp>
+          <sup>4</sup>
+         </fix>
+        </sep>
+       </code>
+      </cell>
+     </row>
+
+    </table>
+
+   </body>
+
+  </sect>
+
  </body>
+
 </page>

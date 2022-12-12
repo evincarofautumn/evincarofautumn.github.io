@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE style
+ SYSTEM "css.dtd">
+<style>
+
+:target
+{
+    &Underlined;
+}
+
+a
+{
+    &Underlined;
+}
+
+abbr
+{
+    &Small-caps;
+}
+
+body
+{
+    font-family:                serif;
+    &Double-spaced;
+}
+
+code
+{
+/*
+    border:                     1px solid &border-color;;
+    border-radius:              0.25em;
+    display:                    inline-block;
+    line-height:                1em;
+    margin:                     &space;;
+    padding:                    &space;;
+*/
+}
+
+dd
+{
+    &Block;
+    &Indented;
+}
+
+dl
+{
+    &Block;
+}
+
+dt
+{
+    &Heavy;
+}
+
+h1
+{
+    &Block;
+}
+
+main > heading > h1
+{
+    font-size:                  xx-large;
+}
+
+section > heading > h1
+{
+    font-size:                  x-large;
+}
+
+h2
+{
+    &Block;
+}
+
+heading
+{
+    border-bottom:              1px solid &border-color;;
+    display:                    block;
+    &Block;
+}
+
+main
+{
+    margin:                     &xx-large-margin; auto;
+    max-width:                  64em;
+    padding:                    0 &large-margin;;
+}
+
+main > heading > p
+{
+    font-size:                  x-large;
+}
+
+section > heading > p
+{
+    font-size:                  large;
+}
+
+section
+{
+    display:                    block;
+    margin:                     &x-large-margin; 0;
+}
+
+.ref
+{
+    padding-left:               &hair-space;;
+    padding-right:              &hair-space;;
+    &Underlined;
+}
+
+span.cat
+{
+    white-space:                normal;
+}
+
+span.fix
+{
+    white-space:                nowrap;
+}
+
+span.grp
+{
+    display:                    inline-block;
+    white-space:                normal;
+}
+
+code > sup
+{
+    font-size:                  inherit;
+}
+
+table
+{
+    border-collapse:            collapse;
+    width:                      100%;
+    &Figure;
+}
+
+td
+{
+    border:                     1px solid &border-color;;
+    padding:                    &small-margin;;
+    text-align:                 left;
+    vertical-align:             baseline;
+}
+
+th
+{
+    border:                     1px solid &border-color;;
+    padding:                    &small-margin;;
+    text-align:                 left;
+    vertical-align:             baseline;
+}
+
+.todo
+{
+    color:                      &todo-color;;
+    font-style:                 italic;
+}
+
+u
+{
+    &Underlined;
+}
+
+</style>

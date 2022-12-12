@@ -2,49 +2,106 @@
  SYSTEM "entities.dtd">
 %entities;
 
+<!ENTITY % block
+ 'defs | para | sect | table'>
+
+<!ENTITY % inline
+ 'abbr | code | link | ref | sup | text | todo
+  | cat | fix | grp | sep'>
+
+<!ENTITY % block-content
+ '(#PCDATA | %block; | %inline;)*'>
+
+<!ENTITY % inline-content
+ '(#PCDATA | %inline;)*'>
+
+<!-- structure -->
+
 <!ELEMENT page
  (head, body)>
 <!ATTLIST page
  id ID #REQUIRED
  xml:base CDATA #IMPLIED>
 
+ <!ELEMENT head
+  (title, subtitle*)>
+  <!ELEMENT title
+   (#PCDATA)>
+  <!ELEMENT subtitle
+   (#PCDATA)>
+
+ <!ELEMENT body
+  %block-content;>
+
+<!-- block content -->
+
+<!ELEMENT defs
+ (def*)>
+ <!ELEMENT def
+  (key+, val+)>
+ <!ATTLIST def
+  id ID #IMPLIED>
+  <!ELEMENT key
+   %inline-content;>
+  <!ELEMENT val
+   %block-content;>
+
+<!ELEMENT para
+ %inline-content;>
+
 <!ELEMENT sect
  (head, body)>
 
-<!ELEMENT head
- (title, subtitle*)>
+<!ELEMENT table
+ (fmt?, row*)>
+ <!ELEMENT fmt
+  (fld*)>
+  <!ELEMENT fld
+   (#PCDATA)>
+ <!ELEMENT row
+  (cell*)>
+  <!ELEMENT cell
+   %block-content;>
 
-<!ELEMENT title
+<!-- inline content -->
+
+<!ELEMENT abbr
  (#PCDATA)>
+<!ATTLIST abbr
+ of IDREF #IMPLIED>
 
-<!ELEMENT subtitle
- (#PCDATA)>
-
-<!ENTITY % block
- 'defs | para | sect'>
-
-<!ENTITY % inline
- 'link'>
-
-<!ENTITY % content
- '%block; | %inline;'>
-
-<!ELEMENT body
- (%content;)>
-
-<!ELEMENT defs
- ((key+, val+)+)>
-
-<!ELEMENT key
- (%inline;)>
-
-<!ELEMENT val
- (%content;)>
+<!ELEMENT code
+ %inline-content;>
 
 <!ELEMENT link
  (#PCDATA)>
 <!ATTLIST link
  to IDREF #REQUIRED>
 
-<!ELEMENT para
+<!ELEMENT ref
  (#PCDATA)>
+<!ATTLIST ref
+ to IDREF #IMPLIED>
+
+<!ELEMENT sup
+ %inline-content;>
+
+<!ELEMENT text
+ (#PCDATA)>
+
+<!ELEMENT todo
+ (#PCDATA)>
+
+<!-- construction -->
+
+<!ELEMENT cat
+ %inline-content;>
+
+<!ELEMENT fix
+ %inline-content;>
+
+<!ELEMENT grp
+ %inline-content;>
+
+<!ELEMENT sep
+ %inline-content;>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!DOCTYPE stylesheet
- SYSTEM "style.dtd">
+ SYSTEM "xslt.dtd">
 
 <s:stylesheet
  exclude-result-prefixes="g h"
@@ -26,20 +26,21 @@
   stylesheet-prefix="g"
   />
 
- <s:strip-space
-  elements="*"
-  />
-
  <template match="/" xmlns="&xslt;">
   <apply-templates/>
  </template>
 
  <template match="/site" xmlns="&xslt;">
   <for-each select="page">
-   <e:document href="{ @id }.xml">
-    <processing-instruction
-     name="xsl-stylesheet"
-     >href="page.xsl" type="text/xsl"</processing-instruction>
+   <e:document
+    doctype-system="page.dtd"
+    encoding="utf-8"
+    href="{ @id }.xml"
+    method="xml"
+    >
+    <processing-instruction name="xsl-stylesheet"><!--
+     -->href="page.xsl" type="text/xsl"<!--
+    --></processing-instruction>
     <copy-of select="."/>
    </e:document>
   </for-each>

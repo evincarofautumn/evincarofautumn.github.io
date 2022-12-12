@@ -13,6 +13,9 @@ build: \
 
 ################################################################
 
+src/css.dtd: \
+    src/entities.dtd
+
 src/page.dtd: \
     src/entities.dtd
 
@@ -20,7 +23,7 @@ src/site.dtd: \
     src/entities.dtd \
     src/page.dtd
 
-src/style.dtd: \
+src/xslt.dtd: \
     src/entities.dtd
 
 ################################################################
@@ -31,17 +34,14 @@ src/site.xml: \
 
 ################################################################
 
+src/css.xsl: \
+	src/xslt.dtd
+
 src/page.xsl: \
-    src/style.dtd
+    src/xslt.dtd
 
 src/site.xsl: \
-    src/style.dtd
-
-################################################################
-
-dst/web/style.css: src/web/style.css
-	mkdir -p dst/web; \
-	cp "$<" "$@"
+    src/xslt.dtd
 
 ################################################################
 
@@ -57,13 +57,26 @@ xsltproc \
     $(3)
 endef
 
-dst/web/index.html: dst/home.xml src/page.xsl
+dst/web/index.html: \
+    dst/home.xml \
+    src/page.xsl \
+    src/page.dtd
 	mkdir -p dst/web; \
 	$(call xsltproc,$@,src/page.xsl,$<)
 
-dst/web/loops/index.html: dst/loops.xml src/page.xsl
+dst/web/loops/index.html: \
+    dst/loops.xml \
+    src/page.xsl \
+    src/page.dtd
 	mkdir -p dst/web/loops; \
 	$(call xsltproc,$@,src/page.xsl,$<)
+
+dst/web/style.css: \
+    src/web/style.xml \
+    src/css.xsl \
+    src/css.dtd
+	mkdir -p dst/web; \
+	$(call xsltproc,$@,src/css.xsl,$<)
 
 ################################################################
 
