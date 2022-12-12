@@ -49,22 +49,22 @@
     <title>Writing</title>
    </head>
    <body>
-    <defs>
-     <def>
+    <map>
+     <assn>
       <key><link to="loops">Loops</link></key>
       <val>
        <para>Gathered writings on crochet and other yarncraft.</para>
       </val>
-     </def>
-     <def>
+     </assn>
+     <assn>
       <key><link to="credits">Credits</link></key>
       <val>
        <para>
         Credits and citations for content on this site.
        </para>
       </val>
-     </def>
-    </defs>
+     </assn>
+    </map>
    </body>
   </sect>
 

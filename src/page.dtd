@@ -3,7 +3,7 @@
 %entities;
 
 <!ENTITY % block
- 'defs | para | sect | table'>
+ 'map | para | sect | table'>
 
 <!ENTITY % inline
  'abbr | cite | code | link | ref | sup | text | todo
@@ -36,16 +36,15 @@
 
 <!-- block content -->
 
-<!ELEMENT defs
- (def*)>
- <!ELEMENT def
+<!ELEMENT map
+ (assn*)>
+ <!ELEMENT assn
   (key+, val+)>
- <!ATTLIST def
+ <!ATTLIST assn
   id ID #IMPLIED>
   <!ELEMENT key
    %inline-content;>
-  <!ELEMENT val
-   %block-content;>
+  <!-- ELEMENT val -->
 
 <!ELEMENT para
  %inline-content;>
@@ -63,6 +62,9 @@
   (cell*)>
   <!ELEMENT cell
    %block-content;>
+
+<!ELEMENT val
+ %block-content;>
 
 <!-- inline content -->
 

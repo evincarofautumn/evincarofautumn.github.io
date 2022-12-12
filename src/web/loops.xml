@@ -22,9 +22,9 @@
      I’ll refer to them using the following terms.
     </para>
 
-    <defs>
+    <map>
 
-     <def id="substitch">
+     <assn id="substitch">
       <key>Substitch</key>
       <val>
        <para>
@@ -39,9 +39,9 @@
         </sep>
        </para>
       </val>
-     </def>
+     </assn>
 
-     <def id="basic-stitch">
+     <assn id="basic-stitch">
       <key>Basic Stitch</key>
       <val>
        <para>
@@ -66,9 +66,9 @@
         </sep>
        </para>
       </val>
-     </def>
+     </assn>
 
-     <def id="superstitch">
+     <assn id="superstitch">
       <key>Superstitch</key>
       <val>
        <para>
@@ -87,9 +87,9 @@
         </cat>
        </para>
       </val>
-     </def>
+     </assn>
 
-    </defs>
+    </map>
 
    </body>
 
@@ -103,9 +103,9 @@
 
    <body>
 
-    <defs>
+    <map>
 
-     <def id="yarn-over">
+     <assn id="yarn-over">
       <key>Yarn Over (<abbr>YO</abbr>)</key>
       <key>Yarn Over Hook (<abbr>YOH</abbr>)</key>
       <val>
@@ -121,9 +121,9 @@
         </sep>
        </para>
       </val>
-     </def>
+     </assn>
 
-     <def id="yarn-under">
+     <assn id="yarn-under">
       <key>Yarn Under (<abbr>YU</abbr>)</key>
       <key>Yarn Under Hook (<abbr>YUH</abbr>)</key>
       <key>Reversed Yarn Over (<abbr>RYO</abbr>)</key>
@@ -141,9 +141,9 @@
         </cat>
        </para>
       </val>
-     </def>
+     </assn>
 
-     <def id="insert-hook">
+     <assn id="insert-hook">
       <key>Insert Hook (<abbr>IH</abbr>)</key>
       <val>
        <para>
@@ -169,9 +169,9 @@
         </sep>
        </para>
       </val>
-     </def>
+     </assn>
 
-     <def id="pull-through">
+     <assn id="pull-through">
       <key>Pull Through (<abbr>PT</abbr>)</key>
       <val>
        <para>
@@ -185,9 +185,9 @@
         </sep>
        </para>
       </val>
-     </def>
+     </assn>
 
-    </defs>
+    </map>
 
    </body>
 
@@ -201,39 +201,39 @@
 
    <body>
 
-    <defs>
+    <map>
 
-     <def id="loop-on-hook">
+     <assn id="loop-on-hook">
       <key>Loop on Hook, Loops on Hook (<abbr>LOH</abbr>)</key>
       <val><todo/></val>
-     </def>
+     </assn>
 
-     <def id="anchor-point">
+     <assn id="anchor-point">
       <key>Anchor Point</key>
       <val><todo/></val>
-     </def>
+     </assn>
 
-     <def id="near-side">
+     <assn id="near-side">
       <key>Near Side (<abbr>NS</abbr>)</key>
       <val><todo/></val>
-     </def>
+     </assn>
 
-     <def id="far-side">
+     <assn id="far-side">
       <key>Far Side (<abbr>FS</abbr>)</key>
       <val><todo/></val>
-     </def>
+     </assn>
 
-     <def id="right-side">
+     <assn id="right-side">
       <key>Right Side (<abbr>RS</abbr>)</key>
       <val><todo/></val>
-     </def>
+     </assn>
 
-     <def id="wrong-side">
+     <assn id="wrong-side">
       <key>Wrong Side (<abbr>WS</abbr>)</key>
       <val><todo/></val>
-     </def>
+     </assn>
 
-    </defs>
+    </map>
 
    </body>
 

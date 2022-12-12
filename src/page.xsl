@@ -99,13 +99,13 @@
   <value-of select="normalize-space(.)"/>
  </template>
 
- <template match="defs" xmlns="&xslt;">
+ <template match="map" xmlns="&xslt;">
   <dl xmlns="&html;">
    <s:apply-templates/>
   </dl>
  </template>
 
- <template match="def" xmlns="&xslt;">
+ <template match="assn" xmlns="&xslt;">
   <apply-templates select="key"/>
   <apply-templates select="val"/>
  </template>
