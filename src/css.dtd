@@ -13,12 +13,26 @@
 <!ENTITY x-large-margin  '4rem'>
 <!ENTITY xx-large-margin '8rem'>
 
+<!ENTITY small-radius  '0.25em'>
+<!ENTITY medium-radius '0.50em'>
+
 <!ENTITY hair-space '0.04rem'>  <!-- 1/24 -->
 <!ENTITY thin-space '0.12rem'>  <!--  1/8 -->
 <!ENTITY space      '0.16rem'>  <!--  1/6 -->
+<!ENTITY en-space   '0.50rem'>  <!--  1/2 -->
 
-<!ENTITY border-color 'grey'>
-<!ENTITY todo-color   'grey'>
+<!ENTITY border-color  'slategrey'>
+<!ENTITY error-color   'red'>
+<!ENTITY sample-color  'white'>
+<!ENTITY page-color    'floralwhite'>
+<!ENTITY text-color    'darkslategrey'>
+<!ENTITY todo-color    'grey'>
+<!ENTITY warning-color 'orange'>
+
+<!-- steelblue 0.125 -->
+<!ENTITY negative-color 'rgba(70, 130, 180, 0.125)'>
+<!-- gold 0.125 -->
+<!ENTITY positive-color 'rgba(255, 215, 0, 0.125)'>
 
 <!-- Declaration Sets -->
 
@@ -30,9 +44,18 @@
     font-weight:                bold;
 '>
 
+<!ENTITY Italic '
+    font-style:                 italic;
+'>
+
 <!ENTITY Underlined '
-    text-decoration:            underline;
+    text-decoration-line:       underline;
     text-decoration-skip-ink:   auto;
+'>
+
+<!ENTITY WavyUnderlined '
+    &Underlined;
+    text-decoration-style:      wavy;
 '>
 
 <!ENTITY Small-caps '
@@ -50,4 +73,25 @@
 <!ENTITY Indented '
     margin-left:                &medium-margin;;
     margin-right:               &medium-margin;;
+'>
+
+<!ENTITY Thin-spaced '
+    margin-left:                &thin-space;;
+    margin-right:               &thin-space;;
+    padding-left:               &thin-space;;
+    padding-right:              &thin-space;;
+'>
+
+<!ENTITY Spaced '
+    margin-left:                &space;;
+    margin-right:               &space;;
+    padding-left:               &space;;
+    padding-right:              &space;;
+'>
+
+<!ENTITY En-spaced '
+    margin-left:                &en-space;;
+    margin-right:               &en-space;;
+    padding-left:               &en-space;;
+    padding-right:              &en-space;;
 '>

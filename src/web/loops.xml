@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE page
- SYSTEM "page.dtd">
+ SYSTEM "page.dtd" [
+
+<!ENTITY ih '<ref>ih</ref>'>
+<!ENTITY pt '<ref>pt</ref>'>
+<!ENTITY yo '<ref>yo</ref>'>
+
+<!ENTITY ch '<ref>ch</ref>'>
+<!ENTITY ss '<ref>ss</ref>'>
+<!ENTITY sc '<ref>sc</ref>'>
+<!ENTITY hdc '<ref>hdc</ref>'>
+<!ENTITY dc '<ref>dc</ref>'>
+<!ENTITY htr '<ref>htr</ref>'>
+<!ENTITY tr '<ref>tr</ref>'>
+<!ENTITY hdtr '<ref>hdtr</ref>'>
+<!ENTITY dtr '<ref>dtr</ref>'>
+
+<!ENTITY p1 '<sup>1</sup>'>
+<!ENTITY p2 '<sup>2</sup>'>
+<!ENTITY p3 '<sup>3</sup>'>
+<!ENTITY p4 '<sup>4</sup>'>
+<!ENTITY pn '<sup><var>n</var></sup>'>
+<!ENTITY pd '<sup><var>d</var></sup>'>
+<!ENTITY pd1 '<sup>(<var>d</var>+1)</sup>'>
+
+<!ENTITY b1 '<sub>1</sub>'>
+<!ENTITY b2 '<sub>2</sub>'>
+<!ENTITY b3 '<sub>3</sub>'>
+<!ENTITY b4 '<sub>4</sub>'>
+<!ENTITY bd '<sub><var>d</var></sub>'>
+
+]>
 <page id="loops">
  <head>
   <title>Loops</title>
@@ -242,281 +272,1050 @@
   <sect>
 
    <head>
-    <title>Basic Crochet Stitches</title>
+    <title>Pattern Notation</title>
    </head>
 
    <body>
 
-    <table>
+    <para>
+     Crochet patterns and charts
+     are informal notational systems
+     intended for human communication and interpretation.
+     In particular, they
+     are neither consistent nor precise enough
+     for machine consumption or formal analysis.
+     Therefore, I have adopted
+     the following conventions
+     consistently throughout this site,
+     which I hope are rigorous without being too burdensome.
+    </para>
 
-     <fmt>
-      <fld>Height</fld>
-      <fld>US</fld>
-      <fld>UK</fld>
-      <fld>Substitches</fld>
-     </fmt>
+    <set>
 
-     <row>
-      <cell>0&nbsp;h</cell>
-      <cell>Chain (<code><ref>ch</ref></code>)</cell>
-      <cell>Chain (<code><ref>ch</ref></code>)</cell>
-      <cell>
-       <code>
-        <sep>
-         <ref>yo</ref>
-         <ref>pt</ref>
-        </sep>
-       </code>
-      </cell>
-     </row>
+     <val>
+      <para>
+       <sep>
+        Except where otherwise noted, stitches are referred to
+        by <cat><emph>US names</emph>.</cat>
+       </sep>
+      </para>
+     </val>
 
-     <row>
-      <cell>1&nbsp;h</cell>
-      <cell>Slip stitch (<code><ref>sl</ref></code>)</cell>
-      <cell>Slip stitch (<code><ref>sl</ref></code>)</cell>
-      <cell>
-       <code>
-        <code>
+     <val>
+      <para>
+       <sep>
+        A <emph>space</emph> separates steps.
+       </sep>
+      </para>
+     </val>
+
+     <val>
+      <para>
+       <sep>
+        Logical groups of steps are written in square brackets,
+        whether or not they are repeated.
+        For instance, attaching to the work
+        is typically grouped as
+        <cat>
+         <code>
+          <grp><sep>&ih;&yo;&pt;</sep></grp>
+         </code>.
+        </cat>
+       </sep>
+      </para>
+     </val>
+
+     <val>
+
+      <para>
+       <sep>
+        When any step or sequence of steps
+        is repeated multiple times,
+        the <emph>total number of repetitions</emph> is written
+        <emph>after</emph> the repeated item.
+        I have also chosen to typeset this as a superscript
+        where possible, and otherwise
+        use a caret/circumflex (<code>^</code>).
+        Thus
+        <cat>
          <sep>
-          <cat>
+          <code><fix><var>x</var>&p1;</fix></code>
+          is the same as
+          <code><sep><var>x</var></sep></code>
+         </sep>,
+        </cat>
+        <cat>
+         <sep>
+          <code><fix><var>x</var>&p2;</fix></code>
+          means
+          <code>
            <grp>
             <sep>
-             <ref>ih</ref>
-             <ref>yo</ref>
-             <ref>pt</ref>
+             <var>x</var>
+             <var>x</var>
             </sep>
            </grp>
-          </cat>
-          <ref>pt</ref>
-         </sep>
+          </code>
+         </sep>,
+        </cat>
+        <cat>
+         <sep>
+          <code><fix><var>x</var>&p3;</fix></code>
+          means
+          <code>
+           <grp>
+            <sep>
+             <var>x</var>
+             <var>x</var>
+             <var>x</var>
+            </sep>
+           </grp>
+          </code>
+         </sep>,
+        </cat>
+        and so on,
+        whatever <code><var>x</var></code> may be;
+        and in general,
+        <code>
+         <fix><var>x</var><sup><var>n</var></sup></fix>
         </code>
-       </code>
-      </cell>
-     </row>
+        or
+        <code>
+         <fix><var>x</var>^<var>n</var></fix>
+        </code>
+        means
+        <cat>
+         <code>
+          <about>
+           <data>
+            <sep>
+             <var>x</var>
+             …
+             <var>x</var>
+            </sep>
+           </data>
+           <meta>
+            <note><sep><var>n</var> times</sep></note>
+           </meta>
+          </about>
+         </code>
+         .
+        </cat>
+        This may include substitches, stitches,
+        or bracketed groups of steps.
+        Examples:
+       </sep>
+      </para>
 
-     <row>
-      <cell>2&nbsp;h</cell>
-      <cell>Single crochet (<code><ref>sc</ref></code>)</cell>
-      <cell>Double crochet (<code><ref>dc</ref></code>)</cell>
-      <cell>
-       <code>
-        <sep>
-         <cat>
-          <grp>
-           <sep>
-            <ref>ih</ref>
-            <ref>yo</ref>
-            <ref>pt</ref>
-           </sep>
-          </grp>
-         </cat>
-         <fix>
-          <grp>
-           <sep>
-            <ref>yo</ref>
-            <fix><ref>pt</ref><sup>2</sup></fix>
-           </sep>
-          </grp>
-          <sup>1</sup>
-         </fix>
-        </sep>
-       </code>
-      </cell>
-     </row>
+      <map>
 
-     <row>
-      <cell>3&nbsp;h</cell>
-      <cell>Half double crochet (<code><ref>hdc</ref></code>)</cell>
-      <cell>Half treble crochet (<code><ref>htr</ref></code>)</cell>
-      <cell>
-       <code>
-        <sep>
-         <fix>
-          <ref>yo</ref>
-          <sup>1</sup>
-         </fix>
-         <cat>
-          <grp>
-           <sep>
-            <ref>ih</ref>
-            <ref>yo</ref>
-            <ref>pt</ref>
-           </sep>
-          </grp>
-         </cat>
-         <fix>
-          <grp>
-           <sep>
-            <ref>yo</ref>
-            <fix><ref>pt</ref><sup>2</sup></fix>
-           </sep>
-          </grp>
-          <sup>1</sup>
-         </fix>
-         <ref>pt</ref>
-        </sep>
-       </code>
-      </cell>
-     </row>
+       <assn>
+        <key>
+         <code><fix>&ch;&p2;</fix></code>
+        </key>
+        <val><para><code><warn>ch2</warn></code></para></val>
+        <val><para><code><warn>ch 2</warn></code></para></val>
+       </assn>
 
-     <row>
-      <cell>4&nbsp;h</cell>
-      <cell>Double crochet (<code><ref>dc</ref></code>)</cell>
-      <cell>Treble crochet (<code><ref>tr</ref></code>)</cell>
-      <cell>
-       <code>
-        <sep>
-         <fix><ref>yo</ref><sup>1</sup></fix>
-         <cat>
-          <grp>
-           <sep>
-            <ref>ih</ref>
-            <ref>yo</ref>
-            <ref>pt</ref>
-           </sep>
-          </grp>
-         </cat>
-         <fix>
-          <grp>
-           <sep>
-            <ref>yo</ref>
-            <fix><ref>pt</ref><sup>2</sup></fix>
-           </sep>
-          </grp>
-          <sup>2</sup>
-         </fix>
-        </sep>
-       </code>
-      </cell>
-     </row>
+       <assn>
+        <key>
+         <code><fix>dc&p2;</fix></code>
+        </key>
+        <val>
+         <para><code><warn>2dc</warn></code></para>
+        </val>
+        <val>
+         <para><code><warn>dc in next 2 sts</warn></code></para>
+        </val>
+       </assn>
 
-     <row>
-      <cell>5&nbsp;h</cell>
-      <cell>Half triple crochet (<code><ref>htr</ref></code>)</cell>
-      <cell>Half double treble crochet (<code><ref>hdtr</ref></code>)</cell>
-      <cell>
-       <code>
-        <sep>
-         <fix><ref>yo</ref><sup>2</sup></fix>
-         <cat>
-          <grp>
-           <sep>
-            <ref>ih</ref>
-            <ref>yo</ref>
-            <ref>pt</ref>
-           </sep>
-          </grp>
-         </cat>
-         <fix>
-          <grp>
-           <sep>
-            <ref>yo</ref>
-            <fix><ref>pt</ref><sup>2</sup></fix>
-           </sep>
-          </grp>
-          <sup>2</sup>
-         </fix>
-         <ref>pt</ref>
-        </sep>
-       </code>
-      </cell>
-     </row>
+       <assn>
+        <key>
+         <code>
+          <fix>
+           <grp>sc hdc</grp>
+           <sup>10</sup>
+          </fix>
+         </code>
+        </key>
+        <val>
+         <code>
+          <warn>*1sc, 1hdc, rep from * 9 times</warn>
+         </code>
+        </val>
+        <val>
+         <code>
+          <warn>*1sc, 1hdc*, rep from * to * 9 times</warn>
+         </code>
+        </val>
+       </assn>
 
-     <row>
-      <cell>6&nbsp;h</cell>
-      <cell>Triple crochet (<code><ref>tr</ref></code>)</cell>
-      <cell>Double treble crochet (<code><ref>dtr</ref></code>)</cell>
-      <cell>
-       <code>
-        <sep>
-         <fix><ref>yo</ref><sup>2</sup></fix>
-         <cat>
-          <grp>
-           <sep>
-            <ref>ih</ref>
-            <ref>yo</ref>
-            <ref>pt</ref>
-           </sep>
-          </grp>
-         </cat>
-         <fix>
-          <grp>
-           <sep>
-            <ref>yo</ref>
-            <fix><ref>pt</ref><sup>2</sup></fix>
-           </sep>
-          </grp>
-          <sup>3</sup>
-         </fix>
-        </sep>
-       </code>
-      </cell>
-     </row>
+      </map>
 
-     <row>
-      <cell>7&nbsp;h</cell>
-      <cell>Half double triple crochet (<code><ref>hdtr</ref></code>)</cell>
-      <cell>Half triple treble crochet (<code><ref>htrtr</ref></code>)</cell>
-      <cell>
-       <code>
-        <sep>
-         <fix><ref>yo</ref><sup>3</sup></fix>
-         <cat>
-          <grp>
-           <sep>
-            <ref>ih</ref>
-            <ref>yo</ref>
-            <ref>pt</ref>
-           </sep>
-          </grp>
-         </cat>
-         <fix>
-          <grp>
-           <sep>
-            <ref>yo</ref>
-            <fix><ref>pt</ref><sup>2</sup></fix>
-           </sep>
-          </grp>
-          <sup>3</sup>
-         </fix>
-         <ref>pt</ref>
-        </sep>
-       </code>
-      </cell>
-     </row>
+     </val>
 
-     <row>
-      <cell>8&nbsp;h</cell>
-      <cell>Double triple crochet (<code><ref>dtr</ref></code>)</cell>
-      <cell>Triple treble crochet (<code><ref>trtr</ref></code>)</cell>
-      <cell>
-       <code>
-        <sep>
-         <fix><ref>yo</ref><sup>3</sup></fix>
-         <cat>
-          <grp>
-           <sep>
-            <ref>ih</ref>
-            <ref>yo</ref>
-            <ref>pt</ref>
-           </sep>
-          </grp>
-         </cat>
-         <fix>
-          <grp>
-           <sep>
-            <ref>yo</ref>
-            <fix><ref>pt</ref><sup>2</sup></fix>
-           </sep>
-          </grp>
-          <sup>4</sup>
-         </fix>
-        </sep>
-       </code>
-      </cell>
-     </row>
+     <val>
+      <para>
+       <sep>
+        <emph>Increases</emph> and <emph>decreases</emph>
+        always spell out both the type of stitch
+        and the <emph>pitch</emph> of the change,
+        namely, the fraction
+        <code><cat>&pn;⁄&bd;</cat></code>
+        or ratio
+        <code><var>n</var>:<var>d</var></code>
+        between the number of stitches <var>n</var>
+        being formed,
+        and the number of stitches <var>d</var>
+        being worked into.
+       </sep>
+      </para>
+      <para>
+       <sep>
+        Most commonly this will be e.g.
+        <code><fix>sc&p2;⁄&b1;</fix></code>
+        “single crochet two [stitches] over one [position]”
+        (a basic increase)
+        or <code><fix>sc&p1;⁄&b2;</fix></code>
+        “single crochet one [stitch] over two [positions]”
+        (a basic decrease).
+        <todo>Link to info about decreases.</todo>
+       </sep>
+      </para>
+     </val>
 
-    </table>
+    </set>
+
+   </body>
+
+  </sect>
+
+  <sect>
+
+   <head>
+    <title>Crochet Stitches</title>
+   </head>
+
+   <body>
+
+    <sect>
+
+     <head>
+      <title>Basic Crochet Stitches</title>
+     </head>
+
+     <body>
+
+      <table>
+
+       <title>Summary of basic crochet stitches.</title>
+
+       <fmt>
+        <fld>Height</fld>
+        <fld>US</fld>
+        <fld>UK</fld>
+        <fld>Definition</fld>
+       </fmt>
+
+       <row>
+        <cell>0&nbsp;h</cell>
+        <cell>Chain (<code>&ch;</code>)</cell>
+        <cell>Chain (<code>&ch;</code>)</cell>
+        <cell>
+         <code>
+          <sep>
+           ch &nbsp;&nbsp;=
+           <grp>
+            <sep>
+             &yo;
+             &pt;
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>1&nbsp;h</cell>
+        <cell>Slip stitch (<code>&ss;</code>)</cell>
+        <cell>Slip stitch (<code>&ss;</code>)</cell>
+        <cell>
+         <code>
+          <sep>
+           ss &nbsp;&nbsp;=
+           <grp>
+            <sep>
+             <grp><sep>&ih;&yo;&pt;</sep></grp>
+             &pt;
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>2&nbsp;h</cell>
+        <cell>Single crochet (<code>&sc;</code>)</cell>
+        <cell>
+         <warn>
+          Double crochet
+          (<code>dc</code>)
+         </warn>
+        </cell>
+        <cell>
+         <code>
+          <sep>
+           sc &nbsp;&nbsp;=
+           <grp>
+            <sep>
+             <grp><sep>&ih;&yo;&pt;</sep></grp>
+             <fix>
+              <grp>
+               <sep>
+                &yo;
+                <fix>&pt;&p2;</fix>
+               </sep>
+              </grp>
+              &p1;
+             </fix>
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>3&nbsp;h</cell>
+        <cell>
+         Half double crochet (<code>&hdc;</code>)
+        </cell>
+        <cell>
+         <warn>
+          Half treble crochet
+          (<code>htr</code>)
+         </warn>
+        </cell>
+        <cell>
+         <code>
+          <sep>
+           hdc &nbsp;=
+           <grp>
+            <sep>
+             <fix>
+              &yo;
+              &p1;
+             </fix>
+             <grp><sep>&ih;&yo;&pt;</sep></grp>
+             <fix>
+              <grp>
+               <sep>
+                &yo;
+                <fix>&pt;&p2;</fix>
+               </sep>
+              </grp>
+              &p1;
+             </fix>
+             &pt;
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>4&nbsp;h</cell>
+        <cell>Double crochet (<code>&dc;</code>)</cell>
+        <cell>
+         <warn>
+          Treble crochet
+          (<code>tr</code>)
+         </warn>
+        </cell>
+        <cell>
+         <code>
+          <sep>
+           dc &nbsp;&nbsp;=
+           <grp>
+            <sep>
+             <fix>&yo;&p1;</fix>
+             <grp><sep>&ih;&yo;&pt;</sep></grp>
+             <fix>
+              <grp>
+               <sep>
+                &yo;
+                <fix>&pt;&p2;</fix>
+               </sep>
+              </grp>
+              &p2;
+             </fix>
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>5&nbsp;h</cell>
+        <cell>
+         Half triple crochet
+         (<code>&htr;</code>)
+        </cell>
+        <cell>
+         <warn>
+          Half double treble crochet
+          (<code>hdtr</code>)
+         </warn>
+        </cell>
+        <cell>
+         <code>
+          <sep>
+           htr &nbsp;=
+           <grp>
+            <sep>
+             <fix>&yo;&p2;</fix>
+             <grp><sep>&ih;&yo;&pt;</sep></grp>
+             <fix>
+              <grp>
+               <sep>
+                &yo;
+                <fix>&pt;&p2;</fix>
+               </sep>
+              </grp>
+              &p2;
+             </fix>
+             &pt;
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>6&nbsp;h</cell>
+        <cell>Triple crochet (<code>&tr;</code>)</cell>
+        <cell>
+         <warn>
+          Double treble crochet
+          (<code>dtr</code>)
+         </warn>
+        </cell>
+        <cell>
+         <code>
+          <sep>
+           tr &nbsp;&nbsp;=
+           <grp>
+            <sep>
+             <fix>&yo;&p2;</fix>
+             <grp><sep>&ih;&yo;&pt;</sep></grp>
+             <fix>
+              <grp>
+               <sep>
+                &yo;
+                <fix>&pt;&p2;</fix>
+               </sep>
+              </grp>
+              &p3;
+             </fix>
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>7&nbsp;h</cell>
+        <cell>
+         Half double triple crochet
+         (<code>&hdtr;</code>)
+        </cell>
+        <cell>
+         <warn>
+          Half triple treble crochet
+          (<code>htrtr</code>)
+         </warn>
+        </cell>
+        <cell>
+         <code>
+          <sep>
+           hdtr =
+           <grp>
+            <sep>
+             <fix>&yo;&p3;</fix>
+             <grp><sep>&ih;&yo;&pt;</sep></grp>
+             <fix>
+              <grp>
+               <sep>
+                &yo;
+                <fix>&pt;&p2;</fix>
+               </sep>
+              </grp>
+              &p3;
+             </fix>
+             &pt;
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>8&nbsp;h</cell>
+        <cell>
+         Double triple crochet
+         (<code>&dtr;</code>)
+        </cell>
+        <cell>
+         <warn>
+          Triple treble crochet
+          (<code>trtr</code>)
+         </warn>
+        </cell>
+        <cell>
+         <code>
+          <sep>
+           dtr &nbsp;=
+           <grp>
+            <sep>
+             <fix>&yo;&p3;</fix>
+             <grp><sep>&ih;&yo;&pt;</sep></grp>
+             <fix>
+              <grp>
+               <sep>
+                &yo;
+                <fix>&pt;&p2;</fix>
+               </sep>
+              </grp>
+              &p4;
+             </fix>
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+      </table>
+
+      <table class="compact">
+
+       <title>Relationships among the basic stitches.</title>
+
+       <row>
+        <gap cols="3"/>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <gap cols="9"/>
+       </row>
+
+       <row>
+        <gap cols="3"/>
+        <cell><code>ch{</code></cell>
+        <cell><code>}</code></cell>
+        <gap cols="9"/>
+       </row>
+
+       <row>
+        <gap cols="3"/>
+        <cell cols="2"><code>ch</code></cell>
+        <gap cols="9"/>
+       </row>
+
+       <row>
+        <gap cols="14"/>
+       </row>
+
+       <row>
+        <gap cols="2"/>
+        <cell class="pos"><code><emph>ih</emph></code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <gap cols="2"/>
+        <cell class="neg"><code>pt</code></cell>
+        <gap cols="6"/>
+       </row>
+
+       <row>
+        <gap cols="2"/>
+        <cell cols="1"><code>at{</code></cell>
+        <cell cols="2"><code>ch</code></cell>
+        <gap cols="2"/>
+        <cell><code>}</code></cell>
+        <gap cols="6"/>
+       </row>
+
+       <row>
+        <gap cols="2"/>
+        <cell cols="3"><code>ss{</code></cell>
+        <gap cols="2"/>
+        <cell><code>}</code></cell>
+        <gap cols="6"/>
+       </row>
+
+       <row>
+        <gap cols="2"/>
+        <cell cols="3"><code>ss</code></cell>
+        <brk cols="2"/>
+        <cell/>
+        <gap cols="6"/>
+       </row>
+
+       <row>
+        <gap cols="14"/>
+       </row>
+
+       <row>
+        <gap cols="2"/>
+        <cell class="pos"><code><emph>ih</emph></code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <gap cols="6"/>
+       </row>
+
+       <row>
+        <gap cols="2"/>
+        <cell cols="3"><code>ss{</code></cell>
+        <cell cols="2"><code>ch</code></cell>
+        <cell cols="1"><code>}</code></cell>
+        <gap cols="6"/>
+       </row>
+
+       <row>
+        <gap cols="2"/>
+        <cell cols="6"><code>sc</code></cell>
+        <gap cols="6"/>
+       </row>
+
+       <row>
+        <gap cols="14"/>
+       </row>
+
+       <row>
+        <gap cols="1"/>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="pos"><code><emph>ih</emph></code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <gap cols="2"/>
+        <cell class="neg"><code>pt</code></cell>
+        <gap cols="3"/>
+       </row>
+
+       <row>
+        <gap cols="1"/>
+        <cell><code>yo</code></cell>
+        <cell cols="6"><code>sc</code></cell>
+        <gap cols="2"/>
+        <cell><code>pt</code></cell>
+        <gap cols="3"/>
+       </row>
+
+       <row>
+        <gap cols="1"/>
+        <cell cols="7"><code>hdc{</code></cell>
+        <gap cols="2"/>
+        <cell><code>}</code></cell>
+        <gap cols="3"/>
+       </row>
+
+       <row>
+        <gap cols="1"/>
+        <cell cols="7"><code>hdc</code></cell>
+        <brk cols="2"/>
+        <cell/>
+        <gap cols="3"/>
+       </row>
+
+       <row>
+        <gap cols="14"/>
+       </row>
+
+       <row>
+        <gap cols="1"/>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="pos"><code><emph>ih</emph></code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <gap cols="3"/>
+       </row>
+
+       <row>
+        <gap cols="1"/>
+        <cell cols="7"><code>hdc{</code></cell>
+        <cell cols="2"><code>ch</code></cell>
+        <cell cols="1"><code>}</code></cell>
+        <gap cols="3"/>
+       </row>
+
+       <row>
+        <gap cols="1"/>
+        <cell cols="10"><code>dc</code></cell>
+        <gap cols="3"/>
+       </row>
+
+       <row>
+        <gap cols="14"/>
+       </row>
+
+       <row>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="pos"><code><emph>ih</emph></code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <gap cols="2"/>
+        <cell class="neg"><code>pt</code></cell>
+       </row>
+
+       <row>
+        <cell><code>yo</code></cell>
+        <cell cols="10"><code>dc</code></cell>
+        <gap cols="2"/>
+        <cell><code>pt</code></cell>
+       </row>
+
+       <row>
+        <cell cols="11"><code>htr{</code></cell>
+        <gap cols="2"/>
+        <cell><code>}</code></cell>
+       </row>
+
+       <row>
+        <cell cols="11"><code>htr</code></cell>
+        <brk cols="2"/>
+        <cell/>
+       </row>
+
+       <row>
+        <gap cols="14"/>
+       </row>
+
+       <row>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="pos"><code><emph>ih</emph></code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="pos"><code>yo</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+        <cell class="neg"><code>pt</code></cell>
+       </row>
+
+       <row>
+        <cell cols="11"><code>htr{</code></cell>
+        <cell cols="2"><code>ch</code></cell>
+        <cell><code>}</code></cell>
+       </row>
+
+       <row>
+        <cell cols="14"><code>tr</code></cell>
+       </row>
+
+      </table>
+
+     </body>
+
+    </sect>
+
+    <sect>
+
+     <head>
+      <title>Basic Crochet Decreases</title>
+     </head>
+
+     <body>
+
+      <table>
+
+       <title>Summary of basic crochet decreases.</title>
+
+       <fmt>
+        <fld>Stitch</fld>
+        <fld>Pitch</fld>
+        <fld>Definition</fld>
+       </fmt>
+
+       <row>
+        <cell rows="4">
+         <code>&sc;</code>
+        </cell>
+        <cell>&p1;⁄&b1;</cell>
+        <cell>
+         <code>
+          <sep>
+           <fix>sc&p1;⁄&b1;</fix> =
+           <grp>
+            <sep>
+             <fix>
+              <grp><sep>&ih;&yo;&pt;</sep></grp>
+              &p1;
+             </fix>
+             <grp>
+              <sep>
+               &yo;
+               <fix>&pt;&p2;</fix>
+              </sep>
+             </grp>
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>&p1;⁄&b2;</cell>
+        <cell>
+         <code>
+          <sep>
+           <fix>sc&p1;⁄&b2;</fix> =
+           <grp>
+            <sep>
+             <fix>
+              <grp><sep>&ih;&yo;&pt;</sep></grp>
+              &p2;
+             </fix>
+             <grp>
+              <sep>
+               &yo;
+               <fix>&pt;&p3;</fix>
+              </sep>
+             </grp>
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>&p1;⁄&b3;</cell>
+        <cell>
+         <code>
+          <sep>
+           <fix>sc&p1;⁄&b3;</fix> =
+           <grp>
+            <sep>
+             <fix>
+              <grp><sep>&ih;&yo;&pt;</sep></grp>
+              &p3;
+             </fix>
+             <grp>
+              <sep>
+               &yo;
+               <fix>&pt;&p4;</fix>
+              </sep>
+             </grp>
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>&p1;⁄&bd;</cell>
+        <cell>
+         <code>
+          <sep>
+           <fix>sc&p1;⁄&bd;</fix> =
+           <grp>
+            <sep>
+             <fix>
+              <grp><sep>&ih;&yo;&pt;</sep></grp>
+              <sup><var>d</var></sup>
+             </fix>
+             <grp>
+              <sep>
+               &yo;
+               <fix>&pt;&pd1;</fix>
+              </sep>
+             </grp>
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell rows="4">
+         <code>&dc;</code>
+        </cell>
+        <cell>&p1;⁄&b1;</cell>
+        <cell>
+         <code>
+          <sep>
+           <fix>dc&p1;⁄&b1;</fix> =
+           <grp>
+            <sep>
+             <fix>
+              <grp>
+               <sep>
+                &yo;
+                <grp><sep>&ih;&yo;&pt;</sep></grp>
+                <grp>
+                 <sep>
+                  &yo;
+                  <fix>&pt;&p2;</fix>
+                 </sep>
+                </grp>
+               </sep>
+              </grp>
+              &p1;
+             </fix>
+             <grp>
+              <sep>
+               &yo;
+               <fix>&pt;&p2;</fix>
+              </sep>
+             </grp>
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>&p1;⁄&b2;</cell>
+        <cell>
+         <code>
+          <sep>
+           <fix>dc&p1;⁄&b2;</fix> =
+           <grp>
+            <sep>
+             <fix>
+              <grp>
+               <sep>
+                &yo;
+                <grp><sep>&ih;&yo;&pt;</sep></grp>
+                <grp><sep>&yo;<fix>&pt;&p2;</fix></sep></grp>
+               </sep>
+              </grp>
+              &p2;
+             </fix>
+             <grp>
+              <sep>
+               &yo;
+               <fix>&pt;&p3;</fix>
+              </sep>
+             </grp>
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>&p1;⁄&b3;</cell>
+        <cell>
+         <code>
+          <sep>
+           <fix>dc&p1;⁄&b3;</fix> =
+           <grp>
+            <sep>
+             <fix>
+              <grp>
+               <sep>
+                &yo;
+                <grp><sep>&ih;&yo;&pt;</sep></grp>
+                <grp>
+                 <sep>
+                  &yo;
+                  <fix>&pt;&p2;</fix>
+                 </sep>
+                </grp>
+               </sep>
+              </grp>
+              &p3;
+             </fix>
+             <grp>
+              <sep>
+               &yo;
+               <fix>&pt;&p4;</fix>
+              </sep>
+             </grp>
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+       <row>
+        <cell>&p1;⁄&bd;</cell>
+        <cell>
+         <code>
+          <sep>
+           <fix>dc&p1;⁄&bd;</fix> =
+           <grp>
+            <sep>
+             <fix>
+              <grp>
+               <sep>
+                &yo;
+                <grp><sep>&ih;&yo;&pt;</sep></grp>
+                <grp>
+                 <sep>
+                  &yo;
+                  <fix>&pt;&p2;</fix>
+                 </sep>
+                </grp>
+               </sep>
+              </grp>
+              &pd;
+             </fix>
+             <grp>
+              <sep>
+               &yo;
+               <fix>&pt;&pd1;</fix>
+              </sep>
+             </grp>
+            </sep>
+           </grp>
+          </sep>
+         </code>
+        </cell>
+       </row>
+
+      </table>
+
+     </body>
+
+    </sect>
 
    </body>
 

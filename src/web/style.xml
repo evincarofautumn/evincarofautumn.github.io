@@ -18,22 +18,33 @@ abbr
     &Small-caps;
 }
 
+ruby > .about-data
+{
+    border-radius:              &medium-radius;;
+    border-bottom:              1px solid &border-color;;
+    padding-left:               &medium-radius;;
+    padding-right:              &medium-radius;;
+}
+
 body
 {
+    background-color:           &page-color;;
+    color:                      &text-color;;
     font-family:                serif;
     &Double-spaced;
 }
 
 code
 {
-/*
-    border:                     1px solid &border-color;;
-    border-radius:              0.25em;
-    display:                    inline-block;
-    line-height:                1em;
-    margin:                     &space;;
-    padding:                    &space;;
-*/
+    font-family:                monospace;
+    font-size:                  normal;
+    &Double-spaced;
+    &Spaced;
+}
+
+.compact code
+{
+    &Thin-spaced;
 }
 
 dd
@@ -52,6 +63,17 @@ dt
     &Heavy;
 }
 
+figcaption
+{
+    &Indented;
+    &Italic;
+}
+
+figure
+{
+    &Figure;
+}
+
 h1
 {
     &Block;
@@ -67,6 +89,11 @@ section > heading > h1
     font-size:                  x-large;
 }
 
+section section > heading > h1
+{
+    font-size:                  large;
+}
+
 h2
 {
     &Block;
@@ -79,11 +106,22 @@ heading
     &Block;
 }
 
+li
+{
+    &Block;
+    &Indented;
+}
+
 main
 {
     margin:                     &xx-large-margin; auto;
     max-width:                  64em;
     padding:                    0 &large-margin;;
+}
+
+code .note
+{
+    font-family:                sans-serif;
 }
 
 main > heading > p
@@ -102,16 +140,36 @@ section
     margin:                     &x-large-margin; 0;
 }
 
+section section
+{
+    &Indented;
+}
+
 .ref
 {
-    padding-left:               &hair-space;;
-    padding-right:              &hair-space;;
     &Underlined;
+}
+
+ruby
+{
+    ruby-align:                 center;
+    ruby-position:              under;
+}
+
+rt
+{
+    font-size:                  small;
 }
 
 span.cat
 {
     white-space:                normal;
+}
+
+span.err
+{
+    text-decoration-color:      &error-color;;
+    &WavyUnderlined;
 }
 
 span.fix
@@ -125,6 +183,17 @@ span.grp
     white-space:                normal;
 }
 
+span.warn
+{
+    text-decoration-color:      &warning-color;;
+    &WavyUnderlined;
+}
+
+strong
+{
+    &Heavy;
+}
+
 code > sup
 {
     font-size:                  inherit;
@@ -134,34 +203,86 @@ table
 {
     border-collapse:            collapse;
     width:                      100%;
-    &Figure;
 }
 
-td
-{
-    border:                     1px solid &border-color;;
-    padding:                    &small-margin;;
-    text-align:                 left;
-    vertical-align:             baseline;
-}
-
+td,
 th
 {
-    border:                     1px solid &border-color;;
+    border-color:               &border-color;;
+    border-style:               solid;
+    border-width:               1px 0;
     padding:                    &small-margin;;
     text-align:                 left;
     vertical-align:             baseline;
+}
+
+.compact td,
+.compact th
+{
+    font-size:                  smaller;
+    padding:                    &space;;
+}
+
+td.cell + td.cell,
+td.cell:first-child,
+th + th,
+th:first-child
+{
+    border-left-style:          dashed;
+    border-left-width:          1px;
+}
+
+td.cell:last-child,
+th:last-child
+{
+    border-right-style:         dashed;
+    border-right-width:         1px;
+}
+
+td.brk
+{
+    background-image:           url("/hatch-light.svg");
+}
+
+td.gap
+{
+    background-image:           url("/hatch-medium.svg");
+}
+
+td.gap:only-child
+{
+    background-image:           url("/hatch-dark.svg");
+}
+
+td.neg
+{
+    background-color:           &negative-color;;
+}
+
+td.pos
+{
+    background-color:           &positive-color;;
 }
 
 .todo
 {
     color:                      &todo-color;;
-    font-style:                 italic;
+    &Italic;
 }
 
 u
 {
     &Underlined;
+}
+
+ul
+{
+    &Block;
+}
+
+var
+{
+    &Italic;
 }
 
 </style>

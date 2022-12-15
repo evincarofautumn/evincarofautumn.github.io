@@ -13,6 +13,9 @@
 <!ENTITY saxon
  "http://icl.com/saxon">
 
+<!ENTITY c
+ "&amp;c.">
+
 <!ENTITY sp
  "&#x20;">
 

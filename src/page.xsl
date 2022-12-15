@@ -83,11 +83,17 @@
   </heading>
  </template>
 
- <template match="title" xmlns="&xslt;">
+ <template match="head/title" xmlns="&xslt;">
   <h1 xmlns="&html;"><s:value-of select="."/></h1>
  </template>
 
- <template match="subtitle" xmlns="&xslt;">
+ <template match="table/title" xmlns="&xslt;">
+  <figcaption xmlns="&html;">
+   <s:value-of select="."/>
+  </figcaption>
+ </template>
+
+ <template match="head/subtitle" xmlns="&xslt;">
   <p xmlns="&html;"><s:value-of select="."/></p>
  </template>
 
@@ -125,13 +131,52 @@
   <value-of select="normalize-space(.)"/>
  </template>
 
- <template match="val" xmlns="&xslt;">
+ <template match="assn/val" xmlns="&xslt;">
   <dd xmlns="&html;">
    <s:apply-templates/>
   </dd>
  </template>
 
  <template match="val/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
+ <template match="set" xmlns="&xslt;">
+  <ul xmlns="&html;">
+   <s:apply-templates/>
+  </ul>
+ </template>
+
+ <template match="set/val" xmlns="&xslt;">
+  <li xmlns="&html;">
+   <s:apply-templates/>
+  </li>
+ </template>
+
+ <template match="about" xmlns="&xslt;">
+  <ruby xmlns="&html;">
+   <s:apply-templates select="data"/>
+   <s:apply-templates select="meta"/>
+  </ruby>
+ </template>
+
+ <template match="about/data" xmlns="&xslt;">
+  <span class="about-data" xmlns="&html;">
+   <s:apply-templates/>
+  </span>
+ </template>
+
+ <template match="data/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
+ <template match="about/meta" xmlns="&xslt;">
+  <h:rp>(</h:rp>
+  <h:rt class="about-meta"><apply-templates/></h:rt>
+  <h:rp>)</h:rp>
+ </template>
+
+ <template match="meta/text()" xmlns="&xslt;">
   <value-of select="normalize-space(.)"/>
  </template>
 
@@ -182,6 +227,12 @@
   </span>
  </template>
 
+ <template match="var" xmlns="&xslt;">
+  <var xmlns="&html;">
+   <s:value-of select="normalize-space(.)"/>
+  </var>
+ </template>
+
  <template match="abbr" xmlns="&xslt;">
   <abbr xmlns="&html;"><s:value-of select="."/></abbr>
  </template>
@@ -195,7 +246,7 @@
   </message>
   <span class="todo" xmlns="&html;">
    <s:text>TODO</s:text>
-   <if test="./*" xmlns="&xslt;">
+   <if test="./node()" xmlns="&xslt;">
     <text>: </text>
     <value-of select="."/>
    </if>
@@ -203,14 +254,17 @@
  </template>
 
  <template match="table" xmlns="&xslt;">
-  <table xmlns="&html;">
-   <thead>
-    <s:apply-templates select="fmt"/>
-   </thead>
-   <tbody>
-    <s:apply-templates select="row"/>
-   </tbody>
-  </table>
+  <figure xmlns="&html;">
+   <table class="{ @class }">
+    <thead>
+     <s:apply-templates select="fmt"/>
+    </thead>
+    <tbody>
+     <s:apply-templates select="row"/>
+    </tbody>
+   </table>
+   <s:apply-templates select="title"/>
+  </figure>
  </template>
 
  <template match="fmt" xmlns="&xslt;">
@@ -220,7 +274,10 @@
  </template>
 
  <template match="fld" xmlns="&xslt;">
-  <th xmlns="&html;">
+  <th
+   colspan="{ @cols }"
+   rowspan="{ @rows }"
+   xmlns="&html;">
    <s:apply-templates/>
   </th>
  </template>
@@ -235,14 +292,20 @@
   </tr>
  </template>
 
- <template match="cell" xmlns="&xslt;">
-  <td xmlns="&html;">
-   <s:apply-templates/>
-  </td>
- </template>
-
  <template match="cell/text()" xmlns="&xslt;">
   <value-of select="normalize-space(.)"/>
+ </template>
+
+ <template match="brk | cell | gap" xmlns="&xslt;">
+  <variable name="has_content" select="name() = 'cell'"/>
+  <h:td
+   class="{ name() } { @class }"
+   colspan="{ @cols }"
+   rowspan="{ @rows }">
+   <if test="$has_content">
+    <s:apply-templates/>
+   </if>
+  </h:td>
  </template>
 
  <template match="code" xmlns="&xslt;">
@@ -253,6 +316,56 @@
 
  <template match="code/text()" xmlns="&xslt;">
   <value-of select="."/>
+ </template>
+
+ <template match="code//note" xmlns="&xslt;">
+  <span class="note" xmlns="&html;">
+   <s:apply-templates/>
+  </span>
+ </template>
+
+ <template match="emph" xmlns="&xslt;">
+  <strong xmlns="&html;">
+   <s:apply-templates/>
+  </strong>
+ </template>
+
+ <template match="emph/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
+ <template match="err" xmlns="&xslt;">
+  <span class="err" xmlns="&html;">
+   <s:apply-templates/>
+  </span>
+ </template>
+
+ <template match="err/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
+ <template match="warn" xmlns="&xslt;">
+  <span class="warn" xmlns="&html;">
+   <s:apply-templates/>
+  </span>
+ </template>
+
+ <template match="warn/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
+ <template match="note/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
+ <template match="sub" xmlns="&xslt;">
+  <sub xmlns="&html;">
+   <s:apply-templates/>
+  </sub>
+ </template>
+
+ <template match="sub/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="sup" xmlns="&xslt;">
@@ -301,11 +414,22 @@
  </template>
 
  <template match="grp" xmlns="&xslt;">
-  <span class="grp" xmlns="&html;">
-   <s:text>(</s:text>
-   <s:apply-templates/>
-   <s:text>)</s:text>
-  </span>
+  <variable name="padding">
+   <if test=".//grp">
+    <text>&sp;</text>
+   </if>
+  </variable>
+  <h:span class="grp">
+   <text>[</text>
+   <value-of select="$padding"/>
+   <apply-templates/>
+   <value-of select="$padding"/>
+   <text>]</text>
+  </h:span>
+ </template>
+
+ <template match="grp/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="text" xmlns="&xslt;">

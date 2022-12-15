@@ -3,10 +3,11 @@
 %entities;
 
 <!ENTITY % block
- 'map | para | sect | table'>
+ 'map | para | sect | set | table'>
 
 <!ENTITY % inline
- 'abbr | cite | code | link | ref | sup | text | todo
+ 'abbr | link | ref | text | todo | var
+ | about | cite | code | emph | err | note | sub | sup | warn
  | cat | fix | grp | sep
  | ital'>
 
@@ -52,16 +53,38 @@
 <!ELEMENT sect
  (head, body)>
 
+<!ELEMENT set
+ (val*)>
+ <!-- ELEMENT val -->
+
 <!ELEMENT table
- (fmt?, row*)>
+ (title?, fmt?, row*)>
+ <!ATTLIST table
+  class CDATA #IMPLIED>
+ <!-- ELEMENT title -->
  <!ELEMENT fmt
   (fld*)>
   <!ELEMENT fld
    (#PCDATA)>
  <!ELEMENT row
-  (cell*)>
+  ((brk | cell | gap)*)>
+  <!ENTITY % cell-attlist '
+   cols  CDATA #IMPLIED
+   rows  CDATA #IMPLIED
+   class CDATA #IMPLIED
+  '>
   <!ELEMENT cell
    %block-content;>
+  <!ATTLIST cell
+   %cell-attlist;>
+  <!ELEMENT brk
+   EMPTY>
+  <!ATTLIST brk
+   %cell-attlist;>
+  <!ELEMENT gap
+   EMPTY>
+  <!ATTLIST gap
+   %cell-attlist;>
 
 <!ELEMENT val
  %block-content;>
@@ -73,6 +96,13 @@
 <!ATTLIST abbr
  of IDREF #IMPLIED>
 
+<!ELEMENT about
+ (data, meta)>
+ <!ELEMENT data
+  %inline-content;>
+ <!ELEMENT meta
+  %inline-content;>
+
 <!ELEMENT cite
  %inline-content;>
 <!ATTLIST cite
@@ -81,15 +111,27 @@
 <!ELEMENT code
  %inline-content;>
 
+<!ELEMENT emph
+ %inline-content;>
+
+<!ELEMENT err
+ %inline-content;>
+
 <!ELEMENT link
  (#PCDATA)>
 <!ATTLIST link
  to IDREF #REQUIRED>
 
+<!ELEMENT note
+ %inline-content;>
+
 <!ELEMENT ref
  (#PCDATA)>
 <!ATTLIST ref
  to IDREF #IMPLIED>
+
+<!ELEMENT sub
+ %inline-content;>
 
 <!ELEMENT sup
  %inline-content;>
@@ -99,6 +141,12 @@
 
 <!ELEMENT todo
  (#PCDATA)>
+
+<!ELEMENT var
+ (#PCDATA)>
+
+<!ELEMENT warn
+ %inline-content;>
 
 <!-- construction -->
 

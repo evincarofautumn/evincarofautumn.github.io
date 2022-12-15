@@ -7,6 +7,9 @@ XSLTFLAGS ?= --verbose
 .PHONY: build
 
 build: \
+    dst/web/hatch-dark.svg \
+    dst/web/hatch-light.svg \
+    dst/web/hatch-medium.svg \
     dst/web/index.html \
     dst/web/credits/index.html \
     dst/web/loops/index.html \
@@ -44,6 +47,23 @@ src/page.xsl: \
 
 src/site.xsl: \
     src/xslt.dtd
+
+################################################################
+
+dst/web/hatch-dark.svg: \
+    src/web/hatch-dark.svg
+	mkdir -p dst/web; \
+	cp $< $@
+
+dst/web/hatch-light.svg: \
+    src/web/hatch-light.svg
+	mkdir -p dst/web; \
+	cp $< $@
+
+dst/web/hatch-medium.svg: \
+    src/web/hatch-medium.svg
+	mkdir -p dst/web; \
+	cp $< $@
 
 ################################################################
 
