@@ -62,6 +62,10 @@
      rel="stylesheet"
      type="text/css"
      />
+    <link
+     href="/favicon.ico"
+     rel="shortcut icon"
+     />
    </head>
    <body>
     <main>
