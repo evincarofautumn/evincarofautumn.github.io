@@ -25,11 +25,26 @@
 <!ENTITY xslt
  "http://www.w3.org/1999/XSL/Transform">
 
+<!ENTITY cite-cc-by-sa-3.0
+ "https://creativecommons.org/licenses/by-sa/3.0/">
+
+<!ENTITY cite-dotnet-strings
+ "https://github.com/dotnet/runtime/issues/6612">
+
+<!ENTITY cite-groq-2020
+ "https://dl.acm.org/doi/10.1109/ISCA45697.2020.00023">
+
+<!ENTITY cite-marlow-et-al-2014
+ "https://dl.acm.org/doi/10.1145/2628136.2628144">
+
+<!ENTITY cite-mono-gc-handles
+ "https://www.mono-project.com/news/2016/08/16/lock-free-gc-handles/">
+
+<!ENTITY cite-mono-strings
+ "https://www.mono-project.com/docs/advanced/runtime/docs/ascii-strings/">
+
 <!ENTITY cite-wikimedia-indian-pipe
  "https://commons.wikimedia.org/wiki/File:Indian_pipe_PDB.JPG">
 
 <!ENTITY cite-wikipedia-user-018
  "https://en.wikipedia.org/wiki/User:O18">
-
-<!ENTITY cite-cc-by-sa-3.0
- "https://creativecommons.org/licenses/by-sa/3.0/">

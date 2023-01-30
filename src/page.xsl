@@ -55,7 +55,16 @@
   <html xmlns="&html;">
    <head>
     <title>
-     <s:value-of select="title"/>
+      <for-each select="head/subtitle" xmlns="&xslt;">
+        <sort
+         select="position()"
+         data-type="number"
+         order="descending"
+         />
+        <value-of select="."/>
+        <text>&sp;·&sp;</text>
+      </for-each>
+      <value-of select="head/title" xmlns="&xslt;"/>
     </title>
     <link
      href="/style.css"

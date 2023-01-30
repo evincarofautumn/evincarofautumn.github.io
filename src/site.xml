@@ -3,6 +3,7 @@
  SYSTEM "site.dtd">
 <site>
  <include xmlns="&xinclude;" href="credits.xml"/>
+ <include xmlns="&xinclude;" href="cv.xml"/>
  <include xmlns="&xinclude;" href="home.xml"/>
  <include xmlns="&xinclude;" href="loops.xml"/>
 </site>

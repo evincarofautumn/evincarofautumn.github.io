@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE page
+ SYSTEM "page.dtd">
+<page id="cv">
+ <head>
+  <title>Jon Purdy</title>
+  <subtitle>CV</subtitle>
+ </head>
+ <body>
+
+  <sect>
+   <head>
+    <title>Experience</title>
+   </head>
+   <body>
+
+    <sect>
+     <head>
+      <title>Groq (Feb 2019 – Dec 2022)</title>
+      <subtitle>Compiler Team; Core Libraries Team</subtitle>
+     </head>
+     <body>
+      <para>
+       <sep>
+        I joined Groq to work on a compiler
+        written in Haskell
+        from TensorFlow to the Groq TSP.
+        The chip deliberately omits much of the control hardware
+        found in stock CPUs and GPUs,
+        such as automatic instruction fetching
+        and caching; it is the responsibility of a frontend
+        to implement such functions offline in software.
+        This can have significant performance benefits,
+        but also makes the device exceedingly difficult
+        to program correctly,
+        and likewise to write a compiler for.
+        Therefore I designed an assembly language
+        for v1 of the chip,
+        derived from the backend of the Haskell-based compiler,
+        which offers zero-cost abstractions
+        that serve to make the chip
+        resemble more conventional hardware.
+       </sep>
+      </para>
+      <para>
+       <sep>
+        That assembler soon became the basis of a Python API,
+        then a new compiler written in C++ using MLIR,
+        and later a Haskell API.
+        I also designed a revised assembler,
+        also written in Haskell,
+        to support v2 and future versions of the chip;
+        this was based on some of my earlier personal research
+        into typed assembly languages.
+        This was meant to address correctness issues,
+        so as to simplify feature development,
+        as well as performance issues, to reduce ongoing costs.
+        However, much of this work remained in progress
+        when I left.
+       </sep>
+      </para>
+      <para>
+       <sep>
+        Over the course of this job, I learned a great deal
+        about the hardware development process
+        and became skilled at working with SystemVerilog code
+        to understand hardware semantics
+        and derive a programming model and type system.
+        I also gained some experience with Nix.
+        After the original compiler team was dissolved,
+        I became a technical leader on the Core Libraries team,
+        was heavily involved in hiring new team members,
+        and spent a considerable portion of my time
+        on support and mentorship for more junior developers.
+       </sep>
+      </para>
+     </body>
+    </sect>
+
+    <sect>
+     <head>
+      <title>
+       Xamarin &amp; Microsoft
+       (Aug 2014 – Mar 2016 – Dec 2017)
+      </title>
+      <subtitle>Mono Runtime Performance Team</subtitle>
+     </head>
+     <body>
+      <para>
+       <sep>
+        At Xamarin, later acquired by Microsoft,
+        I worked as a performance engineer
+        on the Mono runtime.
+        Most of my time was focused
+        on the SGen garbage collector, written in C.
+        I wrote
+        <cite of="&cite-mono-gc-handles;">
+         a novel lock-free implementation of GC handles
+        </cite>,
+        which made Mono an order of magnitude faster
+        at handling large numbers of weak references.
+        I wrote, and helped write, a wide variety of tools
+        for GC tracing, debugging, and tuning (in C and F♯);
+        benchmark measurement and statistical analysis;
+        and visualisation of benchmark suite results
+        (using TypeScript),
+        with automatic monitoring for performance regressions.
+        I also gained much experience with
+        debugging and fixing subtle issues in concurrent C code.
+       </sep>
+      </para>
+      <para>
+       <sep>
+        My responsibilities included R&amp;D time
+        on performance experiments
+        that would not necessarily make it to production.
+        The most notable example that has not been merged was
+        <cat>
+         <cite of="&cite-mono-strings;">
+          an implementation of compact strings
+         </cite>.
+        </cat>
+        I expect this may resurface some day,
+        since there was also a
+        <cat>
+         <cite of="&cite-dotnet-strings;">
+          compact string proposal for the Microsoft runtime
+         </cite>.
+        </cat>
+        Besides that, I experimented with dynamic tuning
+        of object size classes to help reduce fragmentation,
+        and optimistic thread-local stack allocation/collection
+        to improve concurrency and reduce pauses.
+        Both of these looked promising,
+        but I believe they would’ve required substantial changes
+        to the heap layout or JIT code generation to continue.
+       </sep>
+      </para>
+     </body>
+    </sect>
+
+    <sect>
+     <head>
+      <title>
+       Facebook
+       (Apr 2013 – Jul 2014)
+      </title>
+      <subtitle>Site Integrity Infrastructure Team</subtitle>
+     </head>
+     <body>
+      <para>
+       <sep>
+        I was acquihired by Facebook
+        along with a handful of my teammates from Spaceport,
+        and joined the SInfra team because it afforded a chance
+        to continue using Haskell, and work with Simon Marlow.
+        I helped design and implement
+        the Haxl system for concurrent I/O,
+        and wrote the Haxl bindings
+        for the major data sources used at Facebook.
+        I also spent considerable time tutoring Haskell,
+        and reviewing C++ code with a keen eye for bugs.
+       </sep>
+      </para>
+     </body>
+    </sect>
+
+    <sect>
+     <head>
+      <title>
+       Spaceport
+       (Jun 2012 – Apr 2013)
+      </title>
+     </head>
+     <body>
+      <para>
+       <sep>
+        This was my first full-time job after I left college.
+        I was immensely fortunate to get to work with Haskell
+        on gamedev tools, an area that I greatly enjoy.
+        We wrote a compiler in Haskell
+        for the full ActionScript 3 language,
+        targeting JavaScript and the Spaceport runtime,
+        which was a bug-for-bug–compatible,
+        cross-platform implementation of Adobe Flash
+        written in C++,
+        with GPU rendering superior to Adobe AIR.
+       </sep>
+      </para>
+     </body>
+    </sect>
+
+   </body>
+  </sect>
+
+  <sect>
+   <head>
+    <title>Publications</title>
+   </head>
+   <body>
+
+    <sect>
+
+     <head>
+      <title>Think Fast</title>
+      <subtitle>
+       A tensor streaming processor (TSP)
+       for accelerating deep learning workloads
+      </subtitle>
+     </head>
+
+     <body>
+      <para>
+       <sep>
+        Presented at ISCA 2020 with sundry coauthors.
+        ACM:
+        <cite of="&cite-groq-2020;">
+         doi:10.1109/ISCA45697.2020.00023
+        </cite>
+       </sep>
+      </para>
+      <para>
+       <sep>
+        In this paper, we introduce
+        the Tensor Streaming Processor (TSP) architecture,
+        a functionally-sliced microarchitecture
+        with memory units interleaved
+        with vector and matrix deep learning functional units
+        in order to take advantage of dataflow locality
+        of deep learning operations.
+        The TSP is built based on two key observations:
+        (1) machine learning workloads
+        exhibit abundant data parallelism,
+        which can be readily mapped to tensors in hardware,
+        and (2) a simple and deterministic processor
+        with producer–consumer stream programming model
+        enables precise reasoning
+        and control of hardware components,
+        achieving good performance and power efficiency.
+        The TSP is designed to exploit parallelism
+        inherent in machine-learning workloads
+        including instruction-level, memory concurrency,
+        data and model parallelism,
+        while guaranteeing determinism
+        by eliminating all reactive elements in the hardware
+        (e.g. arbiters, and caches).
+        Early ResNet50 image classification results
+        demonstrate 20.4K processed images per second (IPS)
+        with a batch-size of one—a 4× improvement
+        compared to other modern GPUs and accelerators.
+        Our first ASIC implementation of the TSP architecture
+        yields a computational density
+        of more than 1 TeraOp/s per square mm of silicon
+        for its 25×29 mm 14 nm chip
+        operating at a nominal clock frequency of 900 MHz.
+        The TSP demonstrates a novel hardware–software approach
+        to achieve fast, yet predictable, performance
+        on machine-learning workloads
+        within a desired power envelope.
+       </sep>
+      </para>
+     </body>
+
+    </sect>
+
+    <sect>
+
+     <head>
+      <title>There is No Fork</title>
+      <subtitle>
+       An abstraction for efficient, concurrent,
+       and concise data access
+      </subtitle>
+     </head>
+
+     <body>
+      <para>
+       <sep>
+        Presented at ICFP 2014
+        with Simon Marlow, Louis Brandy, and Jonathan Coens.
+        ACM:
+        <cite of="&cite-marlow-et-al-2014;">
+         doi:10.1145/2628136.2628144
+        </cite>
+       </sep>
+      </para>
+      <para>
+       <sep>
+         We describe a new programming idiom for concurrency,
+         based on Applicative Functors, where concurrency
+         is implicit in the Applicative
+         <code>&lt;*&gt;</code> operator.
+         The result is that concurrent programs
+         can be written in a natural applicative style,
+         and they retain a high degree of clarity and modularity
+         while executing with maximal concurrency.
+         This idiom is particularly useful
+         for programming against external data sources,
+         where the application code is written
+         without the use of explicit concurrency constructs,
+         while the implementation is able
+         to batch together multiple requests for data
+         from the same source,
+         and fetch data from multiple sources concurrently.
+         Our abstraction uses a cache to ensure
+         that multiple requests for the same data
+         return the same result,
+         which frees the programmer
+         from having to arrange to fetch data only once,
+         which in turn leads to greater modularity.
+       </sep>
+      </para>
+     </body>
+
+    </sect>
+
+   </body>
+  </sect>
+
+ </body>
+</page>
