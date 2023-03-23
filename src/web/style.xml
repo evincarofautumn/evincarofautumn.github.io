@@ -185,6 +185,11 @@ span.cat
     white-space:                normal;
 }
 
+span.email
+{
+    &Heavy;
+}
+
 span.err
 {
     text-decoration-color:      &error-color;;

@@ -6,7 +6,7 @@
  'map | para | prog | sect | set | table'>
 
 <!ENTITY % inline
- 'abbr | link | ref | text | todo | var
+ 'abbr | email | link | ref | text | todo | var
  | about | cite | code | emph | err | note | sub | sup | warn
  | cat | fix | grp | sep
  | ital'>
@@ -113,6 +113,9 @@
 
 <!ELEMENT code
  %inline-content;>
+
+<!ELEMENT email
+ (#PCDATA)>
 
 <!ELEMENT emph
  %inline-content;>

@@ -355,6 +355,16 @@
   </span>
  </template>
 
+ <template match="email" xmlns="&xslt;">
+  <span class="email" xmlns="&html;">
+   <s:apply-templates/>
+  </span>
+ </template>
+
+ <template match="email/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
  <template match="emph" xmlns="&xslt;">
   <strong xmlns="&html;">
    <s:apply-templates/>

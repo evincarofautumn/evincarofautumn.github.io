@@ -10,6 +10,49 @@
 
   <sect>
    <head>
+    <title>Overview</title>
+   </head>
+   <body>
+
+    <para>
+     <sep>
+      My greatest strengths
+      are in deeply understanding
+      and thoroughly documenting complex software systems;
+      architecting software
+      for long-term success and adaptability;
+      and building &amp; supporting a team of people
+      to work better together.
+      I take great satisfaction in reducing ongoing costs
+      by taking on the backlog of lower-priority tasks
+      which over time become a burden on productivity.
+      I have a well-practiced ability
+      to take high-level theory
+      and use it directly in low-level,
+      high-performance computing applications.
+     </sep>
+    </para>
+
+    <para>
+     <sep>
+      I would be glad to work
+      in a mixed technical/mentorship role
+      for a team of developers,
+      particularly using Haskell or similar technologies.
+      Most of my work has been in developer tools,
+      compiler technology, and high-performance hardware.
+      If you read about my experience below,
+      and you think I can help you,
+      tell me about your work at
+      <cat><email>evincarofautumn@gmail.com</email>.</cat>
+     </sep>
+    </para>
+
+   </body>
+  </sect>
+
+  <sect>
+   <head>
     <title>Experience</title>
    </head>
    <body>
@@ -94,9 +137,9 @@
         Most of my time was focused
         on the SGen garbage collector, written in C.
         I wrote
-        <cite of="&cite-mono-gc-handles;">
+        <cat><cite of="&cite-mono-gc-handles;">
          a novel lock-free implementation of GC handles
-        </cite>,
+        </cite>,</cat>
         which made Mono an order of magnitude faster
         at handling large numbers of weak references.
         I wrote, and helped write, a wide variety of tools
