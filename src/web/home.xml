@@ -54,6 +54,12 @@
    <body>
     <map>
      <assn>
+      <key><link to="code">Code</link></key>
+      <val>
+       <para>Things about computing and programming.</para>
+      </val>
+     </assn>
+     <assn>
       <key><link to="loops">Loops</link></key>
       <val>
        <para>Gathered writings on crochet and other yarncraft.</para>

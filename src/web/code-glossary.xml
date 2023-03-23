@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE page
+ SYSTEM "page.dtd">
+<page id="code-glossary">
+ <head>
+  <title>Jon Purdy</title>
+  <subtitle>Code</subtitle>
+  <subtitle><code>GLOSSARY</code> File</subtitle>
+ </head>
+ <body>
+
+  <sect>
+
+   <head>
+    <title>Overview</title>
+   </head>
+
+   <body>
+
+    <para>
+     <sep>
+      A <code>GLOSSARY</code> file is a conventional file
+      like a <code>README</code> or <code>LICENSE</code> file,
+      which you can include in a code repository
+      to document the terminology and abbreviations
+      used in the project.
+     </sep>
+    </para>
+
+    <para>
+     <sep>
+      For example, you might use a loosely structured format
+      like a <code>GLOSSARY.txt</code>
+      or <cat><code>GLOSSARY.md</code>:</cat>
+     </sep>
+    </para>
+
+    <prog># Terminology
+
+- code point — an index in a character set
+
+- code unit — the unit of storage of a character encoding
+
+# Abbreviations
+
+- CCC — Cartesian closed category
+- decl — declaration
+- NS — namespace
+- SCC — strongly-connected component</prog>
+
+    <para>
+     <sep>
+      Or you might use a more structured machine-readable format,
+      like a <cat><code>GLOSSARY.yaml</code>:</cat>
+     </sep>
+    </para>
+
+    <prog>terms:
+  code point: an index in a character set
+  code unit: the unit of storage of a character encoding
+
+abbrs:
+  CCC: |
+    Cartesian closed category
+  decl: declaration
+  NS: namespace
+  SCC: |
+    strongly-connected component</prog>
+
+    <para>
+     <sep>
+      I don’t mean to prescribe any particular format here,
+      the idea is that this is just a documentation convention.
+      It could be used as the basis of tooling if you want,
+      but is nevertheless valuable without it.
+     </sep>
+    </para>
+   </body>
+  </sect>
+
+  <sect>
+
+   <head>
+    <title>Background</title>
+   </head>
+
+   <body>
+
+    <para>
+     <sep>
+      At my first full-time job,
+      I wrote a linter for our codebase
+      which would check some of our basic house style rules
+      that were not enforced by other third-party lint tools
+      such as <cat><cite of="&cite-hlint;">HLint</cite>.</cat>
+      For example, my linter would check
+      that line lengths didn’t exceed 80 columns,
+      and advise reducing the nesting of deeply indented code,
+      with various exceptions for commentary and testing.
+     </sep>
+    </para>
+
+    <para>
+     <sep>
+      On a whim, I added a feature
+      that would check our naming conventions, too.
+      It would split up each name in the code
+      and check that the parts conformed to the naming rules;
+      one such rule was that each part should be
+      either a dictionary word, or a “known abbreviation”.
+      For instance, <code>inheritEnv</code> was allowed
+      because <code>inherit</code> is a dictionary word
+      and <code>env</code> was defined in our glossary list,
+      but <warn><code>inhEnv</code></warn>
+      or <warn><code>inheritEnvt</code></warn> would not be.
+     </sep>
+    </para>
+
+    <para>This had a couple of nice consequences:</para>
+
+    <set>
+
+     <val>
+      <para>
+       <sep>
+        We needed to vet the abbreviations
+        that were already used in the code,
+        and decide which were worth keeping.
+        For example, we chose to allow
+        common general-purpose and domain-specific abbreviations
+        such as <code>msg</code> and <cat><code>lhs</code>,</cat>
+        as well as some project-specific ones
+        widely used throughout the codebase
+        such as <code>Fqn</code> for “fully-qualified name”;
+        but we chose to disallow others that weren’t adding value,
+        like <code>str</code> and <cat><code>fn</code>.</cat>
+       </sep>
+      </para>
+     </val>
+
+     <val>
+      <para>
+       <sep>
+        When we used a new abbreviation,
+        we would get a warning about it,
+        so we had to decide whether it was worth adding.
+        This gave us a simple, unobtrusive reminder
+        to keep up a certain standard of clarity in naming.
+       </sep>
+      </para>
+     </val>
+
+    </set>
+
+   </body>
+
+  </sect>
+
+ </body>
+</page>

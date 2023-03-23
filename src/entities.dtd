@@ -34,6 +34,9 @@
 <!ENTITY cite-groq-2020
  "https://dl.acm.org/doi/10.1109/ISCA45697.2020.00023">
 
+<!ENTITY cite-hlint
+ "https://github.com/ndmitchell/hlint#readme">
+
 <!ENTITY cite-marlow-et-al-2014
  "https://dl.acm.org/doi/10.1145/2628136.2628144">
 

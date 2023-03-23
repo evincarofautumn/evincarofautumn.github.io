@@ -207,15 +207,19 @@
   <choose>
    <when test="@to = 'home'">
     <a href="/" xmlns="&html;">
-     <s:value-of select="."/>
+     <s:apply-templates/>
     </a>
    </when>
    <otherwise>
     <a href="/{ @to }/" xmlns="&html;">
-     <s:value-of select="."/>
+     <s:apply-templates/>
     </a>
    </otherwise>
   </choose>
+ </template>
+
+ <template match="link/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="para" xmlns="&xslt;">
@@ -226,6 +230,20 @@
 
  <template match="para/text()" xmlns="&xslt;">
   <value-of select="normalize-space(.)"/>
+ </template>
+
+ <template match="prog" xmlns="&xslt;">
+  <figure xmlns="&html;">
+   <pre>
+    <code>
+     <s:apply-templates/>
+    </code>
+   </pre>
+  </figure>
+ </template>
+
+ <template match="prog/text()" xmlns="&xslt;">
+  <value-of select="."/>
  </template>
 
  <template match="ref[@to]" xmlns="&xslt;">

@@ -7,6 +7,8 @@ XSLTFLAGS ?= --verbose
 .PHONY: build
 
 build: \
+    dst/web/code/index.html \
+    dst/web/code/glossary/index.html \
     dst/web/credits/index.html \
     dst/web/cv/index.html \
     dst/web/hatch-dark.svg \
@@ -34,6 +36,8 @@ src/xslt.dtd: \
 ################################################################
 
 src/site.xml: \
+    src/web/code.xml \
+    src/web/code-glossary.xml \
     src/web/credits.xml \
     src/web/cv.xml \
     src/web/home.xml \
@@ -80,6 +84,20 @@ xsltproc \
     $(2) \
     $(3)
 endef
+
+dst/web/code/index.html: \
+    dst/code.xml \
+    src/page.xsl \
+    src/page.dtd
+	mkdir -p dst/web/code; \
+	$(call xsltproc,$@,src/page.xsl,$<)
+
+dst/web/code/glossary/index.html: \
+    dst/code-glossary.xml \
+    src/page.xsl \
+    src/page.dtd
+	mkdir -p dst/web/code/glossary; \
+	$(call xsltproc,$@,src/page.xsl,$<)
 
 dst/web/credits/index.html: \
     dst/credits.xml \

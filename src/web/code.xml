@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE page
+ SYSTEM "page.dtd">
+<page id="code">
+ <head>
+  <title>Jon Purdy</title>
+  <subtitle>Code</subtitle>
+ </head>
+ <body>
+
+  <set>
+   <val>
+    <para>
+     <link to="code-glossary"><code>GLOSSARY</code> File</link>
+    </para>
+   </val>
+  </set>
+
+ </body>
+</page>

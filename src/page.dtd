@@ -3,7 +3,7 @@
 %entities;
 
 <!ENTITY % block
- 'map | para | sect | set | table'>
+ 'map | para | prog | sect | set | table'>
 
 <!ENTITY % inline
  'abbr | link | ref | text | todo | var
@@ -48,6 +48,9 @@
   <!-- ELEMENT val -->
 
 <!ELEMENT para
+ %inline-content;>
+
+<!ELEMENT prog
  %inline-content;>
 
 <!ELEMENT sect
@@ -118,7 +121,7 @@
  %inline-content;>
 
 <!ELEMENT link
- (#PCDATA)>
+ %inline-content;>
 <!ATTLIST link
  to IDREF #REQUIRED>
 
