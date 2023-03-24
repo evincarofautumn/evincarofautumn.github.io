@@ -275,10 +275,8 @@
    <value-of select="saxon:line-number(.)"/>
    <text>: todo</text>
   </message>
-  <span class="todo" xmlns="&html;">
-   <s:text>TODO</s:text>
+  <span class="todo" title="TODO" xmlns="&html;">
    <if test="./node()" xmlns="&xslt;">
-    <text>: </text>
     <value-of select="."/>
    </if>
   </span>
