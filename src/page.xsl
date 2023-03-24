@@ -211,7 +211,7 @@
     </a>
    </when>
    <otherwise>
-    <a href="/{ @to }/" xmlns="&html;">
+    <a href="/{ translate(@to, '-', '/') }/" xmlns="&html;">
      <s:apply-templates/>
     </a>
    </otherwise>
