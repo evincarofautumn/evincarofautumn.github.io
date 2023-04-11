@@ -11,7 +11,9 @@
   <set>
    <val>
     <para>
-     <link to="code-glossary"><code>GLOSSARY</code> File</link>
+     <link to="code-glossary">
+      <sep><code>GLOSSARY</code> File</sep>
+     </link>
     </para>
    </val>
   </set>
