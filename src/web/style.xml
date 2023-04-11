@@ -41,10 +41,13 @@ body
 
 code
 {
+    background-color:           &page-color;;
+    border:                     1px dotted &border-color;;
     font-family:                monospace;
     font-size:                  normal;
+    margin:                     &thin-space;;
+    padding:                    &thin-space;;
     &Double-spaced;
-    &Spaced;
 }
 
 .compact code
@@ -52,11 +55,12 @@ code
     &Thin-spaced;
 }
 
-pre > code
+pre code
 {
-    display:                    block;
-    &Block;
-    &Indented;
+    background:                 none;
+    border:                     none;
+    margin:                     initial;
+    padding:                    initial;
 }
 
 dd
@@ -159,8 +163,10 @@ section > heading > p
 
 pre
 {
-    background-color:           &sample-color;;
-    border:                     1px solid &border-color;;
+    border-style:               dotted;
+    border-width:               1px;
+    border-color:               &border-color;;
+    padding:                    &small-margin;;
     &Block;
 }
 

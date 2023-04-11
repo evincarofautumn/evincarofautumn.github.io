@@ -35,18 +35,20 @@
      </sep>
     </para>
 
-    <prog># Terminology
-
-- code point — an index in a character set
-
-- code unit — the unit of storage of a character encoding
-
-# Abbreviations
-
-- CCC — Cartesian closed category
-- decl — declaration
-- NS — namespace
-- SCC — strongly-connected component</prog>
+    <prog>
+     <line># Terminology</line>
+     <line/>
+     <line>- code point — an index in a character set</line>
+     <line/>
+     <line>- code unit — the unit of storage of a character encoding</line>
+     <line/>
+     <line># Abbreviations</line>
+     <line/>
+     <line>- CCC — Cartesian closed category</line>
+     <line>- decl — declaration</line>
+     <line>- NS — namespace</line>
+     <line>- SCC — strongly-connected component</line>
+    </prog>
 
     <para>
      <sep>
@@ -55,17 +57,27 @@
      </sep>
     </para>
 
-    <prog>terms:
-  code point: an index in a character set
-  code unit: the unit of storage of a character encoding
-
-abbrs:
-  CCC: |
-    Cartesian closed category
-  decl: declaration
-  NS: namespace
-  SCC: |
-    strongly-connected component</prog>
+    <prog>
+     <line>terms:</line>
+     <nest>
+      <line>code point: an index in a character set</line>
+      <line>code unit: the unit of storage of a character encoding</line>
+     </nest>
+     <line/>
+     <line>abbrs:</line>
+     <nest>
+      <line>CCC: |</line>
+      <nest>
+       <line>Cartesian closed category</line>
+      </nest>
+      <line>decl: declaration</line>
+      <line>NS: namespace</line>
+      <line>SCC: |</line>
+      <nest>
+       <line>strongly-connected component</line>
+      </nest>
+     </nest>
+    </prog>
 
     <para>
      <sep>

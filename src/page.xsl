@@ -257,17 +257,38 @@
  </template>
 
  <template match="prog" xmlns="&xslt;">
-  <figure xmlns="&html;">
-   <pre>
-    <code>
-     <s:apply-templates/>
-    </code>
-   </pre>
-  </figure>
+  <pre xmlns="&html;">
+   <code>
+    <for-each select="./*" xmlns="&xslt;">
+     <if test="position() != 1">
+      <text>&lf;</text>
+     </if>
+     <apply-templates select="."/>
+    </for-each>
+   </code>
+  </pre>
  </template>
 
- <template match="prog/text()" xmlns="&xslt;">
+ <template match="line" xmlns="&xslt;">
+  <param name="prefix" as="string" select=" '' "/>
+  <value-of select="$prefix"/>
+  <apply-templates/>
+ </template>
+
+ <template match="line/text()" xmlns="&xslt;">
   <value-of select="."/>
+ </template>
+
+ <template match="nest" xmlns="&xslt;">
+  <param name="prefix" as="string" select=" '' "/>
+  <for-each select="./*">
+   <if test="position() != 1">
+    <text>&lf;</text>
+   </if>
+   <apply-templates select=".">
+    <with-param name="prefix" select="concat('  ', $prefix)"/>
+   </apply-templates>
+  </for-each>
  </template>
 
  <template match="ref[@to]" xmlns="&xslt;">
