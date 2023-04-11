@@ -131,6 +131,12 @@ main
     padding:                    0 &large-margin;;
 }
 
+mark
+{
+    background-color:           &highlight-color;;
+    &Heavy;
+}
+
 code .note
 {
     font-family:                sans-serif;

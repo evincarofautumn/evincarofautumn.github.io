@@ -7,7 +7,7 @@
 
 <!ENTITY % inline
  'abbr | email | link | ref | text | todo | var
- | about | cite | code | emph | err | note | sub | sup | warn
+ | about | cite | code | emph | err | lit | note | sub | sup | warn
  | cat | fix | grp | sep
  | ital'>
 
@@ -127,6 +127,9 @@
  %inline-content;>
 <!ATTLIST link
  to IDREF #REQUIRED>
+
+<!ELEMENT lit
+ %inline-content;>
 
 <!ELEMENT note
  %inline-content;>

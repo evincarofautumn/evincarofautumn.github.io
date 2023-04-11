@@ -29,6 +29,8 @@
 <!ENTITY todo-color    'grey'>
 <!ENTITY warning-color 'orange'>
 
+<!ENTITY highlight-color 'greenyellow'>
+
 <!-- steelblue 0.125 -->
 <!ENTITY negative-color 'rgba(70, 130, 180, 0.125)'>
 <!-- gold 0.125 -->

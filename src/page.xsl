@@ -230,6 +230,16 @@
   <value-of select="normalize-space(.)"/>
  </template>
 
+ <template match="lit" xmlns="&xslt;">
+  <mark xmlns="&html;">
+   <s:apply-templates/>
+  </mark>
+ </template>
+
+ <template match="lit/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
  <template match="para" xmlns="&xslt;">
   <p xmlns="&html;">
    <s:apply-templates/>
