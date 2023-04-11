@@ -456,7 +456,7 @@
 
  <template match="sep" xmlns="&xslt;">
   <span class="sep" xmlns="&html;">
-   <for-each select="./* | ./text()" xmlns="&xslt;">
+   <for-each select="./node()" xmlns="&xslt;">
     <if test="position() != 1">
      <text>&sp;</text>
     </if>
