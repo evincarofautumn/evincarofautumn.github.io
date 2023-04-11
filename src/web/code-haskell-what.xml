@@ -3,9 +3,15 @@
  SYSTEM "page.dtd">
 <page id="code-haskell-what">
  <head>
-  <title>Jon Purdy</title>
-  <subtitle>Code</subtitle>
-  <subtitle>“Forall What?”</subtitle>
+  <back to="home">Jon Purdy</back>
+  <back to="code">Code</back>
+  <title>“Forall What?”</title>
+  <subtitle>
+   <sep>
+    Getting GHCi to tell you
+    the <emph>real</emph> inferred type of a subexpression
+   </sep>
+  </subtitle>
  </head>
  <body>
 

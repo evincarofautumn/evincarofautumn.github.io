@@ -3,8 +3,8 @@
  SYSTEM "page.dtd">
 <page id="cv">
  <head>
-  <title>Jon Purdy</title>
-  <subtitle>CV</subtitle>
+  <back to="home">Jon Purdy</back>
+  <title>CV</title>
  </head>
  <body>
 

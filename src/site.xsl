@@ -16,7 +16,7 @@
 
  <s:output
   encoding="utf-8"
-  indent="yes"
+  indent="no"
   method="xml"
   version="1.0"
   />

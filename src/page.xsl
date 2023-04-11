@@ -4,7 +4,8 @@
  SYSTEM "xslt.dtd" [
 
 <!ENTITY inline-normalized-text
- ' big/text()
+ ' back/text()
+ | big/text()
  | body/text()
  | cat/text()
  | cell/text()
@@ -54,7 +55,7 @@
 
  <s:output
   encoding="utf-8"
-  indent="yes"
+  indent="no"
   method="html"
   version="5"
   doctype-system="about:legacy-compat"
@@ -93,16 +94,22 @@
   <html xmlns="&html;">
    <head>
     <title>
-      <for-each select="head/subtitle" xmlns="&xslt;">
-        <sort
-         select="position()"
-         data-type="number"
-         order="descending"
-         />
-        <value-of select="."/>
-        <text>&sp;·&sp;</text>
-      </for-each>
-      <value-of select="head/title" xmlns="&xslt;"/>
+     <value-of
+      select="normalize-space(head/title)"
+      xmlns="&xslt;"/>
+     <for-each select="head/subtitle" xmlns="&xslt;">
+      <text>:&sp;</text>
+      <value-of select="normalize-space(.)"/>
+     </for-each>
+     <for-each select="head/back" xmlns="&xslt;">
+      <sort
+       select="position()"
+       data-type="number"
+       order="descending"
+       />
+      <text>&sp;·&sp;</text>
+      <value-of select="."/>
+     </for-each>
     </title>
     <link
      href="/style.css"
@@ -130,8 +137,17 @@
 
  <template match="head" xmlns="&xslt;">
   <heading xmlns="&html;">
-   <s:apply-templates/>
+   <nav>
+    <ol role="list">
+     <s:apply-templates select="back"/>
+    </ol>
+   </nav>
+   <s:apply-templates select="title | subtitle"/>
   </heading>
+ </template>
+
+ <template match="back" xmlns="&xslt;">
+  <li xmlns="&html;"><s:call-template name="link_to"/></li>
  </template>
 
  <template match="head/title" xmlns="&xslt;">
@@ -224,6 +240,10 @@
  </template>
 
  <template match="link" xmlns="&xslt;">
+  <call-template name="link_to"/>
+ </template>
+
+ <template name="link_to" xmlns="&xslt;">
   <choose>
    <when test="@to = 'home'">
     <a href="/" xmlns="&html;">

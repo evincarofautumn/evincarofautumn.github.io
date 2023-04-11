@@ -13,9 +13,11 @@ a
     &Underlined;
 }
 
-a code
+nav > ol > li > a::after
 {
-    margin: inherit;
+    color:                      &text-color;;
+    content:                    '\00A0\25B8';
+    display:                    inline-block;
 }
 
 abbr
@@ -48,6 +50,11 @@ code
     margin:                     &thin-space;;
     padding:                    &thin-space;;
     &Double-spaced;
+}
+
+a code
+{
+    margin: inherit;
 }
 
 .compact code
@@ -128,6 +135,12 @@ li
     &Indented;
 }
 
+nav > ol > li
+{
+    display:                    table-cell;
+    padding-right:              &medium-margin;;
+}
+
 main
 {
     margin:                     &xx-large-margin; auto;
@@ -144,6 +157,18 @@ mark
 code .note
 {
     font-family:                sans-serif;
+}
+
+nav
+{
+    display:                    table;
+    &Block;
+}
+
+nav > ol
+{
+    display:                    table-row;
+    list-style-type:            none;
 }
 
 p

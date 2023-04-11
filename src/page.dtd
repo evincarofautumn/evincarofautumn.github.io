@@ -54,7 +54,11 @@
  xml:base CDATA #IMPLIED>
 
  <!ELEMENT head
-  (title, subtitle*)>
+  (back*, title, subtitle*)>
+  <!ELEMENT back
+   %inline-content;>
+  <!ATTLIST back
+   to IDREF #REQUIRED>
   <!ELEMENT title
    %inline-content;>
   <!ELEMENT subtitle
