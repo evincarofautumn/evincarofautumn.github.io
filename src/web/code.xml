@@ -8,15 +8,53 @@
  </head>
  <body>
 
-  <set>
-   <val>
-    <para>
-     <link to="code-glossary">
-      <sep><code>GLOSSARY</code> File</sep>
-     </link>
-    </para>
-   </val>
-  </set>
+  <sect>
+   <head>
+    <title>Haskell</title>
+   </head>
+   <body>
+
+    <set>
+
+     <val>
+      <para>
+       <sep>
+        <link to="code-haskell-what">“Forall What?”</link>
+        — Getting GHCi to tell you
+        the <emph>real</emph> inferred type of a subexpression
+       </sep>
+      </para>
+     </val>
+
+     <val>
+      <para>
+       <todo>Examples of when to use GADTs</todo>
+      </para>
+     </val>
+
+    </set>
+
+   </body>
+  </sect>
+
+  <sect>
+   <head>
+    <title>Software Engineering</title>
+   </head>
+   <body>
+
+    <set>
+     <val>
+      <para>
+       <link to="code-glossary">
+        <sep><code>GLOSSARY</code> File</sep>
+       </link>
+      </para>
+     </val>
+    </set>
+
+   </body>
+  </sect>
 
  </body>
 </page>

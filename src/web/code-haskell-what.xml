@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE page
+ SYSTEM "page.dtd">
+<page id="code-haskell-what">
+ <head>
+  <title>Jon Purdy</title>
+  <subtitle>Code</subtitle>
+  <subtitle>“Forall What?”</subtitle>
+ </head>
+ <body>
+
+  <sect>
+   <head>
+    <title>What</title>
+   </head>
+   <body>
+    <para>
+     <sep>Put this in your <cat><code>.ghci</code>.</cat></sep>
+    </para>
+    <prog>
+     <line>
+      <sep>
+       <kwd>:def</kwd>
+       what \s -> pure
+       <cat>
+        (
+        <sep>
+         <str>
+          <cat>
+           "
+           <sep>
+            <kwd>let</kwd>
+            { it ::
+            <kwd>forall</kwd>
+            what. _; it = (
+           </sep>
+           "
+          </cat>
+         </str>
+         &lt;&gt; s &lt;&gt;
+         <str>
+          <cat>
+           "
+           <sep>
+            ) }
+            <kwd>in</kwd>
+            it
+           </sep>
+           "
+          </cat>
+         </str>
+        </sep>
+        )
+       </cat>
+      </sep>
+     </line>
+    </prog>
+    <para>
+     <sep>
+      Now when you want a quick way to get the inferred type
+      of a <code><var>subexpression</var></code>
+      inside an <cat><code><var>expression</var></code>,</cat>
+      enter
+      <code>
+       <sep><kwd>:what</kwd> <var>expression</var></sep>
+      </code>
+      and replace <code><var>subexpression</var></code> with
+      <cat>
+       <code>
+        <cat>(<sep><var>subexpression</var> :: what</sep>)</cat>
+       </code>.
+      </cat>
+     </sep>
+    </para>
+   </body>
+  </sect>
+
+  <sect>
+   <head>
+    <title>What?</title>
+    <subtitle>Also, how?</subtitle>
+   </head>
+   <body>
+
+    <para>
+     <sep>
+      If you’re trying to understand the type of an expression,
+      particularly when dealing with a confusing type error,
+      it’s helpful to be able to see the inferred type
+      of a subexpression involving polymorphic terms.
+     </sep>
+    </para>
+
+    <para>
+     <sep>
+      For instance, earlier on in my Haskell career,
+      one day during a code review I saw an expression like
+      <cat><code>f &lt;$&gt; g &lt;$&gt; xs</code>,</cat>
+      and I was surprised that it typechecked, because
+      I remembered that the <code>&lt;$&gt;</code> operator
+      is <cat><emph>left</emph>-associative,</cat>
+      meaning that this was being parsed as
+      <code>(f &lt;$&gt; g) &lt;$&gt; xs</code>
+      and not what my coworker had meant to write,
+      <cat><code>f &lt;$&gt; (g &lt;$&gt; xs)</code>.</cat>
+      In other words,
+      <code>fmap (fmap f g) xs</code> was accepted
+      where <code>fmap f (fmap g xs)</code> was intended,
+      and I wanted to find out why.
+      (Actually, in this case I figured it out
+      by rephrasing the code with <cat><code>fmap</code>,</cat>
+      but if it would come in handy later,
+      I wanted to figure out how I could’ve figured it out.)
+     </sep>
+    </para>
+
+    <para>
+     <sep>
+      So my first thought was to use a type wildcard, since
+      <code>PartialTypeSignatures</code> were new at the time.
+      In this case, asking GHCi
+      about <code>fmap ((fmap :: _) f g) xs</code>
+      does tell us that the type is something like
+      <cat>
+       <code>(a -> b) -> (t -&gt; a) -&gt; (t -&gt; b)</code>,
+      </cat>
+      which contains the important bit for our purposes:
+      <code>(t -&gt;)</code>
+      is a <cat><code>Functor</code>.</cat>
+      But there were other cases
+      where this wasn’t helpful at all!
+     </sep>
+    </para>
+
+    <para>
+     <sep>
+      For instance, I was asked:
+      why does <code>foldr id</code> typecheck?
+      If you ask GHCi about <code>(foldr :: _) id</code>
+      and <cat><code>foldr (id :: _)</code>,</cat> it will say,
+      with perfect innocence and sincerity, that
+      <code>foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; t a -&gt; b</code>
+      and <cat><code>id :: a -&gt; a</code>.</cat>
+      These things you already knew—it gives you no insight.
+      A partial type signature isn’t always quite enough
+      to get GHCi to tell you the actual type
+      at which a subexpression is being used.
+      Part of the reason for this is by design:
+      a partial signature shouldn’t over-constrain the type,
+      so, as much as possible, the compiler will avoid
+      saying anything it’dn’t’ve committed to
+      if you hadn’t asked.
+      We can sometimes wheedle the type by casually saying
+      <cat><code>… :: ()</code>,</cat> in other words,
+      “…, which (as you know) is a unit”
+      and goading the typechecker into correcting us by saying,
+      “Actually, that’s not a unit at all! It’s a —”.
+      But that doesn’t always work:
+      sometimes our trick backfires,
+      and the typechecker just says “Yes, obviously.”
+      because our annotation caused it to commit to that type:
+      we’ve changed the outcome by trying to measure it.
+      No good!
+     </sep>
+    </para>
+
+    <para>
+     <sep>
+      Fortunately, <code>ScopedTypeVariables</code>
+      give us a way to mint a fresh type variable, which,
+      unlike some concrete type like <cat><code>()</code>,</cat>
+      is guaranteed not to unify with anything else.
+      In conjunction with a partial type signature,
+      that lets us observe type inference without disturbing it.
+     </sep>
+    </para>
+
+    <prog>
+     <line><kwd>:{</kwd></line>
+     <line><kwd>let</kwd> it :: <kwd>forall</kwd> what. _</line>
+     <line>    it = ( (foldr :: what) id )</line>
+     <line>  <kwd>in</kwd> it</line>
+     <line><kwd>:}</kwd></line>
+    </prog>
+
+    <prog>
+     <line><kwd>let</kwd> { it :: <kwd>forall</kwd> what. _; it = ( (foldr :: what) id ) } <kwd>in</kwd> it</line>
+    </prog>
+
+    <para>
+     <sep>
+      And as I showed earlier,
+      we can even make this into a GHCi command.
+     </sep>
+    </para>
+
+    <para>
+     <sep>
+      Now the typechecker will quit beating around the bush
+      and tell us <code>what</code> it expected…but
+      <code>((b -&gt; b) -&gt; b -&gt; b) -&gt; b -&gt; t (b -&gt; b) -&gt; b</code>
+      it actually got. So sad! If we ask
+      <code>:what foldr (id :: what)</code>
+      it laments the <code>(b -&gt; b) -&gt; b -&gt; b</code>
+      that it has, which is not <code>what</code> it wanted.
+      That’s where we say “Poor thing—here,
+      let me take those off your hands…” and make our getaway,
+      with our pockets and purses jingling full of types.
+     </sep>
+    </para>
+   </body>
+  </sect>
+
+ </body>
+</page>

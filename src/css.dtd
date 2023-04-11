@@ -25,6 +25,7 @@
 <!ENTITY error-color   'red'>
 <!ENTITY sample-color  'white'>
 <!ENTITY page-color    'floralwhite'>
+<!ENTITY string-color  'darkslateblue'>
 <!ENTITY text-color    'darkslategrey'>
 <!ENTITY todo-color    'grey'>
 <!ENTITY warning-color 'orange'>

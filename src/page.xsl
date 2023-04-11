@@ -24,6 +24,7 @@
  | note/text()
  | para/text()
  | sep/text()
+ | str/text()
  | sub/text()
  | subtitle/text()
  | sup/text()
@@ -404,6 +405,12 @@
 
  <template match="warn" xmlns="&xslt;">
   <span class="warn" xmlns="&html;">
+   <s:apply-templates/>
+  </span>
+ </template>
+
+ <template match="str" xmlns="&xslt;">
+  <span class="str" xmlns="&html;">
    <s:apply-templates/>
   </span>
  </template>

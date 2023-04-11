@@ -30,6 +30,7 @@
  | note
  | ref
  | sep
+ | str
  | sub
  | sup
  | text
@@ -189,6 +190,9 @@
  to IDREF #IMPLIED>
 
 <!ELEMENT sep
+ %inline-content;>
+
+<!ELEMENT str
  %inline-content;>
 
 <!ELEMENT sub

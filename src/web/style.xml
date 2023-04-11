@@ -235,6 +235,11 @@ span.kwd
     &Heavy;
 }
 
+span.str
+{
+    color:                      &string-color;;
+}
+
 span.warn
 {
     text-decoration-color:      &warning-color;;

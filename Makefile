@@ -9,6 +9,7 @@ XSLTFLAGS ?= --verbose
 build: \
     dst/web/code/index.html \
     dst/web/code/glossary/index.html \
+    dst/web/code/haskell/what/index.html \
     dst/web/credits/index.html \
     dst/web/cv/index.html \
     dst/web/hatch-dark.svg \
@@ -38,6 +39,7 @@ src/xslt.dtd: \
 src/site.xml: \
     src/web/code.xml \
     src/web/code-glossary.xml \
+    src/web/code-haskell-what.xml \
     src/web/credits.xml \
     src/web/cv.xml \
     src/web/home.xml \
@@ -97,6 +99,13 @@ dst/web/code/glossary/index.html: \
     src/page.xsl \
     src/page.dtd
 	mkdir -p dst/web/code/glossary; \
+	$(call xsltproc,$@,src/page.xsl,$<)
+
+dst/web/code/haskell/what/index.html: \
+    dst/code-haskell-what.xml \
+    src/page.xsl \
+    src/page.dtd
+	mkdir -p dst/web/code/haskell/what; \
 	$(call xsltproc,$@,src/page.xsl,$<)
 
 dst/web/credits/index.html: \
