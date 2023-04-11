@@ -3,13 +3,40 @@
 %entities;
 
 <!ENTITY % block
- 'map | para | prog | sect | set | table'>
+ ' map
+ | para
+ | prog
+ | sect
+ | set
+ | table
+ '>
 
 <!ENTITY % inline
- 'abbr | big | email | link | ref | text | todo | var
- | about | cite | code | emph | err | kwd | lit | note | sub | sup | warn
- | cat | fix | grp | sep
- | ital'>
+ ' abbr
+ | about
+ | big
+ | cat
+ | cite
+ | code
+ | email
+ | emph
+ | err
+ | fix
+ | grp
+ | ital
+ | kwd
+ | link
+ | lit
+ | note
+ | ref
+ | sep
+ | sub
+ | sup
+ | text
+ | todo
+ | var
+ | warn
+ '>
 
 <!ENTITY % block-content
  '(#PCDATA | %block; | %inline;)*'>
@@ -113,6 +140,9 @@
 <!ELEMENT big
  %inline-content;>
 
+<!ELEMENT cat
+ %inline-content;>
+
 <!ELEMENT cite
  %inline-content;>
 <!ATTLIST cite
@@ -128,6 +158,15 @@
  %inline-content;>
 
 <!ELEMENT err
+ %inline-content;>
+
+<!ELEMENT fix
+ %inline-content;>
+
+<!ELEMENT grp
+ %inline-content;>
+
+<!ELEMENT ital
  %inline-content;>
 
 <!ELEMENT kwd
@@ -149,6 +188,9 @@
 <!ATTLIST ref
  to IDREF #IMPLIED>
 
+<!ELEMENT sep
+ %inline-content;>
+
 <!ELEMENT sub
  %inline-content;>
 
@@ -167,21 +209,5 @@
 <!ELEMENT warn
  %inline-content;>
 
-<!-- construction -->
 
-<!ELEMENT cat
- %inline-content;>
 
-<!ELEMENT fix
- %inline-content;>
-
-<!ELEMENT grp
- %inline-content;>
-
-<!ELEMENT sep
- %inline-content;>
-
-<!-- generic styles -->
-
-<!ELEMENT ital
- %inline-content;>
