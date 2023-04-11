@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!DOCTYPE stylesheet
- SYSTEM "xslt.dtd">
+ SYSTEM "xslt.dtd" [
+
+<!ENTITY inline-normalized-text
+ ' big/text()
+ | body/text()
+ | cat/text()
+ | cell/text()
+ | cite/text()
+ | data/text()
+ | email/text()
+ | emph/text()
+ | err/text()
+ | fix/text()
+ | fld/text()
+ | grp/text()
+ | ital/text()
+ | key/text()
+ | link/text()
+ | lit/text()
+ | meta/text()
+ | note/text()
+ | para/text()
+ | sep/text()
+ | sub/text()
+ | subtitle/text()
+ | sup/text()
+ | title/text()
+ | todo/text()
+ | val/text()
+ | warn/text()
+ '>
+
+<!ENTITY inline-verbatim-text
+ ' code/text()
+ | line/text()
+ '>
+
+]>
 
 <s:stylesheet
  exclude-result-prefixes="e g h i"
@@ -106,24 +143,12 @@
   </figcaption>
  </template>
 
- <template match="title/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="head/subtitle" xmlns="&xslt;">
   <p xmlns="&html;"><s:apply-templates/></p>
  </template>
 
- <template match="subtitle/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="body" xmlns="&xslt;">
   <apply-templates/>
- </template>
-
- <template match="body/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="map" xmlns="&xslt;">
@@ -148,18 +173,10 @@
   </dt>
  </template>
 
- <template match="key/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="assn/val" xmlns="&xslt;">
   <dd xmlns="&html;">
    <s:apply-templates/>
   </dd>
- </template>
-
- <template match="val/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="set" xmlns="&xslt;">
@@ -187,28 +204,16 @@
   </span>
  </template>
 
- <template match="data/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="about/meta" xmlns="&xslt;">
   <h:rp>(</h:rp>
   <h:rt class="about-meta"><apply-templates/></h:rt>
   <h:rp>)</h:rp>
  </template>
 
- <template match="meta/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="cite" xmlns="&xslt;">
   <a href="{ @of }" xmlns="&html;">
    <s:apply-templates/>
   </a>
- </template>
-
- <template match="cite/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="kwd" xmlns="&xslt;">
@@ -232,28 +237,16 @@
   </choose>
  </template>
 
- <template match="link/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="lit" xmlns="&xslt;">
   <mark xmlns="&html;">
    <s:apply-templates/>
   </mark>
  </template>
 
- <template match="lit/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="para" xmlns="&xslt;">
   <p xmlns="&html;">
    <s:apply-templates/>
   </p>
- </template>
-
- <template match="para/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="prog" xmlns="&xslt;">
@@ -273,10 +266,6 @@
   <param name="prefix" as="string" select=" '' "/>
   <value-of select="$prefix"/>
   <apply-templates/>
- </template>
-
- <template match="line/text()" xmlns="&xslt;">
-  <value-of select="."/>
  </template>
 
  <template match="nest" xmlns="&xslt;">
@@ -317,10 +306,6 @@
   <span class="big" xmlns="&html;"><s:apply-templates/></span>
  </template>
 
- <template match="big/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="todo" xmlns="&xslt;">
   <message terminate="no" xmlns:saxon="&saxon;">
    <value-of select="saxon:systemId()"/>
@@ -338,10 +323,6 @@
     </otherwise>
    </choose>
   </span>
- </template>
-
- <template match="todo/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="table" xmlns="&xslt;">
@@ -373,18 +354,10 @@
   </th>
  </template>
 
- <template match="fld/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="row" xmlns="&xslt;">
   <tr xmlns="&html;">
    <s:apply-templates/>
   </tr>
- </template>
-
- <template match="cell/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="brk | cell | gap" xmlns="&xslt;">
@@ -405,10 +378,6 @@
   </code>
  </template>
 
- <template match="code/text()" xmlns="&xslt;">
-  <value-of select="."/>
- </template>
-
  <template match="code//note" xmlns="&xslt;">
   <span class="note" xmlns="&html;">
    <s:apply-templates/>
@@ -421,18 +390,10 @@
   </span>
  </template>
 
- <template match="email/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="emph" xmlns="&xslt;">
   <strong xmlns="&html;">
    <s:apply-templates/>
   </strong>
- </template>
-
- <template match="emph/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="err" xmlns="&xslt;">
@@ -441,22 +402,10 @@
   </span>
  </template>
 
- <template match="err/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="warn" xmlns="&xslt;">
   <span class="warn" xmlns="&html;">
    <s:apply-templates/>
   </span>
- </template>
-
- <template match="warn/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
- <template match="note/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="sub" xmlns="&xslt;">
@@ -465,18 +414,10 @@
   </sub>
  </template>
 
- <template match="sub/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="sup" xmlns="&xslt;">
   <sup xmlns="&html;">
    <s:apply-templates/>
   </sup>
- </template>
-
- <template match="sup/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="cat" xmlns="&xslt;">
@@ -485,18 +426,10 @@
   </span>
  </template>
 
- <template match="cat/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="fix" xmlns="&xslt;">
   <span class="fix" xmlns="&html;">
    <s:apply-templates/>
   </span>
- </template>
-
- <template match="fix/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="sep" xmlns="&xslt;">
@@ -508,10 +441,6 @@
     <apply-templates select="."/>
    </for-each>
   </span>
- </template>
-
- <template match="sep/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="grp" xmlns="&xslt;">
@@ -529,22 +458,22 @@
   </h:span>
  </template>
 
- <template match="grp/text()" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
- <template match="text" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
- </template>
-
  <template match="ital" xmlns="&xslt;">
   <i xmlns="&html;">
    <s:apply-templates/>
   </i>
  </template>
 
- <template match="ital/text()" xmlns="&xslt;">
+ <template match="text" xmlns="&xslt;">
   <value-of select="normalize-space(.)"/>
+ </template>
+
+ <template match="&inline-normalized-text;" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
+ <template match="&inline-verbatim-text;" xmlns="&xslt;">
+  <value-of select="."/>
  </template>
 
 </s:stylesheet>
