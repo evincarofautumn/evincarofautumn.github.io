@@ -142,6 +142,11 @@ code .note
     font-family:                sans-serif;
 }
 
+p
+{
+    &Block;
+}
+
 main > heading > p
 {
     font-size:                  x-large;
