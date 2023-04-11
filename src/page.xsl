@@ -97,17 +97,25 @@
  </template>
 
  <template match="head/title" xmlns="&xslt;">
-  <h1 xmlns="&html;"><s:value-of select="."/></h1>
+  <h1 xmlns="&html;"><s:apply-templates/></h1>
  </template>
 
  <template match="table/title" xmlns="&xslt;">
   <figcaption xmlns="&html;">
-   <s:value-of select="."/>
+   <s:apply-templates/>
   </figcaption>
  </template>
 
+ <template match="title/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
  <template match="head/subtitle" xmlns="&xslt;">
-  <p xmlns="&html;"><s:value-of select="."/></p>
+  <p xmlns="&html;"><s:apply-templates/></p>
+ </template>
+
+ <template match="subtitle/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="body" xmlns="&xslt;">

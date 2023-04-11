@@ -28,9 +28,9 @@
  <!ELEMENT head
   (title, subtitle*)>
   <!ELEMENT title
-   (#PCDATA)>
+   %inline-content;>
   <!ELEMENT subtitle
-   (#PCDATA)>
+   %inline-content;>
 
  <!ELEMENT body
   %block-content;>
