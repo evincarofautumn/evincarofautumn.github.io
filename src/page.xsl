@@ -66,6 +66,10 @@
   stylesheet-prefix="h"
   />
 
+ <s:preserve-space
+  elements="text"
+  />
+
  <s:strip-space
   elements="*"
   />
@@ -492,7 +496,7 @@
  </template>
 
  <template match="text" xmlns="&xslt;">
-  <value-of select="normalize-space(.)"/>
+  <value-of select="."/>
  </template>
 
  <template match="&inline-normalized-text;" xmlns="&xslt;">

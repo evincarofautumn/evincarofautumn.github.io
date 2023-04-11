@@ -185,7 +185,7 @@
      <line><kwd>:{</kwd></line>
      <line><kwd>let</kwd> it :: <kwd>forall</kwd> what. _</line>
      <line>    it = ( (foldr :: what) id )</line>
-     <line>  <kwd>in</kwd> it</line>
+     <line><text> </text><kwd>in</kwd> it</line>
      <line><kwd>:}</kwd></line>
     </prog>
 
@@ -206,7 +206,7 @@
       and tell us <code>what</code> it expected…but
       <code>((b -&gt; b) -&gt; b -&gt; b) -&gt; b -&gt; t (b -&gt; b) -&gt; b</code>
       it actually got. So sad! If we ask
-      <code>:what foldr (id :: what)</code>
+      <code><kwd>:what</kwd> foldr (id :: what)</code>
       it laments the <code>(b -&gt; b) -&gt; b -&gt; b</code>
       that it has, which is not <code>what</code> it wanted.
       That’s where we say “Poor thing—here,
