@@ -284,10 +284,19 @@
    <text>: todo</text>
   </message>
   <span class="todo" title="TODO" xmlns="&html;">
-   <if test="./node()" xmlns="&xslt;">
-    <value-of select="."/>
-   </if>
+   <choose xmlns="&xslt;">
+    <when test="./node()">
+     <apply-templates/>
+    </when>
+    <otherwise>
+     <text>[…]</text>
+    </otherwise>
+   </choose>
   </span>
+ </template>
+
+ <template match="todo/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
  </template>
 
  <template match="table" xmlns="&xslt;">

@@ -146,7 +146,7 @@
  (#PCDATA)>
 
 <!ELEMENT todo
- (#PCDATA)>
+ %inline-content;>
 
 <!ELEMENT var
  (#PCDATA)>
