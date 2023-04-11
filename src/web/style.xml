@@ -213,6 +213,11 @@ span.grp
     white-space:                normal;
 }
 
+span.kwd
+{
+    &Heavy;
+}
+
 span.warn
 {
     text-decoration-color:      &warning-color;;

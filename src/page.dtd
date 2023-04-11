@@ -7,7 +7,7 @@
 
 <!ENTITY % inline
  'abbr | email | link | ref | text | todo | var
- | about | cite | code | emph | err | lit | note | sub | sup | warn
+ | about | cite | code | emph | err | kwd | lit | note | sub | sup | warn
  | cat | fix | grp | sep
  | ital'>
 
@@ -122,6 +122,9 @@
 
 <!ELEMENT err
  %inline-content;>
+
+<!ELEMENT kwd
+ (#PCDATA)>
 
 <!ELEMENT link
  %inline-content;>

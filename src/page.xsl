@@ -211,6 +211,12 @@
   <value-of select="normalize-space(.)"/>
  </template>
 
+ <template match="kwd" xmlns="&xslt;">
+  <span class="kwd" xmlns="&html;">
+   <s:value-of select="."/>
+  </span>
+ </template>
+
  <template match="link" xmlns="&xslt;">
   <choose>
    <when test="@to = 'home'">
