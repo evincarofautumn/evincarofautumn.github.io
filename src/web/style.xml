@@ -191,6 +191,12 @@ rt
     font-size:                  small;
 }
 
+span.big
+{
+    font-size:                  xx-large;
+    &Heavy;
+}
+
 span.cat
 {
     white-space:                normal;

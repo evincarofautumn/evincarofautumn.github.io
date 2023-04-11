@@ -292,6 +292,14 @@
   <abbr xmlns="&html;"><s:value-of select="."/></abbr>
  </template>
 
+ <template match="big" xmlns="&xslt;">
+  <span class="big" xmlns="&html;"><s:apply-templates/></span>
+ </template>
+
+ <template match="big/text()" xmlns="&xslt;">
+  <value-of select="normalize-space(.)"/>
+ </template>
+
  <template match="todo" xmlns="&xslt;">
   <message terminate="no" xmlns:saxon="&saxon;">
    <value-of select="saxon:systemId()"/>
