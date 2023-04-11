@@ -16,6 +16,9 @@
 <!ENTITY c
  "&amp;c.">
 
+<!ENTITY lf
+ "&#x0A;">
+
 <!ENTITY sp
  "&#x20;">
 
