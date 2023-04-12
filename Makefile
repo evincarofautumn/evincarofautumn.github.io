@@ -12,6 +12,7 @@ build: \
     dst/web/code/haskell/what/index.html \
     dst/web/credits/index.html \
     dst/web/cv/index.html \
+    dst/web/favicon.ico \
     dst/web/hatch-dark.svg \
     dst/web/hatch-light.svg \
     dst/web/hatch-medium.svg \
@@ -57,6 +58,11 @@ src/site.xsl: \
     src/xslt.dtd
 
 ################################################################
+
+dst/web/favicon.ico: \
+    src/web/favicon.ico
+	mkdir -p dst/web; \
+	cp $< $@
 
 dst/web/hatch-dark.svg: \
     src/web/hatch-dark.svg
