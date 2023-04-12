@@ -18,7 +18,7 @@
 
      <val>
       <para>
-       <link to="code-haskell-what">“Forall What?”</link>
+       <link to="code-haskell-what">“Forall What?”</link>&_;
        — Getting GHCi to tell you the &_;<emph>real</emph>&_;
        inferred type of a subexpression
       </para>
