@@ -75,16 +75,22 @@
   />
 
  <template match="text()" xmlns="&xslt;">
-  <message terminate="yes">
-   <text>error: no template for '</text>
+  <message terminate="yes" xmlns:saxon="&saxon;">
+   <value-of select="saxon:systemId()"/>
+   <text>:</text>
+   <value-of select="saxon:line-number(.)"/>
+   <text>: error: no template for '</text>
    <value-of select="local-name(..)"/>
    <text>/text()'</text>
   </message>
  </template>
 
  <template match="*" xmlns="&xslt;">
-  <message terminate="yes">
-   <text>error: no template for '</text>
+  <message terminate="yes" xmlns:saxon="&saxon;">
+   <value-of select="saxon:systemId()"/>
+   <text>:</text>
+   <value-of select="saxon:line-number(.)"/>
+   <text>: error: no template for '</text>
    <value-of select="local-name(.)"/>
    <text>'</text>
   </message>
