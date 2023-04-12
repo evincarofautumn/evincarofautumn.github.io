@@ -38,6 +38,7 @@
 <!ENTITY inline-verbatim-text
  ' code/text()
  | line/text()
+ | x
  '>
 
 ]>
@@ -67,7 +68,7 @@
   />
 
  <s:preserve-space
-  elements="text"
+  elements="x"
   />
 
  <s:strip-space
@@ -499,10 +500,6 @@
   <i xmlns="&html;">
    <s:apply-templates/>
   </i>
- </template>
-
- <template match="text" xmlns="&xslt;">
-  <value-of select="."/>
  </template>
 
  <template match="&inline-normalized-text;" xmlns="&xslt;">

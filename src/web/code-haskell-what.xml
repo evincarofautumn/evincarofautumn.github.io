@@ -185,7 +185,7 @@
      <line><kwd>:{</kwd></line>
      <line><kwd>let</kwd> it :: <kwd>forall</kwd> what. _</line>
      <line>    it = ( (foldr :: what) id )</line>
-     <line><text> </text><kwd>in</kwd> it</line>
+     <line><x> </x><kwd>in</kwd> it</line>
      <line><kwd>:}</kwd></line>
     </prog>
 

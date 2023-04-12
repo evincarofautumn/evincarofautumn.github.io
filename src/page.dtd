@@ -33,10 +33,10 @@
  | str
  | sub
  | sup
- | text
  | todo
  | var
  | warn
+ | x
  '>
 
 <!ENTITY % block-content
@@ -205,9 +205,6 @@
 <!ELEMENT sup
  %inline-content;>
 
-<!ELEMENT text
- (#PCDATA)>
-
 <!ELEMENT todo
  %inline-content;>
 
@@ -217,5 +214,6 @@
 <!ELEMENT warn
  %inline-content;>
 
-
-
+<!-- exact/verbatim text -->
+<!ELEMENT x
+ (#PCDATA)>
