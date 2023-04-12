@@ -33,12 +33,12 @@
  | todo/text()
  | val/text()
  | warn/text()
+ | code/text()
+ | line/text()
  '>
 
 <!ENTITY inline-verbatim-text
- ' code/text()
- | line/text()
- | x
+ ' x
  '>
 
 ]>
@@ -283,21 +283,21 @@
 
  <template match="prog" xmlns="&xslt;">
   <pre xmlns="&html;">
-   <code>
-    <for-each select="./*" xmlns="&xslt;">
-     <if test="position() != 1">
-      <text>&lf;</text>
-     </if>
-     <apply-templates select="."/>
-    </for-each>
-   </code>
+   <for-each select="./*" xmlns="&xslt;">
+    <if test="position() != 1">
+     <text>&lf;</text>
+    </if>
+    <apply-templates select="."/>
+   </for-each>
   </pre>
  </template>
 
  <template match="line" xmlns="&xslt;">
   <param name="prefix" as="string" select=" '' "/>
-  <value-of select="$prefix"/>
-  <apply-templates/>
+  <h:code>
+   <value-of select="$prefix"/>
+   <apply-templates/>
+  </h:code>
  </template>
 
  <template match="nest" xmlns="&xslt;">

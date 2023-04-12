@@ -7,10 +7,8 @@
   <back to="code">Code</back>
   <title>“Forall What?”</title>
   <subtitle>
-   <sep>
-    Getting GHCi to tell you
-    the <emph>real</emph> inferred type of a subexpression
-   </sep>
+   Getting GHCi to tell you
+   the &_;<emph>real</emph>&_; inferred type of a subexpression
   </subtitle>
  </head>
  <body>
@@ -21,62 +19,28 @@
    </head>
    <body>
     <para>
-     <sep>Put this in your <cat><code>.ghci</code>.</cat></sep>
+     Put this in your &_;<code>.ghci</code>.
     </para>
     <prog>
      <line>
-      <sep>
-       <kwd>:def</kwd>
-       what \s -> pure
-       <cat>
-        (
-        <sep>
-         <str>
-          <cat>
-           "
-           <sep>
-            <kwd>let</kwd>
-            { it ::
-            <kwd>forall</kwd>
-            what. _; it = (
-           </sep>
-           "
-          </cat>
-         </str>
-         &lt;&gt; s &lt;&gt;
-         <str>
-          <cat>
-           "
-           <sep>
-            ) }
-            <kwd>in</kwd>
-            it
-           </sep>
-           "
-          </cat>
-         </str>
-        </sep>
-        )
-       </cat>
-      </sep>
+      <kwd>:def</kwd>&_; what \s -&gt;
+       pure (
+        <str>"<kwd>let</kwd>&_;{
+         it :: &_;<kwd>forall</kwd>&_; what. _;
+         it = ("</str>&_;
+          &lt;&gt; s &lt;&gt;
+         &_;<str>")
+        } &_;<kwd>in</kwd>&_; it"</str>
+       )
      </line>
     </prog>
     <para>
-     <sep>
-      Now when you want a quick way to get the inferred type
-      of a <code><var>subexpression</var></code>
-      inside an <cat><code><var>expression</var></code>,</cat>
-      enter
-      <code>
-       <sep><kwd>:what</kwd> <var>expression</var></sep>
-      </code>
-      and replace <code><var>subexpression</var></code> with
-      <cat>
-       <code>
-        <cat>(<sep><var>subexpression</var> :: what</sep>)</cat>
-       </code>.
-      </cat>
-     </sep>
+     Now when you want a quick way to get the inferred type
+     of a &_;<code><var>subexpression</var></code>&_;
+     inside an &_;<code><var>expression</var></code>, enter
+     &_;<code><kwd>:what</kwd>&_;<var>expression</var></code>&_;
+     and replace &_;<code><var>subexpression</var></code>&_;
+     with &_;<code>(<var>subexpression</var>&_; :: what)</code>.
     </para>
    </body>
   </sect>
@@ -89,130 +53,119 @@
    <body>
 
     <para>
-     <sep>
-      If you’re trying to understand the type of an expression,
-      particularly when dealing with a confusing type error,
-      it’s helpful to be able to see the inferred type
-      of a subexpression involving polymorphic terms.
-     </sep>
+     If you’re trying to understand the type of an expression,
+     particularly when dealing with a confusing type error,
+     it’s helpful to be able to see the inferred type
+     of a subexpression involving polymorphic terms.
     </para>
 
     <para>
-     <sep>
-      For instance, earlier on in my Haskell career,
-      one day during a code review I saw an expression like
-      <cat><code>f &lt;$&gt; g &lt;$&gt; xs</code>,</cat>
-      and I was surprised that it typechecked, because
-      I remembered that the <code>&lt;$&gt;</code> operator
-      is <cat><emph>left</emph>-associative,</cat>
-      meaning that this was being parsed as
-      <code>(f &lt;$&gt; g) &lt;$&gt; xs</code>
-      and not what my coworker had meant to write,
-      <cat><code>f &lt;$&gt; (g &lt;$&gt; xs)</code>.</cat>
-      In other words,
-      <code>fmap (fmap f g) xs</code> was accepted
-      where <code>fmap f (fmap g xs)</code> was intended,
-      and I wanted to find out why.
-      (Actually, in this case I figured it out
-      by rephrasing the code with <cat><code>fmap</code>,</cat>
-      but if it would come in handy later,
-      I wanted to figure out how I could’ve figured it out.)
-     </sep>
+     For instance, earlier on in my Haskell career,
+     one day during a code review I saw an expression like
+     &_;<code>f &lt;$&gt; g &lt;$&gt; xs</code>,
+     and I was surprised that it typechecked, because
+     I remembered that the &_;<code>&lt;$&gt;</code>&_; operator
+     is &_;<emph>left</emph>-associative,
+     meaning that this was being parsed as
+     &_;<code>(f &lt;$&gt; g) &lt;$&gt; xs</code>&_;
+     and not what my coworker had meant to write,
+     &_;<code>f &lt;$&gt; (g &lt;$&gt; xs)</code>.
+     In other words,
+     &_;<code>fmap (fmap f g) xs</code>&_; was accepted
+     where &_;<code>fmap f (fmap g xs)</code>&_; was intended,
+     and I wanted to find out why.
+     (Actually, in this case I figured it out
+     by rephrasing the code with &_;<code>fmap</code>,
+     but if it would come in handy later,
+     I wanted to figure out how I could’ve figured it out.)
     </para>
 
     <para>
-     <sep>
-      So my first thought was to use a type wildcard, since
-      <code>PartialTypeSignatures</code> were new at the time.
-      In this case, asking GHCi
-      about <code>fmap ((fmap :: _) f g) xs</code>
-      does tell us that the type is something like
-      <cat>
-       <code>(a -> b) -> (t -&gt; a) -&gt; (t -&gt; b)</code>,
-      </cat>
-      which contains the important bit for our purposes:
-      <code>(t -&gt;)</code>
-      is a <cat><code>Functor</code>.</cat>
-      But there were other cases
-      where this wasn’t helpful at all!
-     </sep>
+     So my first thought was to use a type wildcard, since
+     &_;<code>PartialTypeSignatures</code>&_; were new at the time.
+     In this case, asking GHCi
+     about &_;<code>fmap ((fmap :: _) f g) xs</code>&_;
+     does tell us that the type is something like
+     &_;<code>(a -&gt; b) -&gt; (t -&gt; a) -&gt; (t -&gt; b)</code>,
+     which contains the important bit for our purposes:
+     &_;<code>(t -&gt;)</code>&_;
+     is a &_;<code>Functor</code>.
+     But there were other cases
+     where this wasn’t helpful at all!
     </para>
 
     <para>
-     <sep>
-      For instance, I was asked:
-      why does <code>foldr id</code> typecheck?
-      If you ask GHCi about <code>(foldr :: _) id</code>
-      and <cat><code>foldr (id :: _)</code>,</cat> it will say,
-      with perfect innocence and sincerity, that
-      <code>foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; t a -&gt; b</code>
-      and <cat><code>id :: a -&gt; a</code>.</cat>
-      These things you already knew—it gives you no insight.
-      A partial type signature isn’t always quite enough
-      to get GHCi to tell you the actual type
-      at which a subexpression is being used.
-      Part of the reason for this is by design:
-      a partial signature shouldn’t over-constrain the type,
-      so, as much as possible, the compiler will avoid
-      saying anything it’dn’t’ve committed to
-      if you hadn’t asked.
-      We can sometimes wheedle the type by casually saying
-      <cat><code>… :: ()</code>,</cat> in other words,
-      “…, which (as you know) is a unit”
-      and goading the typechecker into correcting us by saying,
-      “Actually, that’s not a unit at all! It’s a —”.
-      But that doesn’t always work:
-      sometimes our trick backfires,
-      and the typechecker just says “Yes, obviously.”
-      because our annotation caused it to commit to that type:
-      we’ve changed the outcome by trying to measure it.
-      No good!
-     </sep>
+     For instance, I was asked:
+     why does &_;<code>foldr id</code>&_; typecheck?
+     If you ask GHCi about &_;<code>(foldr :: _) id</code>&_;
+     and &_;<code>foldr (id :: _)</code>, it will say,
+     with perfect innocence and sincerity, that
+     &_;<code>foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; t a -&gt; b</code>&_;
+     and &_;<code>id :: a -&gt; a</code>.
+     These things you already knew—it gives you no insight.
+     A partial type signature isn’t always quite enough
+     to get GHCi to tell you the actual type
+     at which a subexpression is being used.
+     Part of the reason for this is by design:
+     a partial signature shouldn’t over-constrain the type,
+     so, as much as possible, the compiler will avoid
+     saying anything it’dn’t’ve committed to
+     if you hadn’t asked.
+     We can sometimes wheedle the type by casually saying
+     &_;<code>… :: ()</code>, in other words,
+     “…, which (as you know) is a unit”
+     and goading the typechecker into correcting us by saying,
+     “Actually, that’s not a unit at all! It’s a —”.
+     But that doesn’t always work:
+     sometimes our trick backfires,
+     and the typechecker just says “Yes, obviously.”
+     because our annotation caused it to commit to that type:
+     we’ve changed the outcome by trying to measure it.
+     No good!
     </para>
 
     <para>
-     <sep>
-      Fortunately, <code>ScopedTypeVariables</code>
-      give us a way to mint a fresh type variable, which,
-      unlike some concrete type like <cat><code>()</code>,</cat>
-      is guaranteed not to unify with anything else.
-      In conjunction with a partial type signature,
-      that lets us observe type inference without disturbing it.
-     </sep>
+     Fortunately, &_;<code>ScopedTypeVariables</code>&_;
+     give us a way to mint a fresh type variable, which,
+     unlike some concrete type like &_;<code>()</code>,
+     is guaranteed not to unify with anything else.
+     In conjunction with a partial type signature,
+     that lets us observe type inference without disturbing it.
     </para>
 
     <prog>
      <line><kwd>:{</kwd></line>
-     <line><kwd>let</kwd> it :: <kwd>forall</kwd> what. _</line>
-     <line>    it = ( (foldr :: what) id )</line>
-     <line><x> </x><kwd>in</kwd> it</line>
+     <line>
+      <kwd>let</kwd>&_; it :: &_;<kwd>forall</kwd>&_; what. _
+     </line>
+     <line><x>    </x>it = ( (foldr :: what) id )</line>
+     <line>&_;<kwd>in</kwd>&_; it</line>
      <line><kwd>:}</kwd></line>
     </prog>
 
     <prog>
-     <line><kwd>let</kwd> { it :: <kwd>forall</kwd> what. _; it = ( (foldr :: what) id ) } <kwd>in</kwd> it</line>
+     <line>
+      <kwd>let</kwd>&_; { it :: &_;<kwd>forall</kwd>&_; what. _;
+      it = ( (foldr :: what) id ) } &_;<kwd>in</kwd>&_; it
+     </line>
     </prog>
 
     <para>
-     <sep>
-      And as I showed earlier,
-      we can even make this into a GHCi command.
-     </sep>
+     And as I showed earlier,
+     we can even make this into a GHCi command.
     </para>
 
     <para>
-     <sep>
-      Now the typechecker will quit beating around the bush
-      and tell us <code>what</code> it expected…but
-      <code>((b -&gt; b) -&gt; b -&gt; b) -&gt; b -&gt; t (b -&gt; b) -&gt; b</code>
-      it actually got. So sad! If we ask
-      <code><kwd>:what</kwd> foldr (id :: what)</code>
-      it laments the <code>(b -&gt; b) -&gt; b -&gt; b</code>
-      that it has, which is not <code>what</code> it wanted.
-      That’s where we say “Poor thing—here,
-      let me take those off your hands…” and make our getaway,
-      with our pockets and purses jingling full of types.
-     </sep>
+     Now the typechecker will quit beating around the bush
+     and tell us &_;<code>what</code>&_; it expected…but alas,
+     &_;<code>((b -&gt; b) -&gt; b -&gt; b) -&gt; b -&gt; t (b -&gt; b) -&gt; b</code>&_;
+     it actually got. So sad! If we ask
+     &_;<code><kwd>:what</kwd>&_; foldr (id :: what)</code>&_;
+     it laments the &_;<code>(b -&gt; b) -&gt; b -&gt; b</code>&_;
+     that it has, which is not &_;<code>what</code>&_; it wanted.
+     That’s where we say “Poor thing—here,
+     let me take those off your hands…” and make our getaway,
+     with our pockets and purses jingling full of types.
     </para>
    </body>
   </sect>

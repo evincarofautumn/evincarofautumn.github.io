@@ -27,10 +27,13 @@ abbr
 
 ruby > .about-data
 {
-    border-radius:              &medium-radius;;
-    border-bottom:              1px solid &border-color;;
-    padding-left:               &medium-radius;;
-    padding-right:              &medium-radius;;
+    padding-left:               &er-space;;
+    padding-right:              &er-space;;
+}
+
+ruby > .about-meta
+{
+    border-top:                 1px solid &border-color;;
 }
 
 body
@@ -43,31 +46,25 @@ body
 
 code
 {
-    background-color:           &page-color;;
-    border:                     1px dotted &border-color;;
     font-family:                monospace;
     font-size:                  normal;
-    margin:                     &thin-space;;
-    padding:                    &thin-space;;
     &Double-spaced;
+    &Thin-spaced;
 }
 
 a code
 {
-    margin: inherit;
-}
-
-.compact code
-{
-    &Thin-spaced;
+    margin:                     inherit;
+    padding:                    inherit;
 }
 
 pre code
 {
-    background:                 none;
-    border:                     none;
+    display:                    inline-block;
     margin:                     initial;
+    margin-left:                2rem;
     padding:                    initial;
+    text-indent:                -2rem;
 }
 
 dd
@@ -192,6 +189,7 @@ pre
     border-width:               1px;
     border-color:               &border-color;;
     padding:                    &small-margin;;
+    white-space:                pre-wrap;
     &Block;
 }
 

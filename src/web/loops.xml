@@ -59,15 +59,13 @@
       <key>Substitch</key>
       <val>
        <para>
-        <sep>
          A substitch is one of the basic steps
          used to construct all higher-level stitch forms.
-         The main substitches are:
-         <cat><ref to="insert-hook">insert hook</ref>,</cat>
-         <cat><ref to="yarn-over">yarn over</ref>,</cat>
-         and
-         <cat><ref to="pull-through">pull through</ref>.</cat>
-        </sep>
+         The main substitches are:&_;
+         <ref to="insert-hook">insert hook</ref>,&_;
+         <ref to="yarn-over">yarn over</ref>,&_;
+         and&_;
+         <ref to="pull-through">pull through</ref>.
        </para>
       </val>
      </assn>
@@ -76,25 +74,13 @@
       <key>Basic Stitch</key>
       <val>
        <para>
-        <sep>
-         <cat>
-          <sep>
-           A basic stitch is a series
-           of <ref to="substitch">substitches</ref>
-           that forms one of the basic units
-           of a <ref>pattern</ref>
-          </sep>
-          .
-         </cat>
-         <cat>
-          <sep>
-           In basic crochet,
-           all of the basic stitches begin and end
-           with 1 <ref to="loop-on-hook">loop on the hook</ref>
-          </sep>
-          .
-         </cat>
-        </sep>
+        A basic stitch is a series
+        of &_;<ref to="substitch">substitches</ref>&_;
+        that forms one of the basic units
+        of a &_;<ref>pattern</ref>.
+        In basic crochet,
+        all of the basic stitches begin and end
+        with 1 &_;<ref to="loop-on-hook">loop on the hook</ref>.
        </para>
       </val>
      </assn>
@@ -103,19 +89,14 @@
       <key>Superstitch</key>
       <val>
        <para>
-        <cat>
-         <sep>
-          A superstitch is a series
-          of <ref to="basic-stitch">basic stitches</ref>
-          that forms a higher-level unit than a single stitch.
-          This may span a single <cat><ref>row</ref>,</cat>
-          such as a <ref>shell</ref>
-          or a segment of <cat><ref>cable</ref>;</cat>
-          or it may span multiple rows,
-          as in <ref>star stitch</ref>
-         </sep>
-         .
-        </cat>
+        A superstitch is a series
+        of &_;<ref to="basic-stitch">basic stitches</ref>&_;
+        that forms a higher-level unit than a single stitch.
+        This may span a single &_;<ref>row</ref>,
+        such as a &_;<ref>shell</ref>&_;
+        or a segment of &_;<ref>cable</ref>;
+        or it may span multiple rows,
+        as in &_;<ref>star stitch</ref>.
        </para>
       </val>
      </assn>
@@ -141,15 +122,13 @@
       <key>Yarn Over Hook (<abbr>YOH</abbr>)</key>
       <val>
        <para>
-        <sep>
-         Taking up an untwisted <ref>bight</ref>
-         from the <ref>working yarn</ref>
-         by wrapping it “over” the hook,
-         so that the hook passes
-         from the <ref to="near-side">near side</ref>
-         to the <ref to="far-side">far side</ref>
-         of the bight.
-        </sep>
+        Taking up an untwisted &_;<ref>bight</ref>&_;
+        from the &_;<ref>working yarn</ref>&_;
+        by wrapping it “over” the hook,
+        so that the hook passes
+        from the &_;<ref to="near-side">near side</ref>&_;
+        to the &_;<ref to="far-side">far side</ref>&_;
+        of the bight.
        </para>
       </val>
      </assn>
@@ -160,16 +139,11 @@
       <key>Reversed Yarn Over (<abbr>RYO</abbr>)</key>
       <val>
        <para>
-        <cat>
-         <sep>
-          Taking up a twisted <ref>loop</ref>
-          from the <ref>working yarn</ref>
-          by wrapping it “under” the hook.
-          This is the <ref>reverse</ref>
-          of <ref to="yarn-over">yarn over</ref>
-         </sep>
-         .
-        </cat>
+        Taking up a twisted &_;<ref>loop</ref>&_;
+        from the &_;<ref>working yarn</ref>&_;
+        by wrapping it “under” the hook.
+        This is the &_;<ref>reverse</ref>&_;
+        of &_;<ref to="yarn-over">yarn over</ref>.
        </para>
       </val>
      </assn>
@@ -178,26 +152,14 @@
       <key>Insert Hook (<abbr>IH</abbr>)</key>
       <val>
        <para>
-        <sep>
-         <cat>
-          <sep>
-           Inserting the hook through the work
-           at an <ref to="anchor-point">anchor point</ref>
-           from the <ref to="near-side">near side</ref>
-           to the <ref to="far-side">far side</ref>
-          </sep>
-          .
-         </cat>
-         <cat>
-          <sep>
-           I will represent this
-           as a form of
-           <ref to="loop-on-hook">loop on the hook</ref>
-          </sep>
-          ,
-         </cat>
-         where the “loop” is the body of the work itself.
-        </sep>
+        Inserting the hook through the work
+        at an &_;<ref to="anchor-point">anchor point</ref>&_;
+        from the &_;<ref to="near-side">near side</ref>&_;
+        to the &_;<ref to="far-side">far side</ref>.
+        I will represent this
+        as a form of
+        &_;<ref to="loop-on-hook">loop on the hook</ref>,
+        where the “loop” is the body of the work itself.
        </para>
       </val>
      </assn>
@@ -206,14 +168,12 @@
       <key>Pull Through (<abbr>PT</abbr>)</key>
       <val>
        <para>
-        <sep>
-         Pulling the topmost
-         <ref to="loop-on-hook">loop on the hook</ref>
-         through the next topmost.
-         Decreases the number of
-         <abbr>LOH</abbr>
-         by one.
-        </sep>
+        Pulling the topmost
+        &_;<ref to="loop-on-hook">loop on the hook</ref>&_;
+        through the next topmost.
+        Decreases the number of
+        &_;<abbr>LOH</abbr>&_;
+        by one.
        </para>
       </val>
      </assn>
@@ -295,117 +255,92 @@
 
      <val>
       <para>
-       <sep>
-        Except where otherwise noted, stitches are referred to
-        by <cat><emph>US names</emph>.</cat>
-       </sep>
+       Except where otherwise noted, stitches are referred to
+       by &_;<emph>US names</emph>.
       </para>
      </val>
 
      <val>
       <para>
-       <sep>
-        A <emph>space</emph> separates steps.
-       </sep>
+       A &_;<emph>space</emph>&_; separates steps.
       </para>
      </val>
 
      <val>
       <para>
-       <sep>
-        Logical groups of steps are written in square brackets,
-        whether or not they are repeated.
-        For instance, attaching to the work
-        is typically grouped as
-        <cat>
-         <code>
-          <grp><sep>&ih;&yo;&pt;</sep></grp>
-         </code>.
-        </cat>
-       </sep>
+       Logical groups of steps are written in square brackets,
+       whether or not they are repeated.
+       For instance, attaching to the work
+       is typically grouped as
+       &_;<code>
+        <grp><sep>&ih;&yo;&pt;</sep></grp>
+       </code>.
       </para>
      </val>
 
      <val>
 
       <para>
-       <sep>
-        When any step or sequence of steps
-        is repeated multiple times,
-        the <emph>total number of repetitions</emph> is written
-        <emph>after</emph> the repeated item.
-        I have also chosen to typeset this as a superscript
-        where possible, and otherwise
-        use a caret/circumflex (<code>^</code>).
-        Thus
-        <cat>
+       When any step or sequence of steps
+       is repeated multiple times,
+       the &_;<emph>total number of repetitions</emph>&_;
+       is written &_;<emph>after</emph>&_; the repeated item.
+       I have also chosen to typeset this as a superscript
+       where possible, and otherwise
+       use a caret/circumflex (<code>^</code>).
+       Thus
+       &_;<code><fix><var>x</var>&p1;</fix></code>&_;
+       is the same as
+       &_;<code><sep><var>x</var></sep></code>,
+       &_;<code><fix><var>x</var>&p2;</fix></code>&_;
+       means
+       &_;<code>
+        <grp>
          <sep>
-          <code><fix><var>x</var>&p1;</fix></code>
-          is the same as
-          <code><sep><var>x</var></sep></code>
-         </sep>,
-        </cat>
-        <cat>
+          <var>x</var>
+          <var>x</var>
+         </sep>
+        </grp>
+       </code>,
+       &_;<code><fix><var>x</var>&p3;</fix></code>&_;
+       means
+       &_;<code>
+        <grp>
          <sep>
-          <code><fix><var>x</var>&p2;</fix></code>
-          means
-          <code>
-           <grp>
-            <sep>
-             <var>x</var>
-             <var>x</var>
-            </sep>
-           </grp>
-          </code>
-         </sep>,
-        </cat>
-        <cat>
-         <sep>
-          <code><fix><var>x</var>&p3;</fix></code>
-          means
-          <code>
-           <grp>
-            <sep>
-             <var>x</var>
-             <var>x</var>
-             <var>x</var>
-            </sep>
-           </grp>
-          </code>
-         </sep>,
-        </cat>
-        and so on,
-        whatever <code><var>x</var></code> may be;
-        and in general,
-        <code>
-         <fix><var>x</var><sup><var>n</var></sup></fix>
-        </code>
-        or
-        <code>
-         <fix><var>x</var>^<var>n</var></fix>
-        </code>
-        means
-        <cat>
-         <code>
-          <about>
-           <data>
-            <sep>
-             <var>x</var>
-             …
-             <var>x</var>
-            </sep>
-           </data>
-           <meta>
-            <note><sep><var>n</var> times</sep></note>
-           </meta>
-          </about>
-         </code>
-         .
-        </cat>
-        This may include substitches, stitches,
-        or bracketed groups of steps.
-        Examples:
-       </sep>
+          <var>x</var>
+          <var>x</var>
+          <var>x</var>
+         </sep>
+        </grp>
+       </code>,&_;
+       and so on,
+       whatever &_;<code><var>x</var></code>&_; may be;
+       and in general,
+       &_;<code>
+        <fix><var>x</var><sup><var>n</var></sup></fix>
+       </code>&_;
+       or
+       &_;<code>
+        <fix><var>x</var>^<var>n</var></fix>
+       </code>&_;
+       means
+       &_;<code>
+        <about>
+         <data>
+          <sep>
+           <var>x</var>
+           …
+           <var>x</var>
+          </sep>
+         </data>
+         <meta>
+          <note><sep><var>n</var> times</sep></note>
+         </meta>
+        </about>
+       </code>.
+       This may include substitches, stitches,
+       or bracketed groups of steps.
+       Examples:
       </para>
 
       <map>
@@ -457,31 +392,27 @@
 
      <val>
       <para>
-       <sep>
-        <emph>Increases</emph> and <emph>decreases</emph>
-        always spell out both the type of stitch
-        and the <emph>pitch</emph> of the change,
-        namely, the fraction
-        <code><cat>&pn;⁄&bd;</cat></code>
-        or ratio
-        <code><var>n</var>:<var>d</var></code>
-        between the number of stitches <var>n</var>
-        being formed,
-        and the number of stitches <var>d</var>
-        being worked into.
-       </sep>
+       <emph>Increases</emph>&_; and &_;<emph>decreases</emph>&_;
+       always spell out both the type of stitch
+       and the &_;<emph>pitch</emph>&_; of the change,
+       namely, the fraction
+       &_;<code><cat>&pn;⁄&bd;</cat></code>&_;
+       or ratio
+       &_;<code><var>n</var>:<var>d</var></code>&_;
+       between the number of stitches &_;<var>n</var>&_;
+       being formed,
+       and the number of stitches &_;<var>d</var>&_;
+       being worked into.
       </para>
       <para>
-       <sep>
-        Most commonly this will be e.g.
-        <code><fix>sc&p2;⁄&b1;</fix></code>
-        “single crochet two [stitches] over one [position]”
-        (a basic increase)
-        or <code><fix>sc&p1;⁄&b2;</fix></code>
-        “single crochet one [stitch] over two [positions]”
-        (a basic decrease).
-        <todo>Link to info about decreases.</todo>
-       </sep>
+       Most commonly this will be e.g.
+       &_;<code><fix>sc&p2;⁄&b1;</fix></code>&_;
+       “single crochet two [stitches] over one [position]”
+       (a basic increase)
+       or &_;<code><fix>sc&p1;⁄&b2;</fix></code>&_;
+       “single crochet one [stitch] over two [positions]”
+       (a basic decrease).
+       &_;<todo>Link to info about decreases.</todo>
       </para>
      </val>
 

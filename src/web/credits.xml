@@ -19,21 +19,17 @@
    <body>
 
     <para>
-     <sep>
-      My avatar and the favicon for this site
-      are based on a photo by
-      <cite of="&cite-wikipedia-user-018;">
-       Wikipedia user 0<sup>18</sup>
-      </cite>
-      of
-      <cite of="&cite-wikimedia-indian-pipe;">
-       <ital>Monotropa uniflora</ital>
-      </cite>
-      flowers, licensed under
-      <cat>
-       <cite of="&cite-cc-by-sa-3.0;">CC BY-SA 3.0</cite>.
-      </cat>
-     </sep>
+     My avatar and the favicon for this site
+     are based on a photo by
+     &_;<cite of="&cite-wikipedia-user-018;">
+      Wikipedia user 0<sup>18</sup>
+     </cite>&_;
+     of
+     &_;<cite of="&cite-wikimedia-indian-pipe;">
+      <ital>Monotropa uniflora</ital>
+     </cite>&_;
+     flowers, licensed under
+     &_;<cite of="&cite-cc-by-sa-3.0;">CC BY-SA 3.0</cite>.
     </para>
 
    </body>

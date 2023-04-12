@@ -22,6 +22,9 @@
 <!ENTITY sp
  "&#x20;">
 
+<!ENTITY _
+ '<x>&sp;</x>'>
+
 <!ENTITY xinclude
  "http://www.w3.org/2001/XInclude">
 

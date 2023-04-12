@@ -34,14 +34,12 @@
     </para>
 
     <para>
-     <sep>
-      I am available for hire to write code
-      or to manage, teach, and mentor those who do,
-      preferably using Haskell, Rust, or similar.
-      The code I write is unusually reliable,
-      but I do not produce it quickly.
-      See <link to="cv">my CV</link> for more.
-     </sep>
+     I am available for hire to write code
+     or to manage, teach, and mentor those who do,
+     preferably using Haskell, Rust, or similar.
+     The code I write is unusually reliable,
+     but I do not produce it quickly.
+     See &_;<link to="cv">my CV</link>&_; for more.
     </para>
 
    </body>

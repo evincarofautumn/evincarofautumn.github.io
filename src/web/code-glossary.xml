@@ -5,7 +5,7 @@
  <head>
   <back to="home">Jon Purdy</back>
   <back to="code">Code</back>
-  <title><sep><code>GLOSSARY</code> File</sep></title>
+  <title><code>GLOSSARY</code>&_;File</title>
  </head>
  <body>
 
@@ -18,21 +18,17 @@
    <body>
 
     <para>
-     <sep>
-      A <code>GLOSSARY</code> file is a conventional file
-      like a <code>README</code> or <code>LICENSE</code> file,
-      which you can include in a code repository
-      to document the terminology and abbreviations
-      used in the project.
-     </sep>
+     A &_;<code>GLOSSARY</code>&_; file is a conventional file
+     like a &_;<code>README</code>&_; or &_;<code>LICENSE</code>&_; file,
+     which you can include in a code repository
+     to document the terminology and abbreviations
+     used in the project.
     </para>
 
     <para>
-     <sep>
-      For example, you might use a loosely structured format
-      like a <code>GLOSSARY.txt</code>
-      or <cat><code>GLOSSARY.md</code>:</cat>
-     </sep>
+     For example, you might use a loosely structured format
+     like a &_;<code>GLOSSARY.txt</code>&_;
+     or &_;<code>GLOSSARY.md</code>:
     </para>
 
     <prog>
@@ -51,10 +47,8 @@
     </prog>
 
     <para>
-     <sep>
-      Or you might use a more structured machine-readable format,
-      like a <cat><code>GLOSSARY.yaml</code>:</cat>
-     </sep>
+     Or you might use a more structured machine-readable format,
+     like a &_;<code>GLOSSARY.yaml</code>:
     </para>
 
     <prog>
@@ -80,12 +74,10 @@
     </prog>
 
     <para>
-     <sep>
-      I don’t mean to prescribe any particular format here,
-      the idea is that this is just a documentation convention.
-      It could be used as the basis of tooling if you want,
-      but is nevertheless valuable without it.
-     </sep>
+     I don’t mean to prescribe any particular format here,
+     the idea is that this is just a documentation convention.
+     It could be used as the basis of tooling if you want,
+     but is nevertheless valuable without it.
     </para>
    </body>
   </sect>
@@ -99,33 +91,29 @@
    <body>
 
     <para>
-     <sep>
-      At my first full-time job,
-      I wrote a linter for our codebase
-      which would check some of our basic house style rules
-      that were not enforced by other third-party lint tools
-      such as <cat><cite of="&cite-hlint;">HLint</cite>.</cat>
-      For example, my linter would check
-      that line lengths didn’t exceed 80 columns,
-      and advise reducing the nesting of deeply indented code,
-      with various exceptions for commentary and testing.
-     </sep>
+     At my first full-time job,
+     I wrote a linter for our codebase
+     which would check some of our basic house style rules
+     that were not enforced by other third-party lint tools
+     such as &_;<cite of="&cite-hlint;">HLint</cite>.
+     For example, my linter would check
+     that line lengths didn’t exceed 80 columns,
+     and advise reducing the nesting of deeply indented code,
+     with various exceptions for commentary and testing.
     </para>
 
     <para>
-     <sep>
-      On a whim, I added a feature
-      that would check our naming conventions, too.
-      It would split up each name in the code
-      and check that the parts conformed to the naming rules;
-      one such rule was that each part should be
-      either a dictionary word, or a “known abbreviation”.
-      For instance, <code>inheritEnv</code> was allowed
-      because <code>inherit</code> is a dictionary word
-      and <code>env</code> was defined in our glossary list,
-      but <warn><code>inhEnv</code></warn>
-      or <warn><code>inheritEnvt</code></warn> would not be.
-     </sep>
+     On a whim, I added a feature
+     that would check our naming conventions, too.
+     It would split up each name in the code
+     and check that the parts conformed to the naming rules;
+     one such rule was that each part should be
+     either a dictionary word, or a “known abbreviation”.
+     For instance, &_;<code>inheritEnv</code>&_; was allowed
+     because &_;<code>inherit</code>&_; is a dictionary word
+     and &_;<code>env</code>&_; was defined in our glossary list,
+     but &_;<warn><code>inhEnv</code></warn>&_;
+     or &_;<warn><code>inheritEnvt</code></warn>&_; would not be.
     </para>
 
     <para>This had a couple of nice consequences:</para>
@@ -134,31 +122,27 @@
 
      <val>
       <para>
-       <sep>
-        We needed to vet the abbreviations
-        that were already used in the code,
-        and decide which were worth keeping.
-        For example, we chose to allow
-        common general-purpose and domain-specific abbreviations
-        such as <code>msg</code> and <cat><code>lhs</code>,</cat>
-        as well as some project-specific ones
-        widely used throughout the codebase
-        such as <code>Fqn</code> for “fully-qualified name”;
-        but we chose to disallow others that weren’t adding value,
-        like <code>str</code> and <cat><code>fn</code>.</cat>
-       </sep>
+       We needed to vet the abbreviations
+       that were already used in the code,
+       and decide which were worth keeping.
+       For example, we chose to allow
+       common general-purpose and domain-specific abbreviations
+       such as &_;<code>msg</code>&_; and &_;<code>lhs</code>,
+       as well as some project-specific ones
+       widely used throughout the codebase
+       such as &_;<code>Fqn</code>&_; for “fully-qualified name”;
+       but we chose to disallow others that weren’t adding value,
+       like &_;<code>str</code>&_; and &_;<code>fn</code>.
       </para>
      </val>
 
      <val>
       <para>
-       <sep>
-        When we used a new abbreviation,
-        we would get a warning about it,
-        so we had to decide whether it was worth adding.
-        This gave us a simple, unobtrusive reminder
-        to keep up a certain standard of clarity in naming.
-       </sep>
+       When we used a new abbreviation,
+       we would get a warning about it,
+       so we had to decide whether it was worth adding.
+       This gave us a simple, unobtrusive reminder
+       to keep up a certain standard of clarity in naming.
       </para>
      </val>
 
