@@ -126,6 +126,12 @@ heading
     &Block;
 }
 
+.youtube > iframe
+{
+    height:                     100%;
+    width:                      100%;
+}
+
 li
 {
     &Block;
@@ -363,6 +369,13 @@ ul
 var
 {
     &Italic;
+}
+
+.youtube
+{
+    aspect-ratio:               16/9;
+    width:                      100%;
+    &Block;
 }
 
 </style>

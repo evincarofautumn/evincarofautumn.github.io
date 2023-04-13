@@ -502,6 +502,21 @@
   </i>
  </template>
 
+ <template match="youtube" xmlns="&xslt;">
+  <h:div class="youtube">
+   <h:iframe
+    width="560"
+    height="315"
+    src="https://www.youtube-nocookie.com/embed/{ normalize-space(.) }"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    >
+    <attribute name="allowfullscreen"/>
+   </h:iframe>
+  </h:div>
+ </template>
+
  <template match="&inline-normalized-text;" xmlns="&xslt;">
   <value-of select="normalize-space(.)"/>
  </template>
