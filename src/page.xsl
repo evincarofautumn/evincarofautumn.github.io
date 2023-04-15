@@ -158,7 +158,11 @@
  </template>
 
  <template match="back" xmlns="&xslt;">
-  <li xmlns="&html;"><s:call-template name="link_to"/></li>
+  <li xmlns="&html;">
+   <call-template name="link_to" xmlns="&xslt;">
+    <with-param name="id" select="@to"/>
+   </call-template>
+  </li>
  </template>
 
  <template match="head/title" xmlns="&xslt;">
@@ -251,20 +255,47 @@
  </template>
 
  <template match="link" xmlns="&xslt;">
-  <call-template name="link_to"/>
+  <call-template name="link_to">
+   <with-param name="id" select="@to"/>
+  </call-template>
  </template>
 
  <template name="link_to" xmlns="&xslt;">
+  <variable name="url">
+   <call-template name="page_id_to_url">
+    <with-param name="id" select="@to"/>
+   </call-template>
+  </variable>
+  <a href="{ $url }" xmlns="&html;">
+   <s:apply-templates/>
+  </a>
+ </template>
+
+ <template name="page_id_to_url" xmlns="&xslt;">
+  <param name="id" as="string"/>
+  <variable name="path" select="translate($id, '_', '/')"/>
   <choose>
-   <when test="@to = 'home'">
-    <a href="/" xmlns="&html;">
-     <s:apply-templates/>
-    </a>
+   <when test="contains($path, '/index')">
+    <variable name="prefix" select="substring-before($path, '/index')"/>
+    <variable name="suffix" select="substring-after($path, '/index')"/>
+    <choose>
+     <when test=" $suffix = '' ">
+      <value-of select="concat($prefix, '/')"/>
+     </when>
+     <otherwise>
+      <message terminate="yes" xmlns:saxon="&saxon;">
+       <value-of select="saxon:systemId()"/>
+       <text>:</text>
+       <value-of select="saxon:line-number(.)"/>
+       <text>: error: ill-made page id '</text>
+       <value-of select="local-name(.)"/>
+       <text>'</text>
+      </message>
+     </otherwise>
+    </choose>
    </when>
    <otherwise>
-    <a href="/{ translate(@to, '-', '/') }/" xmlns="&html;">
-     <s:apply-templates/>
-    </a>
+    <value-of select="$path"/>
    </otherwise>
   </choose>
  </template>

@@ -31,9 +31,9 @@
 <!ENTITY bd '<sub><var>d</var></sub>'>
 
 ]>
-<page id="loops">
+<page id="_loops_index">
  <head>
-  <back to="home">Jon Purdy</back>
+  <back to="_index">Jon Purdy</back>
   <title>Loops</title>
  </head>
  <body>

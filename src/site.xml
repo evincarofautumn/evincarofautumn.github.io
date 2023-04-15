@@ -2,11 +2,11 @@
 <!DOCTYPE site
  SYSTEM "site.dtd">
 <site>
- <include xmlns="&xinclude;" href="code.xml"/>
- <include xmlns="&xinclude;" href="code-glossary.xml"/>
- <include xmlns="&xinclude;" href="code-haskell-what.xml"/>
- <include xmlns="&xinclude;" href="credits.xml"/>
- <include xmlns="&xinclude;" href="cv.xml"/>
- <include xmlns="&xinclude;" href="home.xml"/>
- <include xmlns="&xinclude;" href="loops.xml"/>
+ <include xmlns="&xinclude;" href="web/code/glossary.xml"/>
+ <include xmlns="&xinclude;" href="web/code/haskell/what.xml"/>
+ <include xmlns="&xinclude;" href="web/code/index.xml"/>
+ <include xmlns="&xinclude;" href="web/credits.xml"/>
+ <include xmlns="&xinclude;" href="web/cv.xml"/>
+ <include xmlns="&xinclude;" href="web/index.xml"/>
+ <include xmlns="&xinclude;" href="web/loops/index.xml"/>
 </site>

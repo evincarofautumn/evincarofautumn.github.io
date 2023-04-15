@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE page
  SYSTEM "page.dtd">
-<page id="home">
+<page id="_index">
  <head>
   <title>Jon Purdy</title>
  </head>
@@ -39,7 +39,7 @@
      preferably using Haskell, Rust, or similar.
      The code I write is unusually reliable,
      but I do not produce it quickly.
-     See &_;<link to="cv">my CV</link>&_; for more.
+     See &_;<link to="_cv">my CV</link>&_; for more.
     </para>
 
    </body>
@@ -52,19 +52,19 @@
    <body>
     <map>
      <assn>
-      <key><link to="code">Code</link></key>
+      <key><link to="_code_index">Code</link></key>
       <val>
        <para>Things about computing and programming.</para>
       </val>
      </assn>
      <assn>
-      <key><link to="loops">Loops</link></key>
+      <key><link to="_loops_index">Loops</link></key>
       <val>
        <para>Gathered writings on crochet and other yarncraft.</para>
       </val>
      </assn>
      <assn>
-      <key><link to="credits">Credits</link></key>
+      <key><link to="_credits">Credits</link></key>
       <val>
        <para>
         Credits and citations for content on this site.

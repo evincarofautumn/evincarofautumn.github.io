@@ -4,21 +4,56 @@ XSLTFLAGS ?= --verbose
 
 ################################################################
 
+page_names := \
+    index \
+        code/index \
+            code/glossary \
+            code/haskell/what \
+        credits \
+        cv \
+        loops/index
+
+page_src_xmls := \
+    $(page_names:%=src/web/%.xml)
+
+page_dst_htmls := \
+    $(page_names:%=dst/web/%.html)
+
+page_dst_xmls := \
+    $(page_names:%=dst/%.xml)
+
+resource_files := \
+	favicon.ico \
+	hatch-dark.svg \
+	hatch-light.svg \
+	hatch-medium.svg
+
+resource_dst_files := \
+    $(resource_files:%=dst/web/%)
+
+style_names := \
+    style
+
+style_dst_csss := \
+    $(style_names:%=dst/web/%.css)
+
+$(info page_names         = $(strip $(page_names)))
+$(info page_src_xmls      = $(strip $(page_src_xmls)))
+$(info page_dst_htmls     = $(strip $(page_dst_htmls)))
+$(info page_dst_xmls      = $(strip $(page_dst_xmls)))
+$(info resource_files     = $(strip $(resource_files)))
+$(info resource_dst_files = $(strip $(resource_dst_files)))
+$(info style_names        = $(strip $(style_names)))
+$(info style_dst_csss     = $(strip $(style_dst_csss)))
+
+################################################################
+
 .PHONY: build
 
 build: \
-    dst/web/code/index.html \
-    dst/web/code/glossary/index.html \
-    dst/web/code/haskell/what/index.html \
-    dst/web/credits/index.html \
-    dst/web/cv/index.html \
-    dst/web/favicon.ico \
-    dst/web/hatch-dark.svg \
-    dst/web/hatch-light.svg \
-    dst/web/hatch-medium.svg \
-    dst/web/index.html \
-    dst/web/loops/index.html \
-    dst/web/style.css
+    $(page_dst_htmls) \
+    $(resource_dst_files) \
+    $(style_dst_csss)
 
 ################################################################
 
@@ -38,13 +73,7 @@ src/xslt.dtd: \
 ################################################################
 
 src/site.xml: \
-    src/web/code.xml \
-    src/web/code-glossary.xml \
-    src/web/code-haskell-what.xml \
-    src/web/credits.xml \
-    src/web/cv.xml \
-    src/web/home.xml \
-    src/web/loops.xml
+    $(page_src_xmls)
 
 ################################################################
 
@@ -59,24 +88,9 @@ src/site.xsl: \
 
 ################################################################
 
-dst/web/favicon.ico: \
-    src/web/favicon.ico
-	mkdir -p dst/web; \
-	cp $< $@
-
-dst/web/hatch-dark.svg: \
-    src/web/hatch-dark.svg
-	mkdir -p dst/web; \
-	cp $< $@
-
-dst/web/hatch-light.svg: \
-    src/web/hatch-light.svg
-	mkdir -p dst/web; \
-	cp $< $@
-
-dst/web/hatch-medium.svg: \
-    src/web/hatch-medium.svg
-	mkdir -p dst/web; \
+$(resource_dst_files): dst/web/%: \
+    src/web/%
+	mkdir -p $(dir $@); \
 	cp $< $@
 
 ################################################################
@@ -86,74 +100,35 @@ define xsltproc
 xsltproc \
     $(XSLTFLAGS) \
     --path src/ \
-    --path src/web \
+    --path src/web/ \
     --xinclude \
     --output $(1) \
     $(2) \
     $(3)
 endef
 
-dst/web/code/index.html: \
-    dst/code.xml \
+# every page_dst_xml is made together
+$(page_dst_xmls) &: \
+    src/site.xml \
+    src/site.xsl \
+    $(page_src_xmls)
+	mkdir -p $(dir $@); \
+	$(call xsltproc,dst/,src/site.xsl,$<)
+
+# each page_dst_html is made from the sibling page_dst_xml
+$(page_dst_htmls): dst/web/%.html: \
+    dst/%.xml \
     src/page.xsl \
     src/page.dtd
-	mkdir -p dst/web/code; \
+	mkdir -p $(dir $@); \
 	$(call xsltproc,$@,src/page.xsl,$<)
 
-dst/web/code/glossary/index.html: \
-    dst/code-glossary.xml \
-    src/page.xsl \
-    src/page.dtd
-	mkdir -p dst/web/code/glossary; \
-	$(call xsltproc,$@,src/page.xsl,$<)
-
-dst/web/code/haskell/what/index.html: \
-    dst/code-haskell-what.xml \
-    src/page.xsl \
-    src/page.dtd
-	mkdir -p dst/web/code/haskell/what; \
-	$(call xsltproc,$@,src/page.xsl,$<)
-
-dst/web/credits/index.html: \
-    dst/credits.xml \
-    src/page.xsl \
-    src/page.dtd
-	mkdir -p dst/web/credits; \
-	$(call xsltproc,$@,src/page.xsl,$<)
-
-dst/web/cv/index.html: \
-    dst/cv.xml \
-    src/page.xsl \
-    src/page.dtd
-	mkdir -p dst/web/cv; \
-	$(call xsltproc,$@,src/page.xsl,$<)
-
-dst/web/index.html: \
-    dst/home.xml \
-    src/page.xsl \
-    src/page.dtd
-	mkdir -p dst/web; \
-	$(call xsltproc,$@,src/page.xsl,$<)
-
-dst/web/loops/index.html: \
-    dst/loops.xml \
-    src/page.xsl \
-    src/page.dtd
-	mkdir -p dst/web/loops; \
-	$(call xsltproc,$@,src/page.xsl,$<)
-
-dst/web/style.css: \
-    src/web/style.xml \
+$(style_dst_csss): dst/web/%.css: \
+    src/web/%.xml \
     src/css.xsl \
     src/css.dtd
 	mkdir -p dst/web; \
 	$(call xsltproc,$@,src/css.xsl,$<)
-
-################################################################
-
-dst/%.xml: src/web/%.xml src/site.xml src/site.xsl
-	mkdir -p dst/web; \
-	$(call xsltproc,dst/,src/site.xsl,src/site.xml)
 
 ################################################################
 
@@ -162,8 +137,8 @@ define xmllint
 xmllint \
     --noent \
     --noout \
-    --path src \
-    --path src/web \
+    --path src/ \
+    --path src/web/ \
     --postvalid \
     --xinclude \
     $(1)

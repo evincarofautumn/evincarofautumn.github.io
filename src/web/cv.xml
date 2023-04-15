@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE page
  SYSTEM "page.dtd">
-<page id="cv">
+<page id="_cv">
  <head>
-  <back to="home">Jon Purdy</back>
+  <back to="_index">Jon Purdy</back>
   <title>CV</title>
  </head>
  <body>
