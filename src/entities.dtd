@@ -1,3 +1,5 @@
+<!-- namespaces -->
+
 <!ENTITY exslt
  "http://exslt.org/common">
 
@@ -7,29 +9,108 @@
 <!ENTITY html
  "http://www.w3.org/1999/xhtml">
 
-<!ENTITY nbsp
- "&#xA0;">
-
 <!ENTITY saxon
  "http://icl.com/saxon">
-
-<!ENTITY c
- "&amp;c.">
-
-<!ENTITY lf
- "&#x0A;">
-
-<!ENTITY sp
- "&#x20;">
-
-<!ENTITY _
- '<x>&sp;</x>'>
 
 <!ENTITY xinclude
  "http://www.w3.org/2001/XInclude">
 
 <!ENTITY xslt
  "http://www.w3.org/1999/XSL/Transform">
+
+<!-- characters and spacing -->
+
+<!ENTITY lf
+ "&#x0A;">
+
+<!-- ~1/4 em (mid), ~1/3 em (thick), ≥1/5 em, ≤1/2 em -->
+<!ENTITY sp
+ "&#x20;">
+
+<!ENTITY c
+ "&amp;c.">
+
+<!-- =sp -->
+<!ENTITY nbsp
+ "&#xA0;">
+<!ENTITY nb
+ "<x>&nbsp;</x>">
+
+<!-- =1 en, =1/2 em; \enspace -->
+<!ENTITY ensp
+ "&#x2002;">
+<!ENTITY en
+ "<x>&ensp;</x>">
+
+<!-- =1 em; \quad -->
+<!ENTITY emsp
+ "&#x2003;">
+<!ENTITY em
+ "<x>&emsp;</x>">
+
+<!-- =1/3 em; \; -->
+<!ENTITY thicksp
+ "&#x2004;">
+<!ENTITY thick
+ "<x>&thicksp;</x>">
+
+<!-- =1/4 em -->
+<!ENTITY midsp
+ "&#x2005;">
+<!ENTITY mid
+ "<x>&midsp;</x>">
+
+<!-- =1/6 em, ~thinsp -->
+<!ENTITY slimsp
+ "&#x2006;">
+<!ENTITY slim
+ "<x>&slimsp;</x>">
+
+<!-- =1 ch, ~1 en -->
+<!ENTITY figsp
+ "&#x2007;">
+<!ENTITY fig
+ "<x>&figsp;</x>">
+
+<!-- =[.], =[,], ~1/5 em, ~thinsp -->
+<!ENTITY puncsp
+ "&#x2008;">
+<!ENTITY punc
+ "<x>&puncsp;</x>">
+
+<!-- ~1/5 em, ~1/6 em, ≥~1/8 em; \,
+ digit group separator -->
+<!ENTITY thinsp
+ "&#x2009;">
+<!ENTITY thin
+ "<x>&thinsp;</x>">
+
+<!-- ≥~1/16 em, ≤~1/10 em -->
+<!ENTITY hairsp
+ "&#x200A;">
+<!ENTITY hair
+ "<x>&hairsp;</x>">
+
+<!-- =0 em -->
+<!ENTITY zwsp
+ "&#x200B;">
+<!ENTITY zw
+ "<x>&zwsp;</x>">
+
+<!-- =4/18 em, ~thinsp; \:
+ around operators with advance with equal to figsp -->
+<!ENTITY mmsp
+ "&#x205F;">
+<!ENTITY mm
+ "<x>&mmsp;</x>">
+
+<!ENTITY _
+ '<x>&sp;</x>'>
+
+<!ENTITY nosp
+ "<x/>">
+
+<!-- citations -->
 
 <!ENTITY cite-cc-by-sa-3.0
  "https://creativecommons.org/licenses/by-sa/3.0/">
