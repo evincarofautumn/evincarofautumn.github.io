@@ -133,6 +133,9 @@
 <!ENTITY cite-mono-strings
  "https://www.mono-project.com/docs/advanced/runtime/docs/ascii-strings/">
 
+<!ENTITY cite-ptx-spec
+ "https://docs.nvidia.com/cuda/parallel-thread-execution/">
+
 <!ENTITY cite-wikimedia-indian-pipe
  "https://commons.wikimedia.org/wiki/File:Indian_pipe_PDB.JPG">
 

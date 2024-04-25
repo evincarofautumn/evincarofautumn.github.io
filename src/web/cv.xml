@@ -29,19 +29,20 @@
      to take high-level theory
      and use it directly in low-level,
      high-performance computing applications.
+     The code I write is unusually reliable.
     </para>
 
     <para>
-     I would be glad to work
+     I prefer to work
      in a mixed technical/mentorship role
      for a team of developers,
-     particularly using &_;<emph>Haskell</emph>&_;
+     particularly using Haskell
      or similar technologies.
      Most of my work has been in
-     &_;<emph>developer tools</emph>,
+     developer tools,
      especially
-     &_;<emph>compiler technology</emph>,
-     and &_;<emph>performance engineering</emph>&_;
+     compiler technology,
+     and performance engineering
      in both software &amp; hardware.
      If you read about my experience below,
      and you think I can help you,
@@ -60,13 +61,28 @@
 
     <sect>
      <head>
+      <title>NVIDIA (Jan 2024 –)</title>
+      <subtitle>PTX Team</subtitle>
+     </head>
+     <body>
+      <para>
+       I am currently a senior software engineer at NVIDIA
+       working on the specification and implementation of the
+       &_;<cite of="&cite-ptx-spec;">PTX</cite>&_;
+       instruction set architecture.
+      </para>
+     </body>
+    </sect>
+
+    <sect>
+     <head>
       <title>Groq (Feb 2019 – Dec 2022)</title>
       <subtitle>Compiler Team; Core Libraries Team</subtitle>
      </head>
      <body>
       <para>
-       I joined Groq to work on a &_;<emph>compiler</emph>&_;
-       written in &_;<emph>Haskell</emph>&_;
+       I joined Groq to work on a compiler
+       written in Haskell
        from TensorFlow to the Groq TSP.
        The chip deliberately omits much of the control hardware
        found in stock CPUs and GPUs,
@@ -103,18 +119,18 @@
        Over the course of this job, I learned a great deal
        about the hardware development process
        and became skilled
-       at working with &_;<emph>SystemVerilog</emph>&_; code
+       at working with SystemVerilog code
        to understand hardware semantics
        and derive a programming model and type system.
        I also gained some experience
-       with &_;<emph>Nix</emph>.
+       with Nix.
        After the original compiler team was dissolved,
-       I became a &_;<emph>technical leader</emph>&_;
+       I became a technical leader
        on the Core Libraries team,
        was heavily involved
-       in &_;<emph>hiring</emph>&_; new team members,
+       in hiring new team members,
        and spent a considerable portion of my time
-       on &_;<emph>education and mentorship</emph>&_;
+       on education and mentorship
        for more junior developers.
       </para>
      </body>
@@ -131,11 +147,11 @@
      <body>
       <para>
        At Xamarin, later acquired by Microsoft,
-       I worked as a &_;<emph>performance engineer</emph>&_;
+       I worked as a performance engineer
        on the Mono runtime.
        Most of my time was focused
-       on the &_;<emph>SGen garbage collector</emph>,
-       written in &_;<emph>C</emph>.
+       on the SGen garbage collector,
+       written in C.
        I wrote
        &_;<cite of="&cite-mono-gc-handles;">
        a novel lock-free implementation of GC handles
@@ -143,14 +159,14 @@
        which made Mono an order of magnitude faster
        at handling large numbers of weak references.
        I wrote, and helped write,
-       a wide variety of &_;<emph>developer tools</emph>&_;
+       a wide variety of developer tools
        for GC tracing, debugging, and tuning
-       (in C and &_;<emph>F♯</emph>);
+       (in C and F♯);
        benchmark design,
-       &_;<emph>statistical analysis</emph>,
-       and &_;<emph>visualisation</emph>&_; of results
-       (using &_;<emph>TypeScript</emph>),
-       with automatic &_;<emph>monitoring</emph>&_;
+       statistical analysis,
+       and visualisation of results
+       (using TypeScript),
+       with automatic monitoring
        for performance regressions.
        I also gained much experience with
        debugging and fixing subtle issues in concurrent C code.
@@ -192,15 +208,15 @@
        I was acquihired by Facebook
        along with a handful of my teammates from Spaceport,
        and joined the SInfra team because it afforded a chance
-       to continue using &_;<emph>Haskell</emph>,
+       to continue using Haskell,
        and work with Simon Marlow.
        I helped design and implement
        the Haxl system for concurrent I/O,
        and wrote the Haxl FFI bindings to integrate
-       with &_;<emph>C</emph>&_; and &_;<emph>C++</emph>&_;
+       with C and C++
        for the major data sources used at Facebook.
        I also spent considerable time
-       &_;<emph>tutoring Haskell</emph>,
+       tutoring Haskell,
        and reviewing C++ code
        with a deep knowledge of the standard
        and a keen eye for bugs.
@@ -219,16 +235,16 @@
       <para>
        This was my first full-time job after I left college.
        I was immensely fortunate
-       to get to work with &_;<emph>Haskell</emph>&_;
-       on &_;<emph>gamedev tools</emph>,
+       to get to work with Haskell
+       on gamedev tools,
        an area that I greatly enjoy.
-       We wrote a &_;<emph>compiler</emph>&_; in Haskell
-       for the full &_;<emph>ActionScript 3</emph>&_; language,
-       targeting &_;<emph>JavaScript</emph>&_;
+       We wrote a compiler in Haskell
+       for the full ActionScript 3 language,
+       targeting JavaScript
        and the Spaceport runtime,
        which was a cross-platform, bug-for-bug–compatible,
        black-box reimplementation of Adobe Flash,
-       written in &_;<emph>C++</emph>,
+       written in C++,
        with GPU rendering superior to Adobe AIR.
       </para>
      </body>

@@ -19,7 +19,8 @@
     </para>
 
     <para>
-     Most of my work is in programming language technology,
+     Most of &_;<link to="_cv">my work</link>&_;
+     has been in programming language technology,
      including
      type systems,
      modern compiler design,
@@ -30,16 +31,7 @@
      I am familiar with an unusually broad array
      of programming technologies,
      but I have the most familiarity and professional experience
-     with Haskell, C, C++, and Perl.
-    </para>
-
-    <para>
-     I am available for hire to write code
-     or to manage, teach, and mentor those who do,
-     preferably using Haskell, Rust, or similar.
-     The code I write is unusually reliable,
-     but I do not produce it quickly.
-     See &_;<link to="_cv">my CV</link>&_; for more.
+     with Haskell, C, C++, Rust, and Perl.
     </para>
 
    </body>
