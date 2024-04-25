@@ -47,7 +47,7 @@ body
 code
 {
     font-family:                monospace;
-    font-size:                  normal;
+    font-size:                  medium;
     &Double-spaced;
     &Thin-spaced;
 }
@@ -71,6 +71,12 @@ dd
 {
     &Block;
     &Indented;
+}
+
+del
+{
+    background-color:           &negative-color;;
+    text-decoration:            line-through;
 }
 
 dl
@@ -130,6 +136,12 @@ heading
 {
     height:                     100%;
     width:                      100%;
+}
+
+ins
+{
+    background-color:           &positive-color;;
+    text-decoration:            underline;
 }
 
 li
@@ -262,6 +274,11 @@ span.grp
 span.kwd
 {
     &Heavy;
+}
+
+span.scap
+{
+    &Small-caps;
 }
 
 span.str

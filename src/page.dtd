@@ -7,6 +7,7 @@
  | para
  | prog
  | sect
+ | seq
  | set
  | table
  | youtube
@@ -16,20 +17,24 @@
  ' abbr
  | about
  | big
+ | bold
  | cat
  | cite
  | code
+ | del
  | email
  | emph
  | err
  | fix
  | grp
+ | ins
  | ital
  | kwd
  | link
  | lit
  | note
  | ref
+ | scap
  | sep
  | str
  | sub
@@ -85,13 +90,23 @@
 
 <!ELEMENT prog
  ((line | nest)*)>
+<!ATTLIST prog
+ nest-by CDATA #IMPLIED
+ >
  <!ELEMENT line
   %inline-content;>
  <!ELEMENT nest
   ((line | nest)*)>
+ <!ATTLIST nest
+  by CDATA #IMPLIED
+  >
 
 <!ELEMENT sect
  (head, body)>
+
+<!ELEMENT seq
+ (val*)>
+ <!-- ELEMENT val -->
 
 <!ELEMENT set
  (val*)>
@@ -105,7 +120,7 @@
  <!ELEMENT fmt
   (fld*)>
   <!ELEMENT fld
-   (#PCDATA)>
+   %inline-content;>
  <!ELEMENT row
   ((brk | cell | gap)*)>
   <!ENTITY % cell-attlist '
@@ -149,6 +164,9 @@
 <!ELEMENT big
  %inline-content;>
 
+<!ELEMENT bold
+ %inline-content;>
+
 <!ELEMENT cat
  %inline-content;>
 
@@ -158,6 +176,9 @@
  of CDATA #REQUIRED>
 
 <!ELEMENT code
+ %inline-content;>
+
+<!ELEMENT del
  %inline-content;>
 
 <!ELEMENT email
@@ -173,6 +194,9 @@
  %inline-content;>
 
 <!ELEMENT grp
+ %inline-content;>
+
+<!ELEMENT ins
  %inline-content;>
 
 <!ELEMENT ital
@@ -196,6 +220,9 @@
  (#PCDATA)>
 <!ATTLIST ref
  to IDREF #IMPLIED>
+
+<!ELEMENT scap
+ %inline-content;>
 
 <!ELEMENT sep
  %inline-content;>

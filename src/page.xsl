@@ -7,16 +7,19 @@
  ' back/text()
  | big/text()
  | body/text()
+ | bold/text()
  | cat/text()
  | cell/text()
  | cite/text()
  | data/text()
+ | del/text()
  | email/text()
  | emph/text()
  | err/text()
  | fix/text()
  | fld/text()
  | grp/text()
+ | ins/text()
  | ital/text()
  | key/text()
  | link/text()
@@ -24,6 +27,7 @@
  | meta/text()
  | note/text()
  | para/text()
+ | scap/text()
  | sep/text()
  | str/text()
  | sub/text()
@@ -211,13 +215,19 @@
   </dd>
  </template>
 
+ <template match="seq" xmlns="&xslt;">
+  <ol xmlns="&html;">
+   <s:apply-templates/>
+  </ol>
+ </template>
+
  <template match="set" xmlns="&xslt;">
   <ul xmlns="&html;">
    <s:apply-templates/>
   </ul>
  </template>
 
- <template match="set/val" xmlns="&xslt;">
+ <template match="set/val|seq/val" xmlns="&xslt;">
   <li xmlns="&html;">
    <s:apply-templates/>
   </li>
@@ -318,27 +328,52 @@
     <if test="position() != 1">
      <text>&lf;</text>
     </if>
-    <apply-templates select="."/>
+    <choose>
+     <when test="../@nest-by and not(@by)">
+      <apply-templates select=".">
+       <with-param name="by" select="../@nest-by"/>
+      </apply-templates>
+     </when>
+     <otherwise>
+      <apply-templates select="."/>
+     </otherwise>
+    </choose>
    </for-each>
   </pre>
  </template>
 
  <template match="line" xmlns="&xslt;">
-  <param name="prefix" as="string" select=" '' "/>
+  <param name="at" as="string" select=" '' "/>
   <h:code>
-   <value-of select="$prefix"/>
-   <apply-templates/>
+   <choose>
+    <when test="node()">
+     <!-- skip prefix for empty line regardless of nesting -->
+     <value-of select="$at"/>
+     <apply-templates/>
+    </when>
+   </choose>
   </h:code>
  </template>
 
  <template match="nest" xmlns="&xslt;">
-  <param name="prefix" as="string" select=" '' "/>
+  <param name="at" as="string" select=" '' "/>
+  <param name="by" as="string">
+   <choose>
+    <when test="@by">
+     <value-of select="string(@by)"/>
+    </when>
+    <otherwise>
+     <text>&sp;&sp;</text>
+    </otherwise>
+   </choose>
+  </param>
   <for-each select="./*">
    <if test="position() != 1">
     <text>&lf;</text>
    </if>
    <apply-templates select=".">
-    <with-param name="prefix" select="concat('  ', $prefix)"/>
+    <with-param name="at" select="concat($by, $at)"/>
+    <with-param name="by" select="$by"/>
    </apply-templates>
   </for-each>
  </template>
@@ -367,6 +402,12 @@
 
  <template match="big" xmlns="&xslt;">
   <span class="big" xmlns="&html;"><s:apply-templates/></span>
+ </template>
+
+ <template match="bold" xmlns="&xslt;">
+  <b xmlns="&html;">
+   <s:apply-templates/>
+  </b>
  </template>
 
  <template match="todo" xmlns="&xslt;">
@@ -441,10 +482,16 @@
   </code>
  </template>
 
- <template match="code//note" xmlns="&xslt;">
+ <template match="code//note|prog//note" xmlns="&xslt;">
   <span class="note" xmlns="&html;">
    <s:apply-templates/>
   </span>
+ </template>
+
+ <template match="del" xmlns="&xslt;">
+  <del xmlns="&html;">
+   <s:apply-templates/>
+  </del>
  </template>
 
  <template match="email" xmlns="&xslt;">
@@ -454,13 +501,19 @@
  </template>
 
  <template match="emph" xmlns="&xslt;">
-  <strong xmlns="&html;">
+  <em xmlns="&html;">
    <s:apply-templates/>
-  </strong>
+  </em>
  </template>
 
  <template match="err" xmlns="&xslt;">
   <span class="err" xmlns="&html;">
+   <s:apply-templates/>
+  </span>
+ </template>
+
+ <template match="scap" xmlns="&xslt;">
+  <span class="scap" xmlns="&html;">
    <s:apply-templates/>
   </span>
  </template>
@@ -525,6 +578,12 @@
    <value-of select="$padding"/>
    <text>]</text>
   </h:span>
+ </template>
+
+ <template match="ins" xmlns="&xslt;">
+  <ins xmlns="&html;">
+   <s:apply-templates/>
+  </ins>
  </template>
 
  <template match="ital" xmlns="&xslt;">
