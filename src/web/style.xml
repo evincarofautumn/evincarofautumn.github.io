@@ -3,6 +3,11 @@
  SYSTEM "css.dtd">
 <style>
 
+html
+{
+    color-scheme:               light dark;
+}
+
 :target
 {
     &Underlined;
@@ -15,7 +20,7 @@ a
 
 nav > ol > li > a::after
 {
-    color:                      &text-color;;
+    color:                      light-dark(&text-light-color;, &text-dark-color;);
     content:                    '\00A0\25B8';
     display:                    inline-block;
 }
@@ -33,13 +38,15 @@ ruby > .about-data
 
 ruby > .about-meta
 {
-    border-top:                 1px solid &border-color;;
+    border-top:                 1px
+                                solid
+                                light-dark(&border-light-color;, &border-dark-color;);
 }
 
 body
 {
-    background-color:           &page-color;;
-    color:                      &text-color;;
+    background-color:           light-dark(&page-light-color;, &page-dark-color;);
+    color:                      light-dark(&text-light-color;, &text-dark-color;);
     font-family:                serif;
     &Double-spaced;
 }
@@ -127,7 +134,7 @@ h2
 
 heading
 {
-    border-bottom:              1px solid &border-color;;
+    border-bottom:              1px solid light-dark(&border-light-color;, &border-dark-color;);
     display:                    block;
     &Block;
 }
@@ -165,7 +172,7 @@ main
 
 mark
 {
-    background-color:           &highlight-color;;
+    background-color:           light-dark(&highlight-light-color;, &highlight-dark-color;);
     &Heavy;
 }
 
@@ -205,7 +212,7 @@ pre
 {
     border-style:               dotted;
     border-width:               1px;
-    border-color:               &border-color;;
+    border-color:               light-dark(&border-light-color;, &border-dark-color;);
     padding:                    &small-margin;;
     white-space:                pre-wrap;
     &Block;
@@ -256,7 +263,7 @@ span.email
 
 span.err
 {
-    text-decoration-color:      &error-color;;
+    text-decoration-color:      light-dark(&error-light-color;, &error-dark-color;);
     &WavyUnderlined;
 }
 
@@ -283,12 +290,12 @@ span.scap
 
 span.str
 {
-    color:                      &string-color;;
+    color:                      light-dark(&string-light-color;, &string-dark-color;);
 }
 
 span.warn
 {
-    text-decoration-color:      &warning-color;;
+    text-decoration-color:      light-dark(&warning-light-color;, &warning-dark-color;);
     &WavyUnderlined;
 }
 
@@ -311,7 +318,7 @@ table
 td,
 th
 {
-    border-color:               &border-color;;
+    border-color:               light-dark(&border-light-color;, &border-dark-color;);
     border-style:               solid;
     border-width:               1px 0;
     padding:                    &small-margin;;
@@ -369,7 +376,7 @@ td.pos
 
 .todo
 {
-    color:                      &todo-color;;
+    color:                      light-dark(&todo-light-color;, &todo-dark-color;);
     &Italic;
 }
 
