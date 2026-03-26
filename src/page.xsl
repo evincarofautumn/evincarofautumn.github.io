@@ -108,6 +108,7 @@
  <template match="page" xmlns="&xslt;">
   <html xmlns="&html;">
    <head>
+    <meta charset="utf-8"/>
     <meta name="color-scheme" content="light dark"/>
     <title>
      <value-of
