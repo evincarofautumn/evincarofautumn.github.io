@@ -7,106 +7,62 @@
  </head>
  <body>
 
-  <sect>
-   <head>
-    <title>About</title>
-   </head>
-   <body>
+  <para>
+   A rare being from the forests of New England,
+   transplanted to California.
+  </para>
 
-    <para>
-     A rare being from the forests of New England,
-     transplanted to California.
-    </para>
+  <para>
+   Most of &_;<link to="_cv">my work</link>&_;
+   has been in programming language technology,
+   including
+   type systems,
+   modern compiler design,
+   parsing,
+   code generation,
+   usability design,
+   and garbage collector implementation.
+   I am familiar with an unusually broad array
+   of programming technologies,
+   but I have the most familiarity and professional experience
+   with Haskell, C, C++, Rust, and Perl.
+  </para>
 
-    <para>
-     Most of &_;<link to="_cv">my work</link>&_;
-     has been in programming language technology,
-     including
-     type systems,
-     modern compiler design,
-     parsing,
-     code generation,
-     usability design,
-     and garbage collector implementation.
-     I am familiar with an unusually broad array
-     of programming technologies,
-     but I have the most familiarity and professional experience
-     with Haskell, C, C++, Rust, and Perl.
-    </para>
+  <map>
 
-   </body>
-  </sect>
+   <assn>
+    <key><link to="_code_index">Code</link></key>
+    <val>
+     <para>Things about computing and programming.</para>
+    </val>
+   </assn>
 
-  <sect>
-   <head>
-    <title>Writing</title>
-   </head>
-   <body>
-    <map>
-     <assn>
-      <key><link to="_code_index">Code</link></key>
-      <val>
-       <para>Things about computing and programming.</para>
-      </val>
-     </assn>
-     <assn>
-      <key><link to="_loops_index">Loops</link></key>
-      <val>
-       <para>Gathered writings on crochet and other yarncraft.</para>
-      </val>
-     </assn>
-     <assn>
-      <key><link to="_credits">Credits</link></key>
-      <val>
-       <para>
-        Credits and citations for content on this site.
-       </para>
-      </val>
-     </assn>
-    </map>
-   </body>
-  </sect>
+   <assn>
+    <key><link to="_loops_index">Loops</link></key>
+    <val>
+     <para>Gathered writings on crochet and other yarncraft.</para>
+    </val>
+   </assn>
 
-  <sect>
-   <head>
-    <title>Talks</title>
-   </head>
-   <body>
+   <assn>
+    <key><link to="_talks">Talks</link></key>
+    <val>
+     <para>
+      Talks I’ve given.
+     </para>
+    </val>
+   </assn>
 
-    <sect>
-     <head>
-      <title>
-       Concatenative Programming: From Ivory to Metal (2017)
-      </title>
-      <subtitle>
-       Stanford EE380 Computer Systems Colloquium Seminar
-      </subtitle>
-     </head>
-     <body>
-      <para>
-       “Concatenative programming is
-       a relatively new programming paradigm
-       built on a simple yet powerful tool:
-       function composition.
-       In this talk I will give
-       an overview of concatenative languages
-       from high-level theory
-       down to low-level implementation.
-       I will discuss some historical background,
-       give an overview
-       of the existing concatenative programming literature,
-       then dive into examples
-       of the exciting advantages
-       that these languages may have to offer
-       in terms of program correctness, safety, usability,
-       and performance on the hardware of today and tomorrow.”
-      </para>
-      <youtube>_IgqJr8jG8M</youtube>
-     </body>
-    </sect>
+   <assn>
+    <key><link to="_credits">Credits</link></key>
+    <val>
+     <para>
+      Credits and citations for content on this site.
+     </para>
+    </val>
+   </assn>
 
-   </body>
-  </sect>
+  </map>
 
  </body>
 </page>

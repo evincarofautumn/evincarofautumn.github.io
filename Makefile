@@ -11,7 +11,8 @@ page_names := \
             code/haskell/what \
         credits \
         cv \
-        loops/index
+        loops/index \
+        talks
 
 page_src_xmls := \
     $(page_names:%=src/web/%.xml)

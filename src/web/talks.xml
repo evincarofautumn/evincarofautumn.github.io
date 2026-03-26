@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE page
+ SYSTEM "page.dtd">
+<page id="_talks">
+ <head>
+  <back to="_index">Jon Purdy</back>
+  <title>Talks</title>
+ </head>
+ <body>
+
+  <sect>
+   <head>
+    <title>
+     Concatenative Programming: From Ivory to Metal (2017)
+    </title>
+    <subtitle>
+     Stanford EE380 Computer Systems Colloquium Seminar
+    </subtitle>
+   </head>
+   <body>
+    <para>
+     “Concatenative programming is
+     a relatively new programming paradigm
+     built on a simple yet powerful tool:
+     function composition.
+     In this talk I will give
+     an overview of concatenative languages
+     from high-level theory
+     down to low-level implementation.
+     I will discuss some historical background,
+     give an overview
+     of the existing concatenative programming literature,
+     then dive into examples
+     of the exciting advantages
+     that these languages may have to offer
+     in terms of program correctness, safety, usability,
+     and performance on the hardware of today and tomorrow.”
+    </para>
+    <youtube>_IgqJr8jG8M</youtube>
+   </body>
+  </sect>
+
+ </body>
+</page>
